@@ -1,38 +1,29 @@
+import React, { useState } from 'react';
 import { Grid } from '@mui/material';
-import React from 'react';
 import './App.css';
-import Content from './components/Content';
 import Links from './components/Links';
 import Navigation from './components/Navigation';
+import Content from './components/Content';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+function App() {
+  const [theme, setTheme] = useState('light');
+  const [page, setPage] = useState('landing');
 
-  componentDidMount() {
-  }
-
-  componentWillUnmount() {
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <Grid container>
-          <Grid item>
-            <Navigation />
-          </Grid>
-          <Grid item>
-            <Links />
-          </Grid>
-          <Grid item>
-            <Content />
-          </Grid>
+  return (
+    <div className="App">
+      <Grid container>
+        <Grid item>
+          <Navigation page={page} setPage={setPage}/>
         </Grid>
-      </div>
-    );
-  }
+        <Grid item>
+          <Links />
+        </Grid>
+        <Grid item>
+          <Content page={page} />
+        </Grid>
+      </Grid>
+    </div>
+  );
 }
 
 export default App;
