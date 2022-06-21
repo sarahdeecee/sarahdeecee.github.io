@@ -1,22 +1,23 @@
+import { Grid } from '@mui/material';
 import './App.css';
+import Content from './components/Content';
 import Links from './components/Links';
 import Navigation from './components/Navigation';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Landing from './pages/Landing';
-import Projects from './pages/Projects';
-import Stack from './pages/Stack';
 
 function App() {
   return (
     <div className="App">
-      <Navigation />
-      <Links />
-      <Landing />
-      <About />
-      <Projects />
-      <Stack />
-      <Contact />
+      <Grid container>
+        <Grid item>
+          <Navigation />
+        </Grid>
+        <Grid item>
+          <Links />
+        </Grid>
+        <Grid item>
+          <Content />
+        </Grid>
+      </Grid>
     </div>
   );
 }
