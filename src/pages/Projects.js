@@ -1,8 +1,10 @@
+import { Typography } from "@mui/material";
+
 function Projects() {
   return (
     <section className="page" id="projects">
       <article>
-        <h2>Projects</h2>
+        <Typography variant="h2">Projects</Typography>
       </article>
     </section>
   );

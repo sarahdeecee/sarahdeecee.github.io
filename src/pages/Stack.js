@@ -1,8 +1,10 @@
+import { Typography } from "@mui/material";
+
 function Stack() {
   return (
     <section className="page" id="stack">
       <article>
-        <h2>Tech Stack</h2>
+        <Typography variant="h2">Tech Stack</Typography>
         <div id="logo-container">
           <span className="logo-box" data-toggle="tooltip" data-placement="top" title="HTML">
             <img src="https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/html-5.svg" className="stack-logo" alt="HTML-5" />
