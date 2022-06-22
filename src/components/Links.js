@@ -74,7 +74,7 @@ function Links(props) {
     </ListItemButton>
   </ListItem>;
 
-  const linkDrawer = <Drawer variant="permanent" open={openLinks} sx={{'& .MuiDrawer-paper': {borderWidth: 0, justifyContent: 'flex-end'}}}>
+  const linksDrawer = <Drawer variant="permanent" open={openLinks} sx={{'& .MuiDrawer-paper': {borderWidth: 0, justifyContent: 'flex-end'}}}>
     <List>
       {links.map((link, index) => (
         <ListItem key={`listitem-${link.text}`} disablePadding sx={{ display: 'block' }}>
@@ -109,7 +109,7 @@ function Links(props) {
     <section className="page" id="links"
       onMouseEnter={handleDrawerOpen}
       onMouseLeave={handleDrawerClose}>
-      {linkDrawer}
+      {linksDrawer}
     </section>
   );
 }
