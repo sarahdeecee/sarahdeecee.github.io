@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import ProjectCard from "../components/ProjectCard";
 
 const projects = [
@@ -11,19 +11,21 @@ const projects = [
   {
     title: "Technical Documentation Page",
     description: "A responsive page showing a sample of Vue documentation.",
-    deployLink: "https://codepen.io/s_dc/details/xxPMgNK",
+    deployLink: "https://codepen.io/s_dc/full/xxPMgNK",
     image: "https://github.com/sarahdeecee/fcc-responsive-projects/blob/main/05-personal-portfolio/data/project-doc-page.png?raw=true",
   }
 ]
 
 function Projects() {
-  const parsedProjects = projects.map(project => <ProjectCard {...project} />);
+  const parsedProjects = projects.map(project => <Grid item><ProjectCard {...project} /></Grid>);
 
   return (
     <section className="page" id="projects">
       <article>
         <Typography variant="h2">Projects</Typography>
-        {parsedProjects}      
+        <Grid container spacing={3}>
+          {parsedProjects}
+        </Grid>      
       </article>
     </section>
   );

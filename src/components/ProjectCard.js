@@ -17,11 +17,11 @@ function ProjectCard(props) {
           alt={`Screenshot of ${title}`}
           />
         <CardContent>
-          <Typography varuant="h5" component="div">{title}</Typography>
-          <Typography varuant="body2" component="p">{description}</Typography>
+          <Typography variant="h5" component="div">{title}</Typography>
+          <Typography variant="body2" component="p">{description}</Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions sx={{justifyContent: "space-evenly"}}>
         <Button href={deployLink}>Link</Button>
         <Button href={githubLink}>GitHub</Button>
       </CardActions>
