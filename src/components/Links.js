@@ -1,4 +1,4 @@
-import { LinkedIn, GitHub, Instagram, Email } from '@mui/icons-material';
+import { LinkedIn, GitHub, Instagram, Email, LightMode, DarkMode } from '@mui/icons-material';
 import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Popover, Typography } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
@@ -37,7 +37,8 @@ const links = [
   }
 ];
 
-function Links() {
+function Links(props) {
+  const {theme, setTheme} = props;
   const [openLinks, setOpenLinks] = useState(false);
   const handleDrawerOpen = () => {
     setOpenLinks(true);
@@ -46,6 +47,32 @@ function Links() {
   const handleDrawerClose = () => {
     setOpenLinks(false);
   };
+  const handleTheme = () => {
+    (theme === 'light') ? setTheme('dark') : setTheme('light');
+  }
+
+  const themeToggle = <ListItem key={`listitem-theme`} disablePadding sx={{ display: 'block' }}>
+    <ListItemButton key={`listbutton-theme`}
+      sx={{
+        minHeight: 48,
+        justifyContent: openLinks ? 'initial' : 'center',
+        px: 2.5,
+      }}
+      onClick={handleTheme}
+    >
+      <ListItemIcon key={`listicon-theme`}
+        sx={{
+          minWidth: 0,
+          mr: openLinks ? 3 : 'auto',
+          justifyContent: 'center',
+          width: "1em"
+        }}
+      >
+        {(theme === 'light') ? <DarkMode /> : <LightMode />}
+      </ListItemIcon>
+      {openLinks && <ListItemText primary={(theme === 'light') ? "Dark Mode" : "Light Mode"} />}
+    </ListItemButton>
+  </ListItem>;
 
   const linkDrawer = <Drawer variant="permanent" open={openLinks} sx={{'& .MuiDrawer-paper': {borderWidth: 0, justifyContent: 'flex-end'}}}>
     <List>
@@ -74,6 +101,7 @@ function Links() {
           </ListItemButton>
         </ListItem>
       ))}
+      {themeToggle}
     </List>
   </Drawer>
 

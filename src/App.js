@@ -14,7 +14,7 @@ function App() {
     <div className={`App ${theme}`}>
       <Grid container>
         <Grid item xs>
-          <Links />
+          <Links theme={theme} setTheme={setTheme} />
         </Grid>
         <Grid container item xs={11}>
           <Grid item>
