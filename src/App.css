@@ -100,3 +100,18 @@ a {
   max-width: 5rem;
   margin-bottom: 5px;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  #landing-logo {
+    animation: logo-spin infinite 30s linear;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
