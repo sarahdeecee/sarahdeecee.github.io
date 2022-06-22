@@ -51,6 +51,11 @@ a {
   text-decoration: none;
 }
 
+.project-img {
+  height: 300px;
+  width: auto;
+}
+
 #content-footer {
   text-align: center;
   font-size: large;
