@@ -1,4 +1,5 @@
 import About from '../pages/About';
+import Certifications from '../pages/Certifications';
 import Contact from '../pages/Contact';
 import Landing from '../pages/Landing';
 import Projects from '../pages/Projects';
@@ -13,6 +14,10 @@ const tabs = [
   {
     text: "about",
     component: <About key="about" />
+  },
+  {
+    text: "certifications",
+    component: <Certifications key="certifications" />
   },
   {
     text: "projects",
@@ -35,7 +40,7 @@ function Content(props) {
   //   useScrollSpy
 
   const parsedTabs = tabs.map(tab => tab.component);
-  
+
   return (
     <main id="content">
       {parsedTabs}
