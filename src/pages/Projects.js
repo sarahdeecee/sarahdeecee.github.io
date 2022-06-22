@@ -15,7 +15,8 @@ function Projects() {
     </Card>
   </Grid>;
   const loadingProjects = <>{loadingProject}{loadingProject}{loadingProject}</>;
-  const parsedProjects = projects? projects.map(project => <Grid item xs={12} sm={6} lg={4} key={`grid-${project.title}`}><ProjectCard key={project.title} {...project} /></Grid>) : loadingProjects;
+  const reverseProjects = projects.slice(0).reverse(); //change order from newest to oldest
+  const parsedProjects = projects? reverseProjects.map(project => <Grid item xs={12} sm={6} lg={4} key={`grid-${project.title}`}><ProjectCard key={project.title} {...project} /></Grid>) : loadingProjects;
   
   return (
     <section className="page" id="projects">

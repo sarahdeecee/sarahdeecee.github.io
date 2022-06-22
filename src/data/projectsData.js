@@ -14,6 +14,13 @@ const projects = [
     image: "https://github.com/sarahdeecee/fcc-responsive-projects/blob/main/05-personal-portfolio/data/project-doc-page.png?raw=true",
   },
   {
+    title: "Todai Ordering",
+    description: "This is a restaurant ordering application for a fictional Japanese restaurant. Users can browse the menu, create orders, see past orders, and receive text message notifications when their orders are completed.",
+    githubLink: "https://github.com/sarahdeecee/food-pickup",
+    deployLink: "",
+    image: "/project-screenshots/todai/menu.png",
+  },
+  {
     title: "Coffee Brewing",
     description: "A single-page app that assists the user with various coffee brewing methods.",
     deployLink: "https://coffeebrewing.herokuapp.com/",
