@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Grid } from '@mui/material';
 import './App.css';
+import './styles/theme.scss';
 import Links from './components/Links';
 import Navigation from './components/Navigation';
 import Content from './components/Content';
@@ -10,7 +11,7 @@ function App() {
   const [page, setPage] = useState('stack');
 
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
       <Grid container>
         <Grid item xs>
           <Links />

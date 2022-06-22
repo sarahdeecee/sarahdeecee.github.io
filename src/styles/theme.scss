@@ -1,0 +1,22 @@
+// Colors
+$lightPink: #F7E0F3;
+$medPink: #E3ADCA;
+$darkPink: #D2608C;
+$lightPurple: #DFD2EB;
+$lightBlue: #9CB6C7;
+
+.light {
+  --theme-color: #000;
+  --theme-page-background: white;
+  --theme-border: $lightPink;
+  --theme-accent-light: $lightPurple;
+  --theme-accent1: #D2608C;
+}
+
+.App {
+  color: var(--theme-color);
+  background-color: var(--theme-page-background);
+}
+a {
+  color: var(--theme-accent1);
+}

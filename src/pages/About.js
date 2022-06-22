@@ -33,7 +33,7 @@ const certifications = [
 
 function About() {
 
-  const parsedCertifications = certifications.map(certification => <li><strong><a href={certification.link}>{certification.title}</a></strong> from <a href={certification.companyLink}>{certification.company}</a></li>);
+  const parsedCertifications = certifications.map(certification => <li key={certification.title}><strong><a href={certification.link}>{certification.title}</a></strong> from <a href={certification.companyLink}>{certification.company}</a></li>);
 
   return (
     <section className="page" id="about">
