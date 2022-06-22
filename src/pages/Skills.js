@@ -48,14 +48,14 @@ const stack = [
   }
 ];
 
-function Stack() {
-  const parsedStack = stack.map(stack => <span className="logo-box" data-toggle="tooltip" data-placement="top" title={stack.title}>
+function Skills() {
+  const parsedStack = stack.map(stack => <span key={stack.title} className="logo-box" data-toggle="tooltip" data-placement="top" title={stack.title}>
   <img src={stack.src} className="stack-logo" alt={stack.title} />
   {stack.title}
   </span>);
 
   return (
-    <section className="page" id="stack">
+    <section className="page" id="skills">
       <article>
         <Typography variant="h2">Tech Stack</Typography>
         <div id="logo-container">
@@ -66,4 +66,4 @@ function Stack() {
   );
 }
 
-export default Stack;
+export default Skills;

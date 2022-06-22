@@ -34,8 +34,8 @@ const certifications = [
 
 function About() {
 
-  const parsedCertifications = certifications.map(certification => <Grid item xs={4} md={3}>
-      <CertificationCard {...certification} />
+  const parsedCertifications = certifications.map(certification => <Grid item xs={4} md={3} key={`grid-${certification.title}`}>
+      <CertificationCard {...certification} key={certification.title} />
     </Grid>);
 
   return (

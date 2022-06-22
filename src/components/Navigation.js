@@ -1,19 +1,62 @@
 import { Tab, Tabs } from '@mui/material';
-import React from 'react';
+import { _findIndex } from 'lodash';
+import useScrollSpy from '../hooks/useScrollSpy';
+import About from '../pages/About';
+import Contact from '../pages/Contact';
+import Landing from '../pages/Landing';
+import Projects from '../pages/Projects';
+import Skills from '../pages/Skills';
 
 function Navigation(props) {
   const {page, setPage} = props;
+  
+  const tabs = [
+    {
+      text: "landing",
+      label: "Top",
+      component: <Landing />
+    },
+    {
+      text: "about",
+      label: "About",
+      component: <About />
+    },
+    {
+      text: "projects",
+      label: "Projects",
+      component: <Projects />
+    },
+    {
+      text: "skills",
+      label: "Skills",
+      component: <Skills />
+    },
+    {
+      text: "contact",
+      label: "Contact",
+      component: <Contact />
+    }
+  ];
 
-  const handlePage = (e, newValue) => {
-    setPage(newValue);
-  }
+  const active = useScrollSpy({ tabs });
+  const activeIndex = active ? _findIndex(tabs, ["text", active]) : false;
+
+  // const handlePage = (e, newValue) => {
+  //   setPage(newValue);
+  // }
+
+  const parsedTabs = tabs.map(({ label }, index) => (
+    <Tab
+      key={index}
+      label={label}
+      variant="scrollable"
+    />
+  ));
+
   return (
     <menu id="menu">
-      <Tabs value={page} onChange={handlePage} selectionFollowsFocus>
-        <Tab value="about" href="#about" label="About" />
-        <Tab value="projects" href="#projects" label="Projects" />
-        <Tab value="stack" href="#stack" label="Stack" />
-        <Tab value="contact" href="#contact" label="Contact" />
+      <Tabs value={activeIndex}>
+        {parsedTabs}
       </Tabs>
     </menu>
   );
