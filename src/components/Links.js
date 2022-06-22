@@ -1,7 +1,7 @@
 import { LinkedIn, GitHub, Instagram, Email, LightMode, DarkMode } from '@mui/icons-material';
-import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Popover, Typography } from '@mui/material';
+import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
+import { faCodepen, faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
 import { useState } from 'react';
 
 const links = [
@@ -19,6 +19,11 @@ const links = [
     link: "https://www.freecodecamp.org/sdc",
     icon: <FontAwesomeIcon icon={faFreeCodeCamp} size="xl"/>,
     text: "freeCodeCamp"
+  },
+  {
+    link: "https://codepen.io/s_dc",
+    icon: <FontAwesomeIcon icon={faCodepen} size="xl"/>,
+    text: "CodePen"
   },
   {
     link: "https://www.instagram.com/inakasarah",
