@@ -26,14 +26,14 @@ const certifications = [
 
 function Certifications() {
 
-  const parsedCertifications = certifications.map(certification => <Grid item xs={4} md={3} key={`grid-${certification.title}`}>
+  const parsedCertifications = certifications.map(certification => <Grid item xs={12} sm={6} md={4} lg={3} key={`grid-${certification.title}`}>
       <CertificationCard {...certification} key={certification.title} />
     </Grid>);
 
   return (
     <section className="page" id="certifications">
       <article>
-        <Typography variant="h3">Certifications:</Typography>
+        <Typography variant="h2">Certifications:</Typography>
         <Grid container spacing={3}>
           {parsedCertifications}
         </Grid>

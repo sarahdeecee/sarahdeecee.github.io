@@ -17,7 +17,7 @@ const projects = [
 ]
 
 function Projects() {
-  const parsedProjects = projects.map(project => <Grid item><ProjectCard {...project} /></Grid>);
+  const parsedProjects = projects.map(project => <Grid item xs={12} sm={6} lg={4} key={`grid-${project.title}`}><ProjectCard key={project.title} {...project} /></Grid>);
 
   return (
     <section className="page" id="projects">
