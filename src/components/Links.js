@@ -1,96 +1,88 @@
-import { LinkedIn, GitHub, Instagram, Email } from '@mui/icons-material';
-import { IconButton, Popover, Typography } from '@mui/material';
+import { LinkedIn, GitHub, Instagram, Email, Facebook } from '@mui/icons-material';
+import { Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Popover, Typography } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
 import { useState } from 'react';
+import { Box } from '@mui/system';
 
 const links = [
   {
     link: "https://www.linkedin.com/in/sarah-delacruz",
     icon: <LinkedIn />,
-    text: ""
+    text: "LinkedIn"
   },
   {
     link: "https://github.com/sarahdeecee",
     icon: <GitHub />,
-    text: ""
+    text: "GitHub"
   },
   {
     link: "https://www.freecodecamp.org/sdc",
-    icon: <FontAwesomeIcon icon={faFreeCodeCamp} />,
-    text: ""
+    icon: <FontAwesomeIcon icon={faFreeCodeCamp} size="xl"/>,
+    text: "freeCodeCamp"
   },
   {
     link: "https://www.instagram.com/inakasarah",
     icon: <Instagram />,
-    text: ""
+    text: "Instagram"
   },
   {
     link: "https://www.flickr.com/photos/186883449@N08/",
-    icon: <FontAwesomeIcon icon={faFlickr} />,
-    text: ""
+    icon: <FontAwesomeIcon icon={faFlickr} size="xl"/>,
+    text: "Flickr"
   },
   {
     link: "mailto:sarah.delacruz@gmail.com",
     icon: <Email />,
-    text: ""
+    text: "Email"
   }
 ];
 
 function Links() {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [popoverText, setPopoverText] = useState(null);
-
-  const handlePopoverOpen = (event, text) => {
-    console.log(event);
-    setPopoverText(text);
-    setAnchorEl(event.currentTarget);
+  const [openLinks, setOpenLinks] = useState(false);
+  const handleDrawerOpen = () => {
+    console.log('open', openLinks);
+    setOpenLinks(true);
   };
   
-  const handlePopoverClose = () => {
-    setPopoverText(null);
-    setAnchorEl(null);
+  const handleDrawerClose = () => {
+    console.log('close', openLinks);
+    setOpenLinks(false);
   };
 
-  const open = Boolean(anchorEl);
-
-  const parsedLinks = links.map(link => <>
-    <IconButton
-      href={link.link}
-      value={link.text}
-      key={link.text}
-      aria-owns={open ? 'mouse-over-popover' : undefined}
-      aria-haspopup="true"
-      onMouseEnter={handlePopoverOpen}
-      onMouseLeave={handlePopoverClose}
-    >
-      {link.icon}
-    </IconButton>
-  </>)
+  const linkDrawer = <Drawer variant="permanent" open={openLinks} sx={{'& .MuiDrawer-paper': {borderWidth: 0, justifyContent: 'flex-end'}}}>
+    <List>
+      {links.map((link, index) => (
+        <ListItem key={`listitem-${link.text}`} disablePadding sx={{ display: 'block' }}>
+          <ListItemButton key={`listbutton-${link.text}`}
+            sx={{
+              minHeight: 48,
+              justifyContent: openLinks ? 'initial' : 'center',
+              px: 2.5,
+            }}
+          >
+            <ListItemIcon key={`listicon-${link.text}`}
+              sx={{
+                minWidth: 0,
+                mr: openLinks ? 3 : 'auto',
+                justifyContent: 'center',
+                width: "1em"
+              }}
+            >
+              {link.icon}
+            </ListItemIcon>
+            {openLinks && <ListItemText primary={link.text} />}
+          </ListItemButton>
+        </ListItem>
+      ))}
+    </List>
+  </Drawer>
 
   return (
-    <section className="page" id="links">
-      {parsedLinks}
-      <Popover
-        id="mouse-over-popover"
-        sx={{
-          pointerEvents: 'none',
-        }}
-        open={open}
-        anchorEl={anchorEl}
-        anchorOrigin={{
-          vertical: 'center',
-          horizontal: 'right',
-        }}
-        transformOrigin={{
-          vertical: 'center',
-          horizontal: 'left',
-        }}
-        onClose={handlePopoverClose}
-        disableRestoreFocus
-      >
-        <Typography sx={{ p: 1 }}>Test</Typography>
-      </Popover>
+    <section className="page" id="links"
+      onMouseEnter={handleDrawerOpen}
+      onMouseLeave={handleDrawerClose}>
+      {linkDrawer}
     </section>
   );
 }
