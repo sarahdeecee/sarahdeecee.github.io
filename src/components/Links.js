@@ -81,7 +81,7 @@ function Links(props) {
 
   const linksDrawer = <Drawer variant="permanent" open={openLinks} sx={{'& .MuiDrawer-paper': {borderWidth: 0, justifyContent: 'flex-end'}}}>
     <List>
-      {links.map((link, index) => (
+      {links.map(link => (
         <ListItem key={`listitem-${link.text}`} disablePadding sx={{ display: 'block' }}>
           <ListItemButton key={`listbutton-${link.text}`}
             sx={{

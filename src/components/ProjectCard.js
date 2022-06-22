@@ -24,8 +24,8 @@ function ProjectCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions sx={{justifyContent: "space-evenly"}}>
-        <Button variant="contained" href={deployLink} disabled={!deployLink}>Link</Button>
-        <Button variant="contained" href={githubLink} disabled={!githubLink}>GitHub</Button>
+        <Button variant="contained" href={deployLink} target="_blank" disabled={!deployLink}>Link</Button>
+        <Button variant="contained" href={githubLink} target="_blank" disabled={!githubLink}>GitHub</Button>
       </CardActions>
     </Card>
   );
