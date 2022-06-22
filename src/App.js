@@ -5,6 +5,7 @@ import './styles/theme.scss';
 import Links from './components/Links';
 import Navigation from './components/Navigation';
 import Content from './components/Content';
+import Particles from './components/Particles';
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <div className={`App ${theme}`}>
+      <Particles />
       <Grid container>
         <Grid item xs>
           <Links theme={theme} setTheme={setTheme} />
