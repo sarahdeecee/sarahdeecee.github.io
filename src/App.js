@@ -8,7 +8,7 @@ import Content from './components/Content';
 
 function App() {
   const [theme, setTheme] = useState('light');
-  const [page, setPage] = useState('stack');
+  const [page, setPage] = useState('landing');
 
   return (
     <div className={`App ${theme}`}>

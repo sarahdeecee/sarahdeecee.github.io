@@ -51,7 +51,6 @@ function Navigation(props) {
       label={label}
       value={text}
       href={`#${text}`}
-      variant="scrollable"
     />
   ));
 

@@ -13,7 +13,7 @@ function ProjectCard(props) {
         <Box className="project-card-image-area">
           <CardMedia
           component="img"
-          class="project-img"
+          className="project-img"
           image={image}
           alt={`Screenshot of ${title}`}
           />
@@ -24,8 +24,8 @@ function ProjectCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions sx={{justifyContent: "space-evenly"}}>
-        <Button href={deployLink}>Link</Button>
-        <Button href={githubLink}>GitHub</Button>
+        <Button variant="contained" href={deployLink}>Link</Button>
+        <Button variant="contained" href={githubLink}>GitHub</Button>
       </CardActions>
     </Card>
   );
