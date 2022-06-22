@@ -1,4 +1,5 @@
-import { Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
+import CertificationCard from "../components/CertificationCard";
 
 const biography = `My name is Sarah and I'm passionate about user experience, efficient code, and making things make sense.
 
@@ -12,17 +13,17 @@ const certifications = [
   { title: "Diploma of Web Development",
     company: "Lighthouse Labs",
     link: "",
-    companyLink: ""
+    companyLink: "https://www.lighthouselabs.ca/"
   },
   { title: "Responsive Web Design Certification",
     company: "freeCodeCamp",
     link: "https://www.freecodecamp.org/certification/sdc/responsive-web-design",
-    companyLink: ""
+    companyLink: "https://www.freecodecamp.org/"
   },
   { title: "JavaScript Algorithms and Data Structures Certification",
     company: "freeCodeCamp",
     link: "https://www.freecodecamp.org/certification/sdc/javascript-algorithms-and-data-structures",
-    companyLink: ""
+    companyLink: "https://www.freecodecamp.org/"
   },
   { title: "Front End Development Libraries",
     company: "freeCodeCamp",
@@ -33,7 +34,9 @@ const certifications = [
 
 function About() {
 
-  const parsedCertifications = certifications.map(certification => <li key={certification.title}><strong><a href={certification.link}>{certification.title}</a></strong> from <a href={certification.companyLink}>{certification.company}</a></li>);
+  const parsedCertifications = certifications.map(certification => <Grid item xs={4} md={3}>
+      <CertificationCard {...certification} />
+    </Grid>);
 
   return (
     <section className="page" id="about">
@@ -43,9 +46,10 @@ function About() {
         <Typography variant="body2">Fun fact: My older brother gifted me a book titled <strong>How to Do Everything with HTML</strong> in the early 2000's &#8212; I still own it to this day.</Typography>
 
         <Typography variant="h3">Certifications:</Typography>
-        <ul>
-          {parsedCertifications}
-        </ul>
+        
+        <Grid container spacing={3}>
+        {parsedCertifications}
+        </Grid>
       </article>
     </section>
   );
