@@ -25,7 +25,14 @@ const projects = [
     description: "A soundboard for the character Anya Forger from Spy x Family.",
     deployLink: "https://anya-soundboard.herokuapp.com/",
     githubLink: "https://github.com/sarahdeecee/anya-soundboard",
-    image: "https://raw.githubusercontent.com/sarahdeecee/anya-soundboard/main/public/screenshots/screenshot-light-full.png?token=GHSAT0AAAAAABUVWLUDKK3GWXUL26FSXOLKYVSXTOA",
+    image: "/project-screenshots/anya/screenshot-light-full.png",
+  },
+  {
+    title: "Junior",
+    description: "Junior is a full-stack web application that allows new developers to easily create a portfolio and apply for jobs or freelance work.",
+    deployLink: "https://junior-active.herokuapp.com/",
+    githubLink: "https://github.com/sarahdeecee/junior",
+    image: "/project-screenshots/junior/project-modal.png",
   },
 ];
 
