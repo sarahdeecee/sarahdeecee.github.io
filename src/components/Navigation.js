@@ -41,21 +41,23 @@ function Navigation(props) {
   const active = useScrollSpy({ tabs });
   const activeIndex = active ? _findIndex(tabs, ["text", active]) : false;
 
-  // const handlePage = (e, newValue) => {
-  //   setPage(newValue);
-  // }
+  const handlePage = (e, newValue) => {
+    setPage(newValue);
+  }
 
-  const parsedTabs = tabs.map(({ label }, index) => (
+  const parsedTabs = tabs.map(({ label, text }, index) => (
     <Tab
       key={index}
       label={label}
+      value={text}
+      href={`#${text}`}
       variant="scrollable"
     />
   ));
 
   return (
     <menu id="menu">
-      <Tabs value={activeIndex}>
+      <Tabs value={page} onChange={handlePage} selectionFollowsFocus>
         {parsedTabs}
       </Tabs>
     </menu>
