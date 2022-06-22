@@ -9,14 +9,15 @@ import Particles from './components/Particles';
 
 function App() {
   const [theme, setTheme] = useState('light');
+  const [particles, setParticles] = useState(true);
   const [page, setPage] = useState('landing');
 
   return (
     <div className={`App ${theme}`}>
-      <Particles />
+      {particles && <Particles />}
       <Grid container>
         <Grid item xs>
-          <Links theme={theme} setTheme={setTheme} />
+          <Links theme={theme} setTheme={setTheme} particles={particles} setParticles={setParticles} />
         </Grid>
         <Grid container item xs={11}>
           <Grid item>

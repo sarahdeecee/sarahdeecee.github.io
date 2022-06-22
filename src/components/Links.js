@@ -1,4 +1,4 @@
-import { LinkedIn, GitHub, Instagram, Email, LightMode, DarkMode } from '@mui/icons-material';
+import { LinkedIn, GitHub, Instagram, Email, LightMode, DarkMode, ToggleOff, ToggleOn } from '@mui/icons-material';
 import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCodepen, faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
@@ -43,7 +43,7 @@ const links = [
 ];
 
 function Links(props) {
-  const {theme, setTheme} = props;
+  const {theme, setTheme, particles, setParticles} = props;
   const [openLinks, setOpenLinks] = useState(false);
   const handleDrawerOpen = () => {
     setOpenLinks(true);
@@ -52,8 +52,13 @@ function Links(props) {
   const handleDrawerClose = () => {
     setOpenLinks(false);
   };
+
   const handleTheme = () => {
     (theme === 'light') ? setTheme('dark') : setTheme('light');
+  }
+
+  const handleParticles = () => {
+    (particles === true) ? setParticles(false) : setParticles(true);
   }
 
   const themeToggle = <ListItem key={`listitem-theme`} disablePadding sx={{ display: 'block' }}>
@@ -78,6 +83,29 @@ function Links(props) {
       {openLinks && <ListItemText primary={(theme === 'light') ? "Dark Mode" : "Light Mode"} />}
     </ListItemButton>
   </ListItem>;
+
+  const particleToggle = <ListItem key={`listitem-particle`} disablePadding sx={{ display: 'block' }}>
+  <ListItemButton key={`listbutton-particle`}
+    sx={{
+      minHeight: 48,
+      justifyContent: openLinks ? 'initial' : 'center',
+      px: 2.5,
+    }}
+    onClick={handleParticles}
+  >
+    <ListItemIcon key={`listicon-particle`}
+      sx={{
+        minWidth: 0,
+        mr: openLinks ? 3 : 'auto',
+        justifyContent: 'center',
+        width: "1em"
+      }}
+    >
+      {particles ? <ToggleOn /> : <ToggleOff />}
+    </ListItemIcon>
+    {openLinks && <ListItemText primary={particles ? "Effects Off" : "Effects On"} />}
+  </ListItemButton>
+</ListItem>;
 
   const linksDrawer = <Drawer variant="permanent" open={openLinks} sx={{'& .MuiDrawer-paper': {borderWidth: 0, justifyContent: 'flex-end'}}}>
     <List>
@@ -107,6 +135,7 @@ function Links(props) {
         </ListItem>
       ))}
       {themeToggle}
+      {particleToggle}
     </List>
   </Drawer>
 

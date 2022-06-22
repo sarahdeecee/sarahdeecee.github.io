@@ -19,6 +19,7 @@ const ParticlesBg = () => {
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}
+      sx={{zIndex: -1}}
       options={{
         "particles": {
           "color": {
@@ -35,8 +36,8 @@ const ParticlesBg = () => {
             },
             "size": true,
             "speed": {
-              "min": 1,
-              "max": 3
+              "min": 0.2,
+              "max": 1.5
             }
           },
           "number": {
@@ -82,15 +83,19 @@ const ParticlesBg = () => {
             }
           },
           "shape": {
-            "type": "polygon",
+            "type": "image",
             "options": {
-              "polygon": [
+              "image": [
                 {
-                  "sides": 5
+                  "src": "./flower-petal.png",
+                  "width": 16,
+                  "height": 16,
+                  "particles": {
+                    "size": {
+                      "value": 4
+                    }
+                  }
                 },
-                {
-                  "sides": 6
-                }
               ]
             }
           },
