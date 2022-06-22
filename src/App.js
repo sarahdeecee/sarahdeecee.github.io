@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <Grid container xs={12}>
+      <Grid container>
         <Grid item xs>
           <Links />
         </Grid>
