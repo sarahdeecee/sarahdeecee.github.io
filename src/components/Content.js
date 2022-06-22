@@ -3,6 +3,7 @@ import Contact from '../pages/Contact';
 import Landing from '../pages/Landing';
 import Projects from '../pages/Projects';
 import Stack from '../pages/Stack';
+import ContentFooter from './Footer';
 
 function Content(props) {
   const {page} = props;
@@ -13,6 +14,7 @@ function Content(props) {
       <Projects />
       <Stack />
       <Contact />
+      <ContentFooter />
     </main>
   );
 }
