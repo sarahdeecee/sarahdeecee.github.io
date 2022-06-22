@@ -1,6 +1,8 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
   max-width: 1500px;
+  padding: 0;
   height: 100%;
 }
 
@@ -9,19 +11,35 @@
   flex-direction: column;
   width: fit-content;
   justify-content: center;
-  height: 100vh;
   position: fixed;
+  bottom: 0;
   left: 0;
-  top: 0;
-  padding: 1em;
+  margin: 1em;
 }
 
 #menu {
   display: flex;
   justify-content: flex-end;
+  margin: 1em;
   position: fixed;
   right: 0;
   top: 0;
+}
+
+#content {
+  height: 99%;
+  margin: 0;
+  align-items: center;
+}
+
+.page {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+article {
+  display: block;
 }
 
 #logo-container {

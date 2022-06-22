@@ -8,16 +8,11 @@ function Content(props) {
   const {page} = props;
   return (
     <main id="content">
-      {(page === 'landing') && 
-        <Landing />}
-      {(page === 'about') &&
-        <About />}
-      {(page === 'projects') &&
-      <Projects />}
-      {(page === 'stack') &&
-      <Stack />}
-      {(page === 'contact') &&
-      <Contact />}
+      <Landing />
+      <About />
+      <Projects />
+      <Stack />
+      <Contact />
     </main>
   );
 }

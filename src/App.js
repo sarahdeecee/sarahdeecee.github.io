@@ -7,19 +7,21 @@ import Content from './components/Content';
 
 function App() {
   const [theme, setTheme] = useState('light');
-  const [page, setPage] = useState('landing');
+  const [page, setPage] = useState('stack');
 
   return (
     <div className="App">
-      <Grid container>
-        <Grid item>
-          <Navigation page={page} setPage={setPage}/>
-        </Grid>
-        <Grid item>
+      <Grid container xs={12}>
+        <Grid item xs>
           <Links />
         </Grid>
-        <Grid item>
-          <Content page={page} />
+        <Grid container item xs={11}>
+          <Grid item>
+            <Navigation page={page} setPage={setPage} />
+          </Grid>
+          <Grid item>
+            <Content page={page} />
+          </Grid>
         </Grid>
       </Grid>
     </div>
