@@ -1,4 +1,4 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Link, Typography } from "@mui/material";
+import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Link, Typography } from "@mui/material";
 
 function ProjectCard(props) {
   const {title, description, image, deployLink, githubLink} = props;
@@ -8,14 +8,16 @@ function ProjectCard(props) {
   }
 
   return (
-    <Card variant="outlined" sx={{ height: '100%' }}>
+    <Card variant="outlined" sx={{ height: "100%"}} className="project-card">
       <CardActionArea onClick={handleProjectCard}>
-        <CardMedia
+        <Box className="project-card-image-area">
+          <CardMedia
           component="img"
           class="project-img"
           image={image}
           alt={`Screenshot of ${title}`}
           />
+        </Box>
         <CardContent>
           <Typography variant="h5" component="div">{title}</Typography>
           <Typography variant="body2" component="p">{description}</Typography>

@@ -43,6 +43,17 @@
   margin-bottom: 10em;
 }
 
+.project-card-image-area {
+  max-height: 300px;
+  overflow-y: hidden;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 article {
   display: block;
 }

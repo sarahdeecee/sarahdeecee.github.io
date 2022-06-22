@@ -3,7 +3,7 @@ import { Card, CardContent, Link, Typography } from "@mui/material";
 function CertificationCard(props) {
   const {title, link, company, companyLink} = props;
   return (
-    <Card variant="outlined" sx={{ height: '100%' }}>
+    <Card variant="outlined">
       <CardContent>
         <Link href={link}>
           <Typography variant="h5" component="div">{title}</Typography>
