@@ -16,7 +16,7 @@ function Skills() {
     title={stack.title}
     p={3}
   >
-    <CardActionArea className="logo-box" sx={{display: 'flex', width: '100%', padding: '1em', alignContent: 'center', justifyContent: 'center'}}>
+    <CardActionArea className="logo-box" sx={{display: 'flex', width: '100%', height: '100%', padding: '1em', justifyContent: 'space-between'}}>
       <CardMedia
         component="img"
         src={stack.src}
