@@ -48,6 +48,18 @@
   max-width: 1500px;
 }
 
+.MuiTypography-root.header {
+  margin-bottom: 0.5em;
+}
+
+.MuiButton-root.MuiButtonBase-root {
+  text-transform: none;
+}
+
+div.MuiListItemIcon-root {
+  color: #788C99;
+}
+
 .particles {
   position: fixed;
   width: 100%;

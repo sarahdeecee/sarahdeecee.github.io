@@ -57,7 +57,7 @@ function Skills() {
   return (
     <section className="page" id="skills">
       <article>
-        <Typography variant="h2">Tech Stack</Typography>
+        <Typography variant="h2" className="header">Tech Stack</Typography>
         <div id="logo-container">
           {parsedStack}
         </div>

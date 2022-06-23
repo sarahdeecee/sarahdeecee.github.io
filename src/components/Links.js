@@ -1,5 +1,5 @@
 import { LinkedIn, GitHub, Instagram, Email, LightMode, DarkMode, ToggleOff, ToggleOn } from '@mui/icons-material';
-import { Button, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { Button, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCodepen, faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
 import { useState } from 'react';
@@ -42,6 +42,8 @@ const links = [
   }
 ];
 
+const linkTextStyle = {fontSize: '16px', fontWeight: 500, color: '#788C99'};
+
 function Links(props) {
   const {theme, setTheme, particles, setParticles} = props;
   const [openLinks, setOpenLinks] = useState(false);
@@ -77,7 +79,7 @@ function Links(props) {
       >
         {(theme === 'light') ? <DarkMode /> : <LightMode />}
       </ListItemIcon>
-      {openLinks && <ListItemText primary={(theme === 'light') ? "Dark Mode" : "Light Mode"} />}
+      {openLinks && <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{(theme === 'light') ? "Dark Mode" : "Light Mode"}</Typography>} />}
     </ListItemButton>
   </ListItem>;
 
@@ -100,7 +102,7 @@ function Links(props) {
       >
         {particles ? <ToggleOn /> : <ToggleOff />}
       </ListItemIcon>
-      {openLinks && <ListItemText primary={particles ? "Effects Off" : "Effects On"} />}
+      {openLinks && <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{particles ? "Effects Off" : "Effects On"}</Typography>} />}
     </ListItemButton>
   </ListItem>;
 
@@ -125,7 +127,7 @@ function Links(props) {
         >
           {link.icon}
         </ListItemIcon>
-        {openLinks && <ListItemText primary={link.text} />}
+        {openLinks && <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{link.text}</Typography>} sx={{fontSize: '16px'}} />}
       </ListItemButton>
     </ListItem>
   ));

@@ -33,7 +33,7 @@ function Certifications() {
   return (
     <section className="page" id="certifications">
       <article>
-        <Typography variant="h2">Certifications:</Typography>
+        <Typography variant="h2" className="header">Certifications:</Typography>
         <Grid container spacing={3}>
           {parsedCertifications}
         </Grid>

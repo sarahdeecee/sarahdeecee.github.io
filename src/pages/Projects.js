@@ -21,7 +21,7 @@ function Projects() {
   return (
     <section className="page" id="projects">
       <article>
-        <Typography variant="h2">Projects</Typography>
+        <Typography variant="h2" className="header">Projects</Typography>
         <Grid container spacing={3}>
           {parsedProjects}
         </Grid>      

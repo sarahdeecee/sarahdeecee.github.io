@@ -51,6 +51,7 @@ function Navigation(props) {
       label={label}
       value={text}
       href={`#${text}`}
+      sx={{textTransform: 'none', fontSize: '16px'}}
     />
   ));
 

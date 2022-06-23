@@ -32,7 +32,7 @@ function Contact() {
   return (
     <section className="page" id="contact">
       <article>
-        <Typography variant="h2">Let's get in touch!</Typography>
+        <Typography variant="h2" className="header">Let's get in touch!</Typography>
         <Grid container spacing={3} sx={{justifyContent: 'center'}}>
           <Grid item xs={6} sm={4}>
             <TextField fullWidth id="name" label="Name" value={form.name} onChange={handleForm} />

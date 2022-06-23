@@ -12,7 +12,7 @@ function About() {
   return (
     <section className="page" id="about">
       <article>
-        <Typography variant="h2">About Me</Typography>
+        <Typography variant="h2" className="header">About Me</Typography>
         <Typography variant="body1" component="p" style={{ whiteSpace: "pre-line" }}>{biography}</Typography>
         <Typography variant="body2" component="p">Fun fact: My older brother gifted me a book titled <strong>How to Do Everything with HTML</strong> in the early 2000's &#8212; I still own it to this day.</Typography>
       </article>
