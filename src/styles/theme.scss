@@ -8,7 +8,7 @@ $lightBlue: #9CB6C7;
 .light {
   --theme-color: #1c3f56;
   --theme-page-background: white;
-  --theme-accent1: #D2608C;
+  --theme-accent1: #9CB6C7;
 }
 .dark {
   --theme-color: #F7E0F3;
@@ -16,7 +16,7 @@ $lightBlue: #9CB6C7;
   --theme-accent1: #D2608C;
 }
 
-.App, #links {
+.App, #links, input {
   color: var(--theme-color);
   background: var(--theme-page-background);
 }
@@ -25,7 +25,7 @@ a {
   color: var(--theme-accent1);
 }
 
-.MuiTabs-root {
+.MuiTabs-root, .MuiList-root {
   color: var(--theme-color);
   background-color: var(--theme-page-background);
 }
@@ -33,4 +33,10 @@ a {
 .MuiPaper-root.MuiDrawer-paper, .MuiDrawer-root, .MuiDrawer-modal {
   color: var(--theme-color);
   background-color: var(--theme-page-background);
+}
+
+button.MuiButton-root.MuiButton-outlined {
+  color: var(--theme-color);
+  border-color: var(--theme-accent1);
+  background-color: var(--theme-accent1);
 }
