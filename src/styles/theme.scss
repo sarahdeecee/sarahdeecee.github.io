@@ -8,12 +8,14 @@ $lightBlue: #9CB6C7;
 .light {
   --theme-color: #1c3f56;
   --theme-page-background: white;
-  --theme-accent1: #9CB6C7;
+  --theme-accent1: #DFD2EB;
+  --theme-accent2: #94c8eb;
 }
 .dark {
   --theme-color: #F7E0F3;
   --theme-page-background: #0a161f;
   --theme-accent1: #D2608C;
+  --theme-accent2: #872349;
 }
 
 .App, #links, input {
@@ -35,8 +37,13 @@ a {
   background-color: var(--theme-page-background);
 }
 
-button.MuiButton-root.MuiButton-outlined {
+.MuiButton-root.MuiButton-outlined {
   color: var(--theme-color);
-  border-color: var(--theme-accent1);
+  border-color: var(--theme-color);
   background-color: var(--theme-accent1);
+}
+.MuiButtonBase-root.MuiButton-root:hover {
+  color: var(--theme-color);
+  border-color: var(--theme-color);
+  background-color: var(--theme-accent2);
 }
