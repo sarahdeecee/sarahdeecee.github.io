@@ -16,7 +16,7 @@ $lightBlue: #9CB6C7;
   --theme-accent1: #D2608C;
 }
 
-.App {
+.App, #links {
   color: var(--theme-color);
   background: var(--theme-page-background);
 }
@@ -30,7 +30,7 @@ a {
   background-color: var(--theme-page-background);
 }
 
-.MuiDrawer-paper, .MuiDrawer-root, .MuiDrawer-modal {
+.MuiPaper-root.MuiDrawer-paper, .MuiDrawer-root, .MuiDrawer-modal {
   color: var(--theme-color);
   background-color: var(--theme-page-background);
 }

@@ -48,8 +48,11 @@ function Links(props) {
   const {theme, setTheme, particles, setParticles} = props;
   const [openLinks, setOpenLinks] = useState(false);
   
-  const handleDrawer = () => {
-    openLinks ? setOpenLinks(false) : setOpenLinks(true);
+  const handleDrawerOpen = () => {
+    setOpenLinks(true);
+  };
+  const handleDrawerClose = () => {
+    setOpenLinks(false);
   };
 
   const handleTheme = () => {
@@ -143,8 +146,8 @@ function Links(props) {
     <section className="page" id="links">
       <SwipeableDrawer variant="permanent"
         open={openLinks} 
-        onMouseEnter={handleDrawer}
-        onMouseLeave={handleDrawer}
+        onMouseEnter={handleDrawerOpen}
+        onMouseLeave={handleDrawerClose}
         sx={{'& .MuiDrawer-paper': {borderWidth: 0, justifyContent: 'flex-end'}}}
       >
         <List>
