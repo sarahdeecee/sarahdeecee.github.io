@@ -1,58 +1,87 @@
-import { Typography } from "@mui/material";
+import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
 
 const stack = [
   { title: "HTML-5",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/html-5.svg",
+    src: "./logos/html-5.svg",
+    type: "Framework"
   },
   { title: "CSS-3",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/css-3.svg",
+    src: "./logos/css-3.svg",
+    type: "Framework"
   },
   { title: "JavaScript",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/javascript.svg",
+    src: "./logos/javascript.svg",
+    type: "Language"
   },
   { title: "Ruby",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/ruby.svg",
+    src: "./logos/ruby.svg",
+    type: "Language"
   },
   {title: "Node JS",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/nodejs-icon.svg",
+    src: "./logos/nodejs-icon.svg",
+    type: "Franework"
   },
   {title: "React",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/react.svg",
+    src: "./logos/react.svg",
+    type: "Franework"
   },
   {title: "Rails",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/rails.svg",
+    src: "./logos/rails.svg",
+    type: "Franework"
   },
   {title: "Postgres",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/postgresql.svg",
+    src: "./logos/postgresql.svg",
+    type: "Database"
   },
   {title: "Git",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/git-icon.svg",
+    src: "./logos/git-icon.svg",
+    type: "Other"
   },
   {title: "Sass",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/sass.svg",
+    src: "./logos/sass.svg",
+    type: ""
   },
   {title: "Bootstrap",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/bootstrap.svg",
+    src: "./logos/bootstrap.svg",
+    type: "Design"
   },
   {title: "Material UI",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/material-ui.svg",
+    src: "./logos/material-ui.svg",
+    type: "Design"
   },
   {title: "Cypress",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/cypress.svg",
+    src: "./logos/cypress.svg",
+    type: "Testing"
   },
   {title: "Jest",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/jest.svg",
+    src: "./logos/jest.svg",
+    type: "Testing"
   },
   {title: "Storybook",
-    src: "https://raw.githubusercontent.com/sarahdeecee/fcc-responsive-projects/0950210dc1a69eca717ca037b3586d202145c75b/05-personal-portfolio/data/storybook-icon.svg",
+    src: "./logos/storybook-icon.svg",
+    type: "Testing"
   }
 ];
 
 function Skills() {
-  const parsedStack = stack.map(stack => <span key={stack.title} className="logo-box" data-toggle="tooltip" data-placement="top" title={stack.title}>
-  <img src={stack.src} className="stack-logo" alt={stack.title} />
-  {stack.title}
-  </span>);
+  const parsedStack = stack.map(stack => <Card 
+    key={stack.title}
+    variant="outlined"
+    className="logo-box"
+    data-toggle="tooltip" data-placement="top"
+    title={stack.title}
+    p={3}
+  >
+    <CardActionArea className="logo-box" sx={{display: 'flex', width: '100%', padding: '1em', alignContent: 'center', justifyContent: 'center'}}>
+      <CardMedia
+        component="img"
+        src={stack.src}
+        className="stack-logo"
+        alt={stack.title}
+        sx={{pb: 1}}/>
+      <Typography variant="body1">{stack.title}</Typography>
+    </CardActionArea>
+  </Card>);
 
   return (
     <section className="page" id="skills">

@@ -98,7 +98,6 @@ a {
 }
 
 #logo-container {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -106,21 +105,16 @@ a {
 .logo-box {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
   margin: 0.5rem;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  background-color: rgba(255,255,255,0.8);
-  color: #0d2f63;
-  border-radius: 5px;
   width: 7rem;
 }
 .stack-logo {
+  /* padding-top: 1rem; */
   width: auto;
   max-height: 5rem;
-  max-width: 5rem;
-  margin-bottom: 5px;
+}
+.MuiCardMedia-root.MuiCardMedia-img {
+  object-fit: scale-down;
 }
 
 @media (prefers-reduced-motion: no-preference) {
