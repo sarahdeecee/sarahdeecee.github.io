@@ -6,12 +6,14 @@ $lightPurple: #DFD2EB;
 $lightBlue: #9CB6C7;
 
 .light {
+  --theme-contrast: #000;
   --theme-color: #1c3f56;
   --theme-page-background: white;
   --theme-accent1: #DFD2EB;
   --theme-accent2: #94c8eb;
 }
 .dark {
+  --theme-contrast: #FFF;
   --theme-color: #F7E0F3;
   --theme-page-background: #0a161f;
   --theme-accent1: #D2608C;
@@ -43,7 +45,13 @@ a {
   background-color: var(--theme-accent1);
 }
 .MuiButtonBase-root.MuiButton-root:hover {
-  color: var(--theme-color);
+  color: var(--theme-contrast);
   border-color: var(--theme-color);
+  background-color: var(--theme-accent2);
+}
+
+.MuiPaper-root.MuiCard-root {
+  color: var(--theme-contrast);
+  border-color: var(--theme-accent1);
   background-color: var(--theme-accent2);
 }
