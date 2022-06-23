@@ -1,5 +1,5 @@
 import { LinkedIn, GitHub, Instagram, Email, LightMode, DarkMode, ToggleOff, ToggleOn } from '@mui/icons-material';
-import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { Button, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCodepen, faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
 import { useState } from 'react';
@@ -45,12 +45,9 @@ const links = [
 function Links(props) {
   const {theme, setTheme, particles, setParticles} = props;
   const [openLinks, setOpenLinks] = useState(false);
-  const handleDrawerOpen = () => {
-    setOpenLinks(true);
-  };
   
-  const handleDrawerClose = () => {
-    setOpenLinks(false);
+  const handleDrawer = () => {
+    openLinks ? setOpenLinks(false) : setOpenLinks(true);
   };
 
   const handleTheme = () => {
@@ -85,65 +82,68 @@ function Links(props) {
   </ListItem>;
 
   const particleToggle = <ListItem key={`listitem-particle`} disablePadding sx={{ display: 'block' }}>
-  <ListItemButton key={`listbutton-particle`}
-    sx={{
-      minHeight: 48,
-      justifyContent: openLinks ? 'initial' : 'center',
-      px: 2.5,
-    }}
-    onClick={handleParticles}
-  >
-    <ListItemIcon key={`listicon-particle`}
+    <ListItemButton key={`listbutton-particle`}
       sx={{
-        minWidth: 0,
-        mr: openLinks ? 3 : 'auto',
-        justifyContent: 'center',
-        width: "1em"
+        minHeight: 48,
+        justifyContent: openLinks ? 'initial' : 'center',
+        px: 2.5,
       }}
+      onClick={handleParticles}
     >
-      {particles ? <ToggleOn /> : <ToggleOff />}
-    </ListItemIcon>
-    {openLinks && <ListItemText primary={particles ? "Effects Off" : "Effects On"} />}
-  </ListItemButton>
-</ListItem>;
+      <ListItemIcon key={`listicon-particle`}
+        sx={{
+          minWidth: 0,
+          mr: openLinks ? 3 : 'auto',
+          justifyContent: 'center',
+          width: "1em"
+        }}
+      >
+        {particles ? <ToggleOn /> : <ToggleOff />}
+      </ListItemIcon>
+      {openLinks && <ListItemText primary={particles ? "Effects Off" : "Effects On"} />}
+    </ListItemButton>
+  </ListItem>;
 
-  const linksDrawer = <Drawer variant="permanent" open={openLinks} sx={{'& .MuiDrawer-paper': {borderWidth: 0, justifyContent: 'flex-end'}}}>
-    <List>
-      {links.map(link => (
-        <ListItem key={`listitem-${link.text}`} disablePadding sx={{ display: 'block' }}>
-          <ListItemButton key={`listbutton-${link.text}`}
-            sx={{
-              minHeight: 48,
-              justifyContent: openLinks ? 'initial' : 'center',
-              px: 2.5,
-            }}
-            href={link.link}
-            target="_blank"
-          >
-            <ListItemIcon key={`listicon-${link.text}`}
-              sx={{
-                minWidth: 0,
-                mr: openLinks ? 3 : 'auto',
-                justifyContent: 'center',
-                width: "1em"
-              }}
-            >
-              {link.icon}
-            </ListItemIcon>
-            {openLinks && <ListItemText primary={link.text} />}
-          </ListItemButton>
-        </ListItem>
-      ))}
-      {themeToggle}
-      {particleToggle}
-    </List>
-  </Drawer>
+  const linksDrawer = links.map(link => (
+    <ListItem key={`listitem-${link.text}`} disablePadding sx={{ display: 'block' }}>
+      <ListItemButton key={`listbutton-${link.text}`}
+        sx={{
+          minHeight: 48,
+          justifyContent: openLinks ? 'initial' : 'center',
+          px: 2.5,
+        }}
+        href={link.link}
+        target="_blank"
+      >
+        <ListItemIcon key={`listicon-${link.text}`}
+          sx={{
+            minWidth: 0,
+            mr: openLinks ? 3 : 'auto',
+            justifyContent: 'center',
+            width: "1em"
+          }}
+        >
+          {link.icon}
+        </ListItemIcon>
+        {openLinks && <ListItemText primary={link.text} />}
+      </ListItemButton>
+    </ListItem>
+  ));
 
   return (
-    <section className="page" id="links"
-      onMouseEnter={handleDrawerOpen}
-      onMouseLeave={handleDrawerClose}>
-      {linksDrawer}
+    <section className="page" id="links">
+      <Drawer variant="permanent"
+        open={openLinks} 
+        onMouseEnter={handleDrawer}
+        onMouseLeave={handleDrawer}
+        sx={{'& .MuiDrawer-paper': {borderWidth: 0, justifyContent: 'flex-end'}}}
+      >
+        <List>
+          {linksDrawer}
+          {themeToggle}
+          {particleToggle}
+        </List>
+      </Drawer>
     </section>
   );
 }

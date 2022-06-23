@@ -14,16 +14,16 @@ function App() {
 
   return (
     <div className={`App ${theme}`}>
-      {particles && <Particles />}
+      {particles && <Particles className="particles" />}
       <Grid container>
         <Grid item xs>
           <Links theme={theme} setTheme={setTheme} particles={particles} setParticles={setParticles} />
         </Grid>
-        <Grid container item xs={11}>
+        <Grid container item xs={11} sx={{justifyContent: 'center'}}>
           <Grid item>
             <Navigation page={page} setPage={setPage} />
           </Grid>
-          <Grid item>
+          <Grid item sx={{width: '100%', maxWidth: '1500px'}}>
             <Content page={page} />
           </Grid>
         </Grid>

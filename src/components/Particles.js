@@ -19,7 +19,6 @@ const ParticlesBg = () => {
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}
-      sx={{zIndex: -1}}
       options={{
         "particles": {
           "color": {

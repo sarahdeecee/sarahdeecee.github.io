@@ -39,7 +39,7 @@ const projects = [
     description: "Junior is a full-stack web application that allows new developers to easily create a portfolio and apply for jobs or freelance work.",
     deployLink: "https://junior-active.herokuapp.com/",
     githubLink: "https://github.com/sarahdeecee/junior",
-    image: "./project-screenshots/junior/project-modal.png",
+    image: "./project-screenshots/junior/projects.png",
   },
 ];
 
