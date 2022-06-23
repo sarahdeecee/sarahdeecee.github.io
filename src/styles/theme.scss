@@ -20,9 +20,16 @@ $lightBlue: #9CB6C7;
   --theme-accent2: #872349;
 }
 
-.App, #links, input {
+.App, #links, .MuiFormLabel-root.MuiInputLabel-root {
   color: var(--theme-color);
   background: var(--theme-page-background);
+}
+
+// Contact Page
+.MuiTextField-root, input.MuiInputBase-input, input.MuiOutlinedInput-input {
+  color: var(--theme-color);
+  border-color: var(--theme-contrast);
+  background-color: var(--theme-accent2);
 }
 
 a {

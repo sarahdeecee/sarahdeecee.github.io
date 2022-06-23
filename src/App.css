@@ -113,6 +113,7 @@ a {
   width: auto;
   max-height: 5rem;
 }
+
 .MuiCardMedia-root.MuiCardMedia-img {
   object-fit: scale-down;
 }

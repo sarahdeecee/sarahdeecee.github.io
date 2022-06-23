@@ -35,13 +35,13 @@ function Contact() {
         <Typography variant="h2" className="header">Let's get in touch!</Typography>
         <Grid container spacing={3} sx={{justifyContent: 'center'}}>
           <Grid item xs={6} sm={4}>
-            <TextField fullWidth id="name" label="Name" value={form.name} onChange={handleForm} />
+            <TextField className="form-textfield" fullWidth id="name" label="Name" value={form.name} onChange={handleForm} />
           </Grid>
           <Grid item xs={6} sm={4}>
-            <TextField fullWidth id="email" label="Email" value={form.email} type="email" onChange={handleForm} />
+            <TextField className="form-textfield" fullWidth id="email" label="Email" value={form.email} type="email" onChange={handleForm} />
           </Grid>
           <Grid item xs={9} sm={8}>
-            <TextField fullWidth id="message" label="Message" value={form.message} multiline rows={4} onChange={handleForm} />
+            <TextField className="form-textfield" fullWidth id="message" label="Message" value={form.message} multiline rows={4} onChange={handleForm} />
           </Grid>
           <Grid item xs={8}>
             <Box sx={{display: 'flex', justifyContent: 'space-evenly'}}>
