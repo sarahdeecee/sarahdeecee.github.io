@@ -57,7 +57,7 @@ function Navigation(props) {
 
   return (
     <menu id="menu">
-      <Tabs value={page} onChange={handlePage} textColor="inherit" selectionFollowsFocus>
+      <Tabs value={page} onChange={handlePage} textColor="inherit" selectionFollowsFocus scrollButtons allowScrollButtonsMobile>
         {parsedTabs}
       </Tabs>
     </menu>

@@ -5,10 +5,10 @@ function CertificationCard(props) {
   return (
     <Card variant="outlined" sx={{height: '100%'}}>
       <CardContent>
-        <Link href={link} underline="none" color="inherit">
-          <Typography href={link} variant="h6" component="div">{title}</Typography>
+        <Link href={link ? link : null} underline="none" color="inherit" target="_blank">
+          <Typography href={link ? link : null} variant="h6" component="div">{title}</Typography>
         </Link>
-        <Link href={companyLink} underline="none" color="inherit">
+        <Link href={companyLink} underline="none" color="inherit" target="_blank">
           <Typography href={companyLink} variant="body1" component="p">{company}</Typography>
         </Link>
       </CardContent>
