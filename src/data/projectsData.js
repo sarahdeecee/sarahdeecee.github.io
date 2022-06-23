@@ -4,14 +4,14 @@ const projects = [
     description: "Personal portfolio page designed in HTML, CSS and Bootstrap.",
     githubLink: "https://github.com/sarahdeecee/fcc-responsive-projects/tree/main/05-personal-portfolio",
     deployLink: "https://codepen.io/s_dc/full/abVXemo",
-    image: "https://github.com/sarahdeecee/fcc-responsive-projects/blob/main/05-personal-portfolio/data/project-portfolio.png?raw=true",
+    image: "/project-screenshots/free-code-camp/project-portfolio.png",
   },
   {
     title: "Technical Documentation Page",
     description: "A responsive page showing a sample of Vue documentation.",
     githubLink: "https://github.com/sarahdeecee/fcc-responsive-projects/tree/main/04-technical-doc-page",
     deployLink: "https://codepen.io/s_dc/full/xxPMgNK",
-    image: "https://github.com/sarahdeecee/fcc-responsive-projects/blob/main/05-personal-portfolio/data/project-doc-page.png?raw=true",
+    image: "/project-screenshots/free-code-camp/project-doc-page.png",
   },
   {
     title: "Todai Ordering",
@@ -25,7 +25,7 @@ const projects = [
     description: "A single-page app that assists the user with various coffee brewing methods.",
     deployLink: "https://coffeebrewing.herokuapp.com/",
     githubLink: "https://github.com/sarahdeecee/coffee-brewing",
-    image: "https://github.com/sarahdeecee/coffee-brewing/blob/main/public/screenshots/desktop-light.png?raw=true",
+    image: "/project-screenshots/coffee/desktop-light.png",
   },
   {
     title: "Anya Soundboard",
