@@ -1,5 +1,5 @@
 import { LinkedIn, GitHub, Instagram, Email, LightMode, DarkMode, ToggleOff, ToggleOn } from '@mui/icons-material';
-import { Button, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import { Button, SwipeableDrawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, Slide } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCodepen, faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
 import { useState } from 'react';
@@ -79,7 +79,9 @@ function Links(props) {
       >
         {(theme === 'light') ? <DarkMode /> : <LightMode />}
       </ListItemIcon>
-      {openLinks && <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{(theme === 'light') ? "Dark Mode" : "Light Mode"}</Typography>} />}
+      <Slide direction="right" in={openLinks} mountOnEnter unmountOnExit>
+        <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{(theme === 'light') ? "Dark Mode" : "Light Mode"}</Typography>} />
+      </Slide>
     </ListItemButton>
   </ListItem>;
 
@@ -102,17 +104,20 @@ function Links(props) {
       >
         {particles ? <ToggleOn /> : <ToggleOff />}
       </ListItemIcon>
-      {openLinks && <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{particles ? "Effects Off" : "Effects On"}</Typography>} />}
+      <Slide direction="right" in={openLinks} mountOnEnter unmountOnExit>
+        <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{particles ? "Effects Off" : "Effects On"}</Typography>} />
+      </Slide>
     </ListItemButton>
   </ListItem>;
 
-  const linksDrawer = links.map(link => (
+  const linksList = links.map(link => (
     <ListItem key={`listitem-${link.text}`} disablePadding sx={{ display: 'block' }}>
       <ListItemButton key={`listbutton-${link.text}`}
         sx={{
           minHeight: 48,
           justifyContent: openLinks ? 'initial' : 'center',
           px: 2.5,
+          backgroundColor: "inherit"
         }}
         href={link.link}
         target="_blank"
@@ -127,25 +132,27 @@ function Links(props) {
         >
           {link.icon}
         </ListItemIcon>
-        {openLinks && <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{link.text}</Typography>} sx={{fontSize: '16px'}} />}
+        <Slide direction="right" in={openLinks} mountOnEnter unmountOnExit>
+          <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{link.text}</Typography>} />
+        </Slide>
       </ListItemButton>
     </ListItem>
   ));
 
   return (
     <section className="page" id="links">
-      <Drawer variant="permanent"
+      <SwipeableDrawer variant="permanent"
         open={openLinks} 
         onMouseEnter={handleDrawer}
         onMouseLeave={handleDrawer}
         sx={{'& .MuiDrawer-paper': {borderWidth: 0, justifyContent: 'flex-end'}}}
       >
         <List>
-          {linksDrawer}
+          {linksList}
           {themeToggle}
           {particleToggle}
         </List>
-      </Drawer>
+      </SwipeableDrawer>
     </section>
   );
 }
