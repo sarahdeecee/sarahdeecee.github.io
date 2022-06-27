@@ -1,4 +1,4 @@
-import { Button, Grid, TextField, Typography } from "@mui/material";
+import { Button, Grid, Link, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
 
@@ -32,8 +32,10 @@ function Contact() {
   return (
     <section className="page" id="contact">
       <article>
+        <Link href="mailto:sarah.delacruz@gmail.com">
         <Typography variant="h2" className="header">Let's get in touch!</Typography>
-        <Grid container spacing={3} sx={{justifyContent: 'center'}}>
+        </Link>
+        {/* <Grid container spacing={3} sx={{justifyContent: 'center'}}>
           <Grid item xs={6} sm={4}>
             <TextField className="form-textfield" fullWidth id="name" label="Name" value={form.name} onChange={handleForm} />
           </Grid>
@@ -49,7 +51,7 @@ function Contact() {
               <Button variant="outlined" onClick={handleClear}>Reset</Button>
             </Box>
           </Grid>
-        </Grid>
+        </Grid> */}
       </article>
     </section>
   );
