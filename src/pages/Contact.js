@@ -1,57 +1,65 @@
-import { Button, Grid, Link, TextField, Typography } from "@mui/material";
+import { Button, FormControl, Grid, Link, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from '@emailjs/browser';
 
 function Contact() {
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const form = useRef();
 
-  const handleForm = e => {
-    setForm(prev => ({
-      ...prev,
-      [e.target.id]: e.target.value
-    }));
-  }
+  const serviceId = process.env.REACT_APP_SERVICE_ID;
+  const templateId = process.env.REACT_APP_EMPLATE_ID;
+  const publicKey = process.env.REACT_APP_PUBLIC_KEY;
 
-  const handleClear = e => {
-    setForm({
-      name: '',
-      email: '',
-      message: ''
-    });
-  }
+  const sendEmail = (e) => {
+    console.log(e);
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        serviceId,
+        templateId,
+        form.current,
+        publicKey
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Email sent!");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Email send failed...", error);
+        }
+      );
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
-    handleClear();    
+    sendEmail(e, form);
   };
 
   return (
     <section className="page" id="contact">
       <article>
-        <Link href="mailto:sarah.delacruz@gmail.com">
         <Typography variant="h2" className="header">Let's get in touch!</Typography>
-        </Link>
-        {/* <Grid container spacing={3} sx={{justifyContent: 'center'}}>
+        <form id="form-control" ref={form} onSubmit={handleSubmit}>
+          <Grid container spacing={3} sx={{justifyContent: 'center'}}>
           <Grid item xs={6} sm={4}>
-            <TextField className="form-textfield" fullWidth id="name" label="Name" value={form.name} onChange={handleForm} />
+            <TextField className="form-textfield" fullWidth id="name" label="Name" value={form.name} name="user_name" />
           </Grid>
           <Grid item xs={6} sm={4}>
-            <TextField className="form-textfield" fullWidth id="email" label="Email" value={form.email} type="email" onChange={handleForm} />
+            <TextField className="form-textfield" fullWidth id="email" label="Email" value={form.email} name="user_email" type="email" />
           </Grid>
           <Grid item xs={9} sm={8}>
-            <TextField className="form-textfield" fullWidth id="message" label="Message" value={form.message} multiline rows={4} onChange={handleForm} />
+            <TextField className="form-textfield" fullWidth id="message" label="Message" value={form.message} name="message" multiline rows={4} />
           </Grid>
           <Grid item xs={8}>
             <Box sx={{display: 'flex', justifyContent: 'space-evenly'}}>
-              <Button variant="outlined" onClick={handleSubmit}>Submit</Button>
-              <Button variant="outlined" onClick={handleClear}>Reset</Button>
+              <Button variant="outlined" type="submit">Submit</Button>
             </Box>
           </Grid>
-        </Grid> */}
+          </Grid>
+        </form>
       </article>
     </section>
   );
