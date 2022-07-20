@@ -1,8 +1,10 @@
-import { LinkedIn, GitHub, Instagram, Email, LightMode, DarkMode, ToggleOff, ToggleOn } from '@mui/icons-material';
-import { Button, SwipeableDrawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, Slide } from '@mui/material';
+import { LinkedIn, GitHub, Instagram, Email,  ToggleOff, ToggleOn } from '@mui/icons-material';
+import { SwipeableDrawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, Slide } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCodepen, faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
 import { useState } from 'react';
+import ThemeToggle from './ThemeToggle';
+import { useTheme } from '@emotion/react';
 
 const links = [
   {
@@ -45,9 +47,10 @@ const links = [
 const linkTextStyle = {fontSize: '16px', fontWeight: 500, color: '#788C99'};
 
 function Links(props) {
-  const {theme, setTheme, particles, setParticles} = props;
+  const {particles, setParticles} = props;
   const [openLinks, setOpenLinks] = useState(false);
-  
+  const theme = useTheme();
+
   const handleDrawerOpen = () => {
     setOpenLinks(true);
   };
@@ -55,38 +58,11 @@ function Links(props) {
     setOpenLinks(false);
   };
 
-  const handleTheme = () => {
-    (theme === 'light') ? setTheme('dark') : setTheme('light');
-  }
-
   const handleParticles = () => {
     (particles === true) ? setParticles(false) : setParticles(true);
   }
 
-  const themeToggle = <ListItem key={`listitem-theme`} disablePadding sx={{ display: 'block' }}>
-    <ListItemButton key={`listbutton-theme`}
-      sx={{
-        minHeight: 48,
-        justifyContent: openLinks ? 'initial' : 'center',
-        px: 2.5,
-      }}
-      onClick={handleTheme}
-    >
-      <ListItemIcon key={`listicon-theme`}
-        sx={{
-          minWidth: 0,
-          mr: openLinks ? 3 : 'auto',
-          justifyContent: 'center',
-          width: "1em"
-        }}
-      >
-        {(theme === 'light') ? <DarkMode /> : <LightMode />}
-      </ListItemIcon>
-      <Slide direction="right" in={openLinks} mountOnEnter unmountOnExit>
-        <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{(theme === 'light') ? "Dark Mode" : "Light Mode"}</Typography>} />
-      </Slide>
-    </ListItemButton>
-  </ListItem>;
+  const themeToggle = <ThemeToggle key='switch-button' openLinks={openLinks} linkTextStyle={linkTextStyle} />;
 
   const particleToggle = <ListItem key={`listitem-particle`} disablePadding sx={{ display: 'block' }}>
     <ListItemButton key={`listbutton-particle`}

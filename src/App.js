@@ -7,7 +7,6 @@ import Navigation from './components/Navigation';
 import Content from './components/Content';
 import Particles from './components/Particles';
 import {lightTheme, darkTheme} from './styles/theme';
-import SwitchModeButton from './components/SwitchModeButton';
 import { ColorContext } from './ColorContext';
 
 function App() {
