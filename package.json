@@ -2,7 +2,7 @@
   "name": "sarah-delacruz-profile",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://sarahdeecee.github.io/profile",
+  "homepage": "https://sarahdeecee.github.io",
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "@emotion/react": "^11.9.3",
