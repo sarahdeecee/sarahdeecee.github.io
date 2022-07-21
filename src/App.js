@@ -8,6 +8,7 @@ import Content from './components/Content';
 import Particles from './components/Particles';
 import {lightTheme, darkTheme} from './styles/theme';
 import { ColorContext } from './ColorContext';
+import LinksEdit from './components/LinkEdit';
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -37,7 +38,7 @@ function App() {
         {particles && <Particles className="particles" />}
         <Grid container>
           <Grid item xs>
-            <Links theme={theme} setTheme={setMode} particles={particles} setParticles={setParticles} />
+            <LinksEdit theme={theme} setTheme={setMode} particles={particles} setParticles={setParticles} />
           </Grid>
           <Grid container item xs={11} sx={{justifyContent: 'center'}}>
             <Grid item>
