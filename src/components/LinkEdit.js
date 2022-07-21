@@ -190,7 +190,6 @@ function Links(props) {
             onClick={handleDrawerOpen}
             edge="start"
             sx={{
-              marginRight: 5,
               ...(openLinks && { display: 'none' }),
             }}
           >

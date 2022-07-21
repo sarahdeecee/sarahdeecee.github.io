@@ -12,11 +12,6 @@ function Navigation(props) {
   
   const tabs = [
     {
-      text: "landing",
-      label: "Top",
-      component: <Landing />
-    },
-    {
       text: "about",
       label: "About",
       component: <About />
@@ -57,7 +52,10 @@ function Navigation(props) {
 
   return (
     <menu id="menu">
-      <Tabs value={page} onChange={handlePage} textColor="inherit" selectionFollowsFocus scrollButtons allowScrollButtonsMobile>
+      <Tabs value={page} onChange={handlePage} textColor="inherit" selectionFollowsFocus allowScrollButtonsMobile 
+        variant="scrollable"
+        scrollButtons="auto"
+        sx={{width: '100%', justifyContent: 'flex-end'}}>
         {parsedTabs}
       </Tabs>
     </menu>

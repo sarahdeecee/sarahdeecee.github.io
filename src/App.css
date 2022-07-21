@@ -8,19 +8,12 @@
   z-index: 1;
 }
 
-
-/* #links {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  margin: 1em;
-} */
-
 #menu {
   display: flex;
+  width: 100%;
   justify-content: flex-end;
-  margin: 1em;
-  position: fixed;
+  margin: 0;
+  padding: 0;
   right: 0;
   top: 0;
   z-index: 100;
