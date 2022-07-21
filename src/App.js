@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { CssBaseline, Grid, ThemeProvider, createTheme, Button, ListItemIcon } from '@mui/material';
+import { CssBaseline, Grid, ThemeProvider, createTheme, Button, ListItemIcon, Box, Typography } from '@mui/material';
 import './App.css';
 // import './styles/theme.scss';
 import Links from './components/Links';
@@ -36,19 +36,14 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
         {particles && <Particles className="particles" />}
-        <Grid container>
-          <Grid item xs>
-            <LinksEdit theme={theme} setTheme={setMode} particles={particles} setParticles={setParticles} />
-          </Grid>
-          <Grid container item xs={11} sx={{justifyContent: 'center'}}>
-            <Grid item>
-              <Navigation page={page} setPage={setPage} />
-            </Grid>
-            <Grid item sx={{width: '100%', maxWidth: '1500px'}}>
-              <Content page={page} />
-            </Grid>
-          </Grid>
-        </Grid>
+        <Box sx={{ display: 'flex' }}>
+          <LinksEdit theme={theme} setTheme={setMode} particles={particles} setParticles={setParticles} />
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          {/* <DrawerHeader /> */}
+          {/* <Typography paragraph>Test</Typography> */}
+          <Content page={page} />
+        </Box>
+        </Box>
       </ThemeProvider>
     </ColorContext.Provider>
   );
