@@ -5,6 +5,7 @@ import { faCodepen, faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-sv
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 import { useTheme } from '@emotion/react';
+import Navigation from './Navigation';
 
 const drawerWidth = 240;
 
@@ -145,14 +146,11 @@ function Links(props) {
           minWidth: 0,
           mr: openLinks ? 3 : 'auto',
           justifyContent: 'center',
-          width: "1em"
         }}
       >
         {particles ? <ToggleOn /> : <ToggleOff />}
       </ListItemIcon>
-      <Slide direction="right" in={openLinks} mountOnEnter unmountOnExit>
-        <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{particles ? "Effects Off" : "Effects On"}</Typography>} />
-      </Slide>
+      <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle} >{particles ? "Effects Off" : "Effects On"}</Typography>} sx={{ opacity: openLinks ? 1 : 0 }} />
     </ListItemButton>
   </ListItem>;
 
@@ -173,14 +171,11 @@ function Links(props) {
             minWidth: 0,
             mr: openLinks ? 3 : 'auto',
             justifyContent: 'center',
-            width: "1em"
           }}
         >
           {link.icon}
         </ListItemIcon>
-        <Slide direction="right" in={openLinks} mountOnEnter unmountOnExit>
-          <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{link.text}</Typography>} />
-        </Slide>
+        <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{link.text}</Typography>} sx={{ opacity: openLinks ? 1 : 0 }} />
       </ListItemButton>
     </ListItem>
   ));
@@ -201,12 +196,11 @@ function Links(props) {
           >
             <Menu />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Mini variant drawer
-          </Typography>
+          <Navigation />
         </Toolbar>
       </StyledAppBar>
-      <StyledDrawer variant="permanent" open={openLinks}>
+      <StyledDrawer variant="permanent" open={openLinks} onMouseEnter={handleDrawerOpen}
+        onMouseLeave={handleDrawerClose}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeft />

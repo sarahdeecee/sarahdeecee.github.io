@@ -22,14 +22,11 @@ function ThemeToggle(props) {
             minWidth: 0,
             mr: openLinks ? 3 : 'auto',
             justifyContent: 'center',
-            width: "1em"
           }}
         >
           {theme.palette.type === 'light' ? <DarkMode /> : <LightMode />}
         </ListItemIcon>
-        <Slide direction="right" in={openLinks} mountOnEnter unmountOnExit>
-          <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{(theme.palette.type === 'light') ? "Dark Mode" : "Light Mode"}</Typography>} />
-        </Slide>
+        <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{(theme.palette.type === 'light') ? "Dark Mode" : "Light Mode"}</Typography>} sx={{ opacity: openLinks ? 1 : 0 }} />
       </ListItemButton>
     </ListItem>
   );
