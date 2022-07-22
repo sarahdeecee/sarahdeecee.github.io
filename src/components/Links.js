@@ -103,13 +103,11 @@ function Links(props) {
             <ChevronLeft color="primary" />
           </IconButton>
         </DrawerHeader>
-        <Divider sx={{
-          ...(!openLinks && { opacity: 0 }),
-        }}/>
+        <Divider />
         <List>
+          {linksList}
           {themeToggle}
           {particleToggle}
-          {linksList}
         </List>
       </StyledDrawer>
     </>

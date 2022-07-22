@@ -15,7 +15,7 @@ export const lightTheme = {
       secondary: '#872349',
     },
     background: {
-      default: '#fafafa',
+      default: '#F7E0F3',
       paper: '#fafafa',
     },
     components: {
@@ -23,6 +23,13 @@ export const lightTheme = {
         styleOverrides: {
           root: {
             color: '#1c3f56',
+          }
+        }
+      },
+      MuiCard: {
+        styleOverrides: {
+          root: {
+            background: '#F7E0F3'
           }
         }
       }
@@ -41,7 +48,7 @@ export const darkTheme = {
       contrastText: '#182c5b',
     },
     text: {
-      primary: '#f7e0f3',
+      primary: '#d2608c',
       secondary: '#872349',
     },
     background: {
@@ -64,7 +71,7 @@ export const darkTheme = {
             }
           }
         }
-      }
+      },
     }
   },
 };

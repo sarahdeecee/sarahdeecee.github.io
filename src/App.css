@@ -121,6 +121,10 @@ a {
   object-fit: scale-down;
 }
 
+input {
+  border-width: 3px;
+}
+
 /* Media queries */
 @media only screen and (max-width: 600px) {
   #landing-container, #bio {
