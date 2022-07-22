@@ -29,7 +29,7 @@
 
 #landing {
   display: flex;
-  min-height: 100vh;
+  min-height: 90vh;
   margin-top: 52px;
   margin-bottom: 0;
   align-items: center;
@@ -50,7 +50,6 @@
 
 .page {
   margin: 5em 0;
-  max-width: 1500px;
 }
 
 .MuiTypography-root.header {

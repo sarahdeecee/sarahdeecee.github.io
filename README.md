@@ -4,3 +4,4 @@
 - [ ] Fix skills layout
 - [ ] Add scrollspy
 - [ ] Add scroll transitions
+- [ ] Implement SafeAreaView
