@@ -31,7 +31,6 @@
   min-height: 100vh;
   margin-top: 52px;
   align-items: center;
-  /* margin-bottom: -10em; */
 }
 
 #bio {
@@ -123,6 +122,10 @@ a {
 
 input {
   border-width: 3px;
+}
+
+.page {
+  scroll-margin-top: 5em;
 }
 
 /* Media queries */

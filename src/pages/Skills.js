@@ -1,4 +1,4 @@
-import { Box, Card, CardActionArea, CardContent, CardMedia, Grid, Typography } from "@mui/material";
+import { Card, CardActionArea, CardMedia, Grid, Typography } from "@mui/material";
 import stack from '../data/stack';
 
 function Skills() {
@@ -33,11 +33,11 @@ function Skills() {
   return (
     <section className="page" id="skills">
       <article>
-        <Typography variant="h2" className="header">Tech Stack</Typography>
+        <Typography variant="h2" className="header">Skill Stack</Typography>
         <Grid container id="logo-container" direction="column">
           <Grid container>
             <Grid item>
-              <Typography variant="h3">Languages</Typography>
+              <Typography variant="h4" component="h3">Languages</Typography>
             </Grid>
             <Grid container direction="row">
               {parseStack(languages)}
@@ -45,7 +45,7 @@ function Skills() {
           </Grid>
           <Grid container>
             <Grid item>
-              <Typography variant="h3">Frameworks</Typography>
+              <Typography variant="h4" component="h3">Frameworks</Typography>
             </Grid>
             <Grid container direction="row">
               {parseStack(frameworks)}
@@ -53,7 +53,7 @@ function Skills() {
           </Grid>
           <Grid container>
             <Grid item>
-              <Typography variant="h3">Databases</Typography>
+              <Typography variant="h4" component="h3">Databases</Typography>
             </Grid>
             <Grid container direction="row">
               {parseStack(databases)}
@@ -61,7 +61,7 @@ function Skills() {
           </Grid>
           <Grid container>
             <Grid item>
-              <Typography variant="h3">Design</Typography>
+              <Typography variant="h4" component="h3">Design</Typography>
             </Grid>
             <Grid container direction="row">
               {parseStack(designs)}
@@ -69,7 +69,7 @@ function Skills() {
           </Grid>
           <Grid container>
             <Grid item>
-              <Typography variant="h3">Testing</Typography>
+              <Typography variant="h4" component="h3">Testing</Typography>
             </Grid>
             <Grid container direction="row">
               {parseStack(testings)}
@@ -77,7 +77,7 @@ function Skills() {
           </Grid>
           <Grid container>
             <Grid item>
-              <Typography variant="h3">Other</Typography>
+              <Typography variant="h4" component="h3">Other</Typography>
             </Grid>
             <Grid container direction="row">
               {parseStack(others)}

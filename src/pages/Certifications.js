@@ -17,11 +17,11 @@ const certifications = [
     link: "https://www.freecodecamp.org/certification/sdc/javascript-algorithms-and-data-structures",
     companyLink: "https://www.freecodecamp.org/"
   },
-  { title: "Front End Development Libraries",
-    company: "freeCodeCamp",
-    link: "https://www.freecodecamp.org/",
-    companyLink: ""
-  },
+  // { title: "Front End Development Libraries",
+  //   company: "freeCodeCamp",
+  //   link: "https://www.freecodecamp.org/",
+  //   companyLink: ""
+  // },
 ];
 
 function Certifications() {
