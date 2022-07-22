@@ -60,7 +60,7 @@ const links = [
 const linkTextStyle = {fontSize: '16px', fontWeight: 500};
 
 function MenuContainer(props) {
-  const theme = useTheme();
+  // const theme = useTheme();
   const {particles, setParticles} = props;
   const [openLinks, setOpenLinks] = useState(false);
 
@@ -118,16 +118,16 @@ function MenuContainer(props) {
     </ListItem>
   ));
 
-  function HideOnScroll(props) {
-    const { children } = props;
-    const trigger = useScrollTrigger();
+  // function HideOnScroll(props) {
+  //   const { children } = props;
+  //   const trigger = useScrollTrigger();
   
-    return (
-      <Slide appear={false} direction="down" in={!trigger}>
-        {children}
-      </Slide>
-    );
-  }
+  //   return (
+  //     <Slide appear={false} direction="down" in={!trigger}>
+  //       {children}
+  //     </Slide>
+  //   );
+  // }
 
   return (<>
       <CssBaseline />

@@ -3,7 +3,6 @@ import { _findIndex } from 'lodash';
 import useScrollSpy from '../hooks/useScrollSpy';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
-import Landing from '../pages/Landing';
 import Projects from '../pages/Projects';
 import Skills from '../pages/Skills';
 
@@ -33,8 +32,9 @@ function Navigation(props) {
     }
   ];
 
+  // MUI Scrollspy
   const active = useScrollSpy({ tabs });
-  const activeIndex = active ? _findIndex(tabs, ["text", active]) : false;
+  // const activeIndex = active ? _findIndex(tabs, ["text", active]) : false;
 
   const handlePage = (e, newValue) => {
     setPage(newValue);

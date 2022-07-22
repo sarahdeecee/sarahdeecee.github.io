@@ -1,11 +1,7 @@
-import { LinkedIn, GitHub, Instagram, Email,  ToggleOff, ToggleOn, ChevronLeft, Menu } from '@mui/icons-material';
-import { Drawer, AppBar, Toolbar, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, Slide, styled, CssBaseline, IconButton, Divider, useScrollTrigger } from '@mui/material';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCodepen, faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
-import { useState } from 'react';
-import ThemeToggle from './ThemeToggle';
+import { ChevronLeft, Menu } from '@mui/icons-material';
+import { Drawer, AppBar, Toolbar, List, styled, IconButton, Divider } from '@mui/material';
 import Navigation from './Navigation';
-import { useTheme } from '@emotion/react';
+// import { useTheme } from '@emotion/react';
 
 const drawerWidth = 240;
 
@@ -66,7 +62,7 @@ const StyledDrawer = styled(Drawer, { shouldForwardProp: (prop) => prop !== 'ope
 );
 
 function Links(props) {
-  const theme = useTheme();
+  // const theme = useTheme();
   const {themeToggle, particleToggle, linksList, openLinks, setOpenLinks, DrawerHeader} = props;
 
   const handleDrawerOpen = () => {

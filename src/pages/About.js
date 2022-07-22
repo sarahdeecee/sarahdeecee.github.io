@@ -6,8 +6,6 @@ My interest in design and web development started at age 12 when I started learn
 
 After an adventurous 5 years working in Japan, I decided to return to Canada and revisit my childhood hobby of creating websites. Now, I'm focused on pursuing web development as a career.`
 
-const funFact = `Fun fact: My older brother gifted me a book titled "How to Do Everything with HTML" in the early 2000's &#8212; I still own it to this day.`;
-
 function About() {
   return (
     <section className="page" id="about">

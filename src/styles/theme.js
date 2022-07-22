@@ -1,5 +1,3 @@
-import { createTheme } from "@mui/system";
-
 export const lightTheme = {
   palette: {
     type: 'light',

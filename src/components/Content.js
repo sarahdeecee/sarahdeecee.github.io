@@ -34,7 +34,7 @@ const tabs = [
 ]
 
 function Content(props) {
-  const {page} = props;
+  // const {page} = props;
 
   // const useScrollSpy = ({ items = [], target = window } = {}) => {
   //   useScrollSpy
