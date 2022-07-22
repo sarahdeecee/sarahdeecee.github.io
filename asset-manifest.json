@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.f5bfc676.css",
-    "main.js": "/static/js/main.e020b888.js",
-    "static/js/787.a1b975b5.chunk.js": "/static/js/787.a1b975b5.chunk.js",
-    "static/media/Pink Sakura Flowers Logo Dark.svg": "/static/media/Pink Sakura Flowers Logo Dark.930ecd634e51ba3841a5398b6386483b.svg",
-    "index.html": "/index.html",
-    "main.f5bfc676.css.map": "/static/css/main.f5bfc676.css.map",
-    "main.e020b888.js.map": "/static/js/main.e020b888.js.map",
-    "787.a1b975b5.chunk.js.map": "/static/js/787.a1b975b5.chunk.js.map"
+    "main.css": "/profile/static/css/main.f5bfc676.css",
+    "main.js": "/profile/static/js/main.af930039.js",
+    "static/js/787.a1b975b5.chunk.js": "/profile/static/js/787.a1b975b5.chunk.js",
+    "static/media/Pink Sakura Flowers Logo Dark.svg": "/profile/static/media/Pink Sakura Flowers Logo Dark.930ecd634e51ba3841a5398b6386483b.svg",
+    "index.html": "/profile/index.html",
+    "main.f5bfc676.css.map": "/profile/static/css/main.f5bfc676.css.map",
+    "main.af930039.js.map": "/profile/static/js/main.af930039.js.map",
+    "787.a1b975b5.chunk.js.map": "/profile/static/js/787.a1b975b5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f5bfc676.css",
-    "static/js/main.e020b888.js"
+    "static/js/main.af930039.js"
   ]
 }
