@@ -42,7 +42,7 @@ function Contact() {
     <section className="page" id="contact">
       <article>
         <Typography variant="h2" className="header">Let's get in touch!</Typography>
-        <Card sx={{py: 2}}>
+        <Card sx={{p: 2}}>
         <form id="form-control" ref={form} onSubmit={handleSubmit}>
           <Grid container spacing={3} sx={{justifyContent: 'center'}}>
             <Grid item xs={12} sm={6} md={4}>
