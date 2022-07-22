@@ -23,7 +23,7 @@ function LinksMobile(props) {
   return (<>
       <CssBaseline />
       {/* <HideOnScroll> */}
-        <AppBar position="fixed" open={openLinks} id="appbar-mobile">
+        <AppBar position="fixed" open={openLinks} color="primary" id="appbar-mobile" enableColorOnDark>
           <Toolbar>
             <IconButton
               color="inherit"

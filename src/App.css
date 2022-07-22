@@ -29,7 +29,9 @@
 #landing {
   display: flex;
   min-height: 100vh;
+  margin-top: 52px;
   align-items: center;
+  /* margin-bottom: -10em; */
 }
 
 #bio {
@@ -46,8 +48,7 @@
 }
 
 .page {
-  margin-top: 52px;
-  margin-bottom: 10em;
+  margin: 5em 0;
   max-width: 1500px;
 }
 

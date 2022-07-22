@@ -51,7 +51,7 @@ export const darkTheme = {
     components: {
       MuiDrawer: {
         styleOverrides: {
-          root: {
+          secondary: {
             color: '#f7e0f3',
           }
         }
@@ -60,7 +60,6 @@ export const darkTheme = {
         styleOverrides: {
           primary: {
             main: {
-
               color: '#f7e0f3',
             }
           }

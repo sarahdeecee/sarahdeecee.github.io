@@ -77,7 +77,7 @@ function Links(props) {
   };
   
   return (<>
-      <StyledAppBar position="fixed" open={openLinks} id="appbar">
+      <StyledAppBar position="fixed" open={openLinks} id="appbar" color="primary" enableColorOnDark>
         <Toolbar>
           <IconButton
             color="inherit"
