@@ -46,6 +46,7 @@
 }
 
 .page {
+  margin-top: 52px;
   margin-bottom: 10em;
   max-width: 1500px;
 }
@@ -58,8 +59,9 @@
   text-transform: none;
 }
 
-div.MuiListItemIcon-root {
-  color: #788C99;
+.fa-list-icon {
+  color: #D2608C;
+  width: 1em;
 }
 
 .particles {

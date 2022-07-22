@@ -24,7 +24,7 @@ function ThemeToggle(props) {
             justifyContent: 'center',
           }}
         >
-          {theme.palette.type === 'light' ? <DarkMode /> : <LightMode />}
+          {theme.palette.type === 'light' ? <DarkMode color="primary" /> : <LightMode color="primary" />}
         </ListItemIcon>
         <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{(theme.palette.type === 'light') ? "Dark Mode" : "Light Mode"}</Typography>} sx={{ opacity: openLinks ? 1 : 0 }} />
       </ListItemButton>

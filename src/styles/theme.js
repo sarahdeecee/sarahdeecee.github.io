@@ -16,8 +16,17 @@ export const lightTheme = {
     },
     background: {
       default: '#fafafa',
-      paper: '#f7e0f3',
+      paper: '#fafafa',
     },
+    components: {
+      MuiDrawer: {
+        styleOverrides: {
+          root: {
+            color: '#1c3f56',
+          }
+        }
+      }
+    }
   }
 };
 
@@ -39,5 +48,24 @@ export const darkTheme = {
       default: '#0a0d12',
       paper: '#0a161f',
     },
+    components: {
+      MuiDrawer: {
+        styleOverrides: {
+          root: {
+            color: '#f7e0f3',
+          }
+        }
+      },
+      MuiSvgIcon: {
+        styleOverrides: {
+          primary: {
+            main: {
+
+              color: '#f7e0f3',
+            }
+          }
+        }
+      }
+    }
   },
 };

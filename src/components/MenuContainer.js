@@ -1,11 +1,10 @@
-import { LinkedIn, GitHub, Instagram, Email,  ToggleOff, ToggleOn, ChevronLeft, Menu } from '@mui/icons-material';
-import { Drawer, AppBar, Toolbar, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, Slide, styled, CssBaseline, IconButton, Divider, useScrollTrigger } from '@mui/material';
+import { LinkedIn, GitHub, Instagram, Email,  ToggleOff, ToggleOn } from '@mui/icons-material';
+import { ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, Slide, styled, CssBaseline, useScrollTrigger } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCodepen, faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 import { useTheme } from '@emotion/react';
-import Navigation from './Navigation';
 import Links from './Links';
 import LinksMobile from './LinksMobile';
 
@@ -20,66 +19,45 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 
-const openedMixin = (theme) => ({
-  width: drawerWidth,
-  transition: theme.transitions.create('width', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.enteringScreen,
-  }),
-  overflowX: 'hidden',
-});
-
-const closedMixin = (theme) => ({
-  transition: theme.transitions.create('width', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  overflowX: 'hidden',
-  width: `calc(${theme.spacing(7)} + 1px)`,
-  [theme.breakpoints.up('sm')]: {
-    width: `calc(${theme.spacing(8)} + 1px)`,
-  },
-});
-
 const links = [
   {
     link: "https://www.linkedin.com/in/sarah-delacruz",
-    icon: <LinkedIn />,
+    icon: <LinkedIn color="primary" />,
     text: "LinkedIn"
   },
   {
     link: "https://github.com/sarahdeecee",
-    icon: <GitHub />,
+    icon: <GitHub color="primary" />,
     text: "GitHub"
   },
   {
     link: "https://www.freecodecamp.org/sdc",
-    icon: <FontAwesomeIcon icon={faFreeCodeCamp} size="xl"/>,
+    icon: <FontAwesomeIcon icon={faFreeCodeCamp} size="xl" className="fa-list-icon" />,
     text: "freeCodeCamp"
   },
   {
     link: "https://codepen.io/s_dc",
-    icon: <FontAwesomeIcon icon={faCodepen} size="xl"/>,
+    icon: <FontAwesomeIcon icon={faCodepen} size="xl" className="fa-list-icon" />,
     text: "CodePen"
   },
   {
     link: "https://www.instagram.com/inakasarah",
-    icon: <Instagram />,
+    icon: <Instagram color="primary" />,
     text: "Instagram"
   },
   {
     link: "https://www.flickr.com/photos/186883449@N08/",
-    icon: <FontAwesomeIcon icon={faFlickr} size="xl"/>,
+    icon: <FontAwesomeIcon icon={faFlickr} size="xl" className="fa-list-icon" />,
     text: "Flickr"
   },
   {
     link: "mailto:sarah.delacruz@gmail.com",
-    icon: <Email />,
+    icon: <Email color="primary" />,
     text: "Email"
   }
 ];
 
-const linkTextStyle = {fontSize: '16px', fontWeight: 500, color: '#788C99'};
+const linkTextStyle = {fontSize: '16px', fontWeight: 500};
 
 function MenuContainer(props) {
   const theme = useTheme();
@@ -108,7 +86,7 @@ function MenuContainer(props) {
           justifyContent: 'center',
         }}
       >
-        {particles ? <ToggleOn /> : <ToggleOff />}
+        {particles ? <ToggleOn color="primary" /> : <ToggleOff color="primary" />}
       </ListItemIcon>
       <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle} >{particles ? "Effects Off" : "Effects On"}</Typography>} sx={{ opacity: openLinks ? 1 : 0 }} />
     </ListItemButton>

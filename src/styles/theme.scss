@@ -22,50 +22,6 @@ $lightBlue: #9CB6C7;
   --theme-accent3: #872349;
 }
 
-.App, #links {
-  color: var(--theme-color);
-  background: var(--theme-page-background);
-}
-
-// Contact Page
-.MuiTextField-root, input.MuiInputBase-input, input.MuiOutlinedInput-input {
-  color: var(--theme-color);
-  border-color: var(--theme-contrast);
-  background-color: var(--theme-accent2);
-}
-
-.MuiFormLabel-root.MuiInputLabel-root {
-  color: var(--theme-color);
-  background: var(--theme-page-background);
-}
-
-a {
-  color: var(--theme-accent1);
-}
-
-.MuiTabs-root, .MuiList-root {
-  color: var(--theme-color);
-  background-color: var(--theme-page-background);
-}
-
-.MuiPaper-root.MuiDrawer-paper, .MuiDrawer-root, .MuiDrawer-modal {
-  color: var(--theme-color);
-  background-color: var(--theme-page-background);
-}
-
-.MuiButton-root.MuiButton-outlined {
-  color: var(--theme-color);
-  border-color: var(--theme-color);
-  background-color: var(--theme-accent3);
-}
-.MuiButtonBase-root.MuiButton-root:hover {
-  color: var(--theme-contrast);
-  border-color: var(--theme-color);
-  background-color: var(--theme-accent2);
-}
-
-.MuiPaper-root.MuiCard-root {
-  color: var(--theme-contrast);
-  border-color: var(--theme-accent1);
-  background-color: var(--theme-accent2);
+.fa-list-icon {
+  color: var(--theme-accent1)
 }

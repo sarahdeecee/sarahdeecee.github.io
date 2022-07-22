@@ -100,7 +100,7 @@ function Links(props) {
           ...(!openLinks && { opacity: 0 }),
         }}>
           <IconButton onClick={handleDrawerClose}>
-            <ChevronLeft />
+            <ChevronLeft color="primary" />
           </IconButton>
         </DrawerHeader>
         <Divider sx={{
