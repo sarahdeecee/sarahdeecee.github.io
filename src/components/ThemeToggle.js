@@ -1,4 +1,4 @@
-import { Button, ListItem, ListItemButton, ListItemIcon, ListItemText, Slide, Typography, useTheme } from "@mui/material";
+import { ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, useTheme } from "@mui/material";
 import { useContext } from "react";
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { ColorContext } from "../ColorContext";

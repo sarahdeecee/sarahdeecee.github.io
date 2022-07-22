@@ -1,10 +1,78 @@
-import { LinkedIn, GitHub, Instagram, Email,  ToggleOff, ToggleOn } from '@mui/icons-material';
-import { SwipeableDrawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, Slide } from '@mui/material';
+import { LinkedIn, GitHub, Instagram, Email,  ToggleOff, ToggleOn, ChevronLeft, Menu } from '@mui/icons-material';
+import { Drawer, AppBar, Toolbar, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, Slide, styled, CssBaseline, IconButton, Divider, useScrollTrigger } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCodepen, faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 import { useTheme } from '@emotion/react';
+import Navigation from './Navigation';
+
+const drawerWidth = 240;
+
+const openedMixin = (theme) => ({
+  width: drawerWidth,
+  transition: theme.transitions.create('width', {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.enteringScreen,
+  }),
+  overflowX: 'hidden',
+});
+
+const closedMixin = (theme) => ({
+  transition: theme.transitions.create('width', {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  overflowX: 'hidden',
+  width: `calc(${theme.spacing(7)} + 1px)`,
+  [theme.breakpoints.up('sm')]: {
+    width: `calc(${theme.spacing(8)} + 1px)`,
+  },
+});
+
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+}));
+
+const StyledAppBar = styled(AppBar, {
+  shouldForwardProp: (prop) => prop !== 'open',
+})(({ theme, open }) => ({
+  zIndex: theme.zIndex.drawer + 1,
+  transition: theme.transitions.create(['width', 'margin'], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  ...(open && {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  }),
+}));
+
+const StyledDrawer = styled(Drawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+  ({ theme, open }) => ({
+    width: drawerWidth,
+    flexShrink: 0,
+    whiteSpace: 'nowrap',
+    boxSizing: 'border-box',
+    ...(open && {
+      ...openedMixin(theme),
+      '& .MuiDrawer-paper': openedMixin(theme),
+    }),
+    ...(!open && {
+      ...closedMixin(theme),
+      '& .MuiDrawer-paper': closedMixin(theme),
+    }),
+  }),
+);
 
 const links = [
   {
@@ -47,9 +115,9 @@ const links = [
 const linkTextStyle = {fontSize: '16px', fontWeight: 500, color: '#788C99'};
 
 function Links(props) {
+  const theme = useTheme();
   const {particles, setParticles} = props;
   const [openLinks, setOpenLinks] = useState(false);
-  const theme = useTheme();
 
   const handleDrawerOpen = () => {
     setOpenLinks(true);
@@ -78,14 +146,11 @@ function Links(props) {
           minWidth: 0,
           mr: openLinks ? 3 : 'auto',
           justifyContent: 'center',
-          width: "1em"
         }}
       >
         {particles ? <ToggleOn /> : <ToggleOff />}
       </ListItemIcon>
-      <Slide direction="right" in={openLinks} mountOnEnter unmountOnExit>
-        <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{particles ? "Effects Off" : "Effects On"}</Typography>} />
-      </Slide>
+      <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle} >{particles ? "Effects Off" : "Effects On"}</Typography>} sx={{ opacity: openLinks ? 1 : 0 }} />
     </ListItemButton>
   </ListItem>;
 
@@ -106,33 +171,65 @@ function Links(props) {
             minWidth: 0,
             mr: openLinks ? 3 : 'auto',
             justifyContent: 'center',
-            width: "1em"
           }}
         >
           {link.icon}
         </ListItemIcon>
-        <Slide direction="right" in={openLinks} mountOnEnter unmountOnExit>
-          <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{link.text}</Typography>} />
-        </Slide>
+        <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{link.text}</Typography>} sx={{ opacity: openLinks ? 1 : 0 }} />
       </ListItemButton>
     </ListItem>
   ));
 
-  return (
-    <section className="page" id="links">
-      <SwipeableDrawer variant="permanent"
-        open={openLinks} 
-        onMouseEnter={handleDrawerOpen}
-        onMouseLeave={handleDrawerClose}
-        sx={{'& .MuiDrawer-paper': {borderWidth: 0, justifyContent: 'flex-end'}}}
-      >
+  function HideOnScroll(props) {
+    const { children } = props;
+    const trigger = useScrollTrigger();
+  
+    return (
+      <Slide appear={false} direction="down" in={!trigger}>
+        {children}
+      </Slide>
+    );
+  }
+
+  return (<>
+      <CssBaseline />
+      {/* <HideOnScroll> */}
+        <StyledAppBar position="fixed" open={openLinks}>
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{
+                ...(openLinks && { display: 'none' }),
+              }}
+            >
+              <Menu />
+            </IconButton>
+            <Navigation />
+          </Toolbar>
+        </StyledAppBar>
+      {/* </HideOnScroll> */}
+      <StyledDrawer variant="permanent" open={openLinks} onMouseEnter={handleDrawerOpen}
+        onMouseLeave={handleDrawerClose} id="links-drawer">
+        <DrawerHeader sx={{
+          ...(!openLinks && { opacity: 0 }),
+        }}>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeft />
+          </IconButton>
+        </DrawerHeader>
+        <Divider sx={{
+          ...(!openLinks && { opacity: 0 }),
+        }}/>
         <List>
-          {linksList}
+        {linksList}
           {themeToggle}
           {particleToggle}
         </List>
-      </SwipeableDrawer>
-    </section>
+      </StyledDrawer>
+    </>
   );
 }
 
