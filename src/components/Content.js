@@ -42,10 +42,10 @@ function Content(props) {
   const parsedTabs = tabs.map(tab => tab.component);
 
   return (
-    <main id="content">
+    <>
       {parsedTabs}
       <ContentFooter />
-    </main>
+    </>
   );
 }
 

@@ -14,7 +14,7 @@ function Landing() {
               <Typography variant="h4" component="p">I'm a <strong>web developer</strong> from Ontario, Canada.</Typography>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={4} md={3} sx={{justifyContent: 'center'}}>
+          <Grid item xs={12} sm={4} md={3} sx={{justifyContent: 'center'}} id="landing-logo-container">
             <img
               src={SakuraLogo}
               alt="Sakura S Logo"

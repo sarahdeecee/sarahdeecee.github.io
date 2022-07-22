@@ -1,11 +1,11 @@
 import { useMemo, useState } from 'react';
 import { CssBaseline, ThemeProvider, createTheme, Box } from '@mui/material';
 import './App.css';
-import Links from './components/Links';
 import Content from './components/Content';
 import Particles from './components/Particles';
 import {lightTheme, darkTheme} from './styles/theme';
 import { ColorContext } from './ColorContext';
+import MenuContainer from './components/MenuContainer';
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -34,7 +34,7 @@ function App() {
         <CssBaseline enableColorScheme />
         {particles && <Particles className="particles" />}
         <Box sx={{ display: 'flex' }}>
-          <Links theme={theme} setTheme={setMode} particles={particles} setParticles={setParticles} />
+          <MenuContainer particles={particles} setParticles={setParticles} />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Content page={page} />
         </Box>

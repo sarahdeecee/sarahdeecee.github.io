@@ -36,6 +36,13 @@
   width: 100%;
 }
 
+#links-drawer-mobile {
+  visibility: hidden;
+}
+#links-drawer, #appbar {
+  visibility: visible;
+}
+
 .page {
   margin-bottom: 10em;
   max-width: 1500px;
@@ -87,7 +94,6 @@ a {
   text-align: center;
   font-size: large;
   font-weight: bold;
-  margin-bottom: 1em;
 }
 
 #logo-container {
@@ -114,14 +120,27 @@ a {
 @media only screen and (max-width: 600px) {
   #landing-container, #bio {
     flex-direction: column;
-    justify-content: space-between;
+    height: 100%;
+    justify-content: space-around;
   }
   #landing-name {
     font-size: 46px;
     font-weight: 700;
   }
-  .target-to-drawer {
-    display: none;
+  #landing-logo-container {
+    padding: 2em 0;
+    display: flex;
+    justify-content: center;
+  }
+  #landing-logo {
+    width: 50%;
+    height: auto;
+  }
+  #links-drawer-mobile {
+    visibility: visible;
+  }
+  #links-drawer, #appbar {
+    visibility: hidden;
   }
 }
 
