@@ -33,7 +33,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
         {particles && <Particles className="particles" />}
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', width: '100%'}}>
           <MenuContainer particles={particles} setParticles={setParticles} />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Content page={page} />

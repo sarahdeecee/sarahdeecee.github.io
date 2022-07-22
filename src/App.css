@@ -36,11 +36,13 @@
   width: 100%;
 }
 
-#links-drawer-mobile {
+#links-drawer-mobile, #app-mobile {
   visibility: hidden;
+  display: none;
 }
 #links-drawer, #appbar {
   visibility: visible;
+  display: block;
 }
 
 .page {
@@ -136,11 +138,13 @@ a {
     width: 50%;
     height: auto;
   }
-  #links-drawer-mobile {
+  #links-drawer-mobile, #appbar-mobile {
     visibility: visible;
+    display: block;
   }
   #links-drawer, #appbar {
     visibility: hidden;
+    display: none;
   }
 }
 
