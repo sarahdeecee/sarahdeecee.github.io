@@ -1,5 +1,5 @@
 import { LinkedIn, GitHub, Instagram, Email,  ToggleOff, ToggleOn, ChevronLeft, Menu } from '@mui/icons-material';
-import { SwipeableDrawer, Drawer, AppBar, Toolbar, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, Slide, styled, CssBaseline, IconButton, Divider } from '@mui/material';
+import { SwipeableDrawer, Drawer, AppBar, Toolbar, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, Slide, styled, CssBaseline, IconButton, Divider, useScrollTrigger } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCodepen, faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
 import { useState } from 'react';
@@ -180,32 +180,49 @@ function Links(props) {
     </ListItem>
   ));
 
+  function HideOnScroll(props) {
+    const { children } = props;
+    const trigger = useScrollTrigger();
+  
+    return (
+      <Slide appear={false} direction="down" in={!trigger}>
+        {children}
+      </Slide>
+    );
+  }
+
   return (<>
       <CssBaseline />
-      <StyledAppBar position="fixed" open={openLinks}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              ...(openLinks && { display: 'none' }),
-            }}
-          >
-            <Menu />
-          </IconButton>
-          <Navigation />
-        </Toolbar>
-      </StyledAppBar>
+      {/* <HideOnScroll> */}
+        <StyledAppBar position="fixed" open={openLinks}>
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{
+                ...(openLinks && { display: 'none' }),
+              }}
+            >
+              <Menu />
+            </IconButton>
+            <Navigation />
+          </Toolbar>
+        </StyledAppBar>
+      {/* </HideOnScroll> */}
       <StyledDrawer variant="permanent" open={openLinks} onMouseEnter={handleDrawerOpen}
-        onMouseLeave={handleDrawerClose}>
-        <DrawerHeader>
+        onMouseLeave={handleDrawerClose} id="links-drawer">
+        <DrawerHeader sx={{
+          ...(!openLinks && { opacity: 0 }),
+        }}>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeft />
           </IconButton>
         </DrawerHeader>
-        <Divider />
+        <Divider sx={{
+          ...(!openLinks && { opacity: 0 }),
+        }}/>
         <List>
         {linksList}
           {themeToggle}

@@ -55,7 +55,7 @@ function Navigation(props) {
       <Tabs value={page} onChange={handlePage} textColor="inherit" selectionFollowsFocus allowScrollButtonsMobile 
         variant="scrollable"
         scrollButtons="auto"
-        sx={{width: '100%', justifyContent: 'flex-end'}}>
+        centered>
         {parsedTabs}
       </Tabs>
     </menu>

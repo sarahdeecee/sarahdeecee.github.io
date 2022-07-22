@@ -120,6 +120,9 @@ a {
     font-size: 46px;
     font-weight: 700;
   }
+  .target-to-drawer {
+    display: none;
+  }
 }
 
 /* Logo animation */
