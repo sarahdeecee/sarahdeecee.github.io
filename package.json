@@ -2,7 +2,7 @@
   "name": "sarah-delacruz-profile",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://sarahdeecee.github.io/profile",
+  "homepage": "https://sarahdeecee.github.io",
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "@emotion/react": "^11.9.3",
@@ -17,11 +17,14 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "babel": "^6.23.0",
+    "babel-eslint": "^10.1.0",
     "dotenv": "^16.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "react-swipeable-views": "file:react-swipeable-views/packages/react-swipeable-views",
+    "react-swipeable-views-utils": "file:react-swipeable-views/packages/react-swipeable-views-utils",
     "react-tsparticles": "^2.1.0",
     "sass": "^1.52.3",
     "swiper": "^8.3.2",
@@ -55,6 +58,12 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "gh-pages": "^4.0.0"
   }
 }

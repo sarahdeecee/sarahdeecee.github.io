@@ -18,7 +18,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-/react-swipeable-views
+/src/react-swipeable-views
 
 npm-debug.log*
 yarn-debug.log*
