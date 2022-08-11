@@ -1,7 +1,7 @@
 import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
 
 function ProjectCard(props) {
-  const {title, description, image, deployLink, githubLink} = props;
+  const {title, description, images, deployLink, githubLink} = props;
 
   const handleProjectCard = e => {
     console.log(e.target.value);
@@ -14,7 +14,7 @@ function ProjectCard(props) {
           <CardMedia
           component="img"
           className="project-img"
-          image={image}
+          image={images[0].src}
           alt={`Screenshot of ${title}`}
           />
         </Box>

@@ -1,6 +1,7 @@
 import { Card, Grid, Skeleton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import ProjectCard from "../components/ProjectCard";
+import SwipeableTextMobileStepper from "../components/ProjectCarousel";
 import projects from "../data/projectsData"
 
 function Projects() {
@@ -24,7 +25,8 @@ function Projects() {
         <Typography variant="h2" className="header">Projects</Typography>
         <Grid container spacing={3}>
           {parsedProjects}
-        </Grid>      
+        </Grid>
+        {/* <SwipeableTextMobileStepper /> */}
       </article>
     </section>
   );

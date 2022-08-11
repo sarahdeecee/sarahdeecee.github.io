@@ -11,22 +11,22 @@ function ProjectCard(props) {
     <Card variant="outlined" sx={{ height: "100%"}} className="project-card">
       <CardActionArea onClick={handleProjectCard}>
         <Box className="project-card-image-area">
-          <CardMedia
+          {/* <CardMedia
           component="img"
           className="project-img"
           image={image}
           alt={`Screenshot of ${title}`}
-          />
+          /> */}
         </Box>
         <CardContent>
           <Typography variant="h5" component="div">{title}</Typography>
           <Typography variant="body2" component="p">{description}</Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions sx={{justifyContent: "space-evenly"}}>
+      {/* <CardActions sx={{justifyContent: "space-evenly"}}>
         <Button variant="contained" href={deployLink}>Link</Button>
         <Button variant="contained" href={githubLink}>GitHub</Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }
