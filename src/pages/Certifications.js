@@ -28,10 +28,11 @@ const certifications = [
   // },
 ];
 
-function Certifications() {
+function Certifications(props) {
+  const {currentProject, setCurrentProject} = props;
 
-  const parsedCertifications = certifications.map(certification => <Grid item xs={12} sm={6} md={4} lg={3} key={`grid-${certification.title}`}>
-      <CertificationCard {...certification} key={certification.title} />
+  const parsedCertifications = certifications.map(certification => <Grid item xs={12} sm={6} lg={4} key={`grid-${certification.title}`}>
+      <CertificationCard {...certification} key={certification.title} currentProject={currentProject} setCurrentProject={setCurrentProject} />
     </Grid>);
 
   return (

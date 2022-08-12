@@ -33,8 +33,7 @@ function SwipeableTextMobileStepper(props) {
   };
 
   const handleProjectDialog = (title, label, src) => {
-    console.log(label, src);
-    setCurrentProject({title: projectTitle, label, src, open: true});
+    setCurrentProject({title, label, src, open: true});
   }
 
   return (

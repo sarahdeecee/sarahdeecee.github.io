@@ -24,7 +24,7 @@ function Content(props) {
     },
     {
       text: "certifications",
-      component: <Certifications key="certifications" />
+      component: <Certifications key="certifications" currentProject={currentProject} setCurrentProject={setCurrentProject} />
     },
     {
       text: "projects",
