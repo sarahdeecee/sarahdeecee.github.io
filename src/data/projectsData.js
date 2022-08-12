@@ -13,7 +13,8 @@ const projects = [
         label: "Preview of full single page website",
         src: "./project-screenshots/free-code-camp/project-portfolio.gif",
       }
-    ]
+    ],
+    stack: ['Javascript', 'HTML', 'CSS', 'Bootstrap'],
   },
   {
     title: "Technical Documentation Page",
@@ -32,7 +33,8 @@ const projects = [
         label: "Small screen version",
         src: "./project-screenshots/free-code-camp/project-doc-page2.png"
       }
-    ]
+    ],
+    stack: ['Javascript', 'HTML', 'CSS', 'Bootstrap'],
   },
   {
     title: "Todai Ordering",
@@ -59,7 +61,8 @@ const projects = [
         label: "Order queue of restaurant",
         src: "./project-screenshots/todai/order-queue.png"
       },
-    ]
+    ],
+    stack: ['Javascript', 'HTML', 'CSS', 'Bootstrap', 'ExpressJS', 'EJS', 'SASS'],
   },
   {
     title: "Coffee Brewing",
@@ -82,7 +85,8 @@ const projects = [
         label: "Mobile version",
         src: "./project-screenshots/coffee/mobile.png"
       }
-    ]
+    ],
+    stack: ['Javascript', 'HTML', 'CSS', 'ReactJS', 'React-Bootstrap', 'SASS'],
   },
   {
     title: "Anya Soundboard",
@@ -94,7 +98,7 @@ const projects = [
         label: "Desktop version",
         src: "./project-screenshots/anya/screenshot-light-full.png"
       },
-      { label: "Dark mode",
+      { label: "Dark mode with Japanese language",
         src: "./project-screenshots/anya/screenshot-dark-full.png",
       },
       {
@@ -105,7 +109,8 @@ const projects = [
         label: "Favourites function",
         src: "./project-screenshots/anya/screenshot-favourites.gif"
       }
-    ]
+    ],
+    stack: ['Javascript', 'HTML', 'CSS', 'ReactJS', 'SASS', 'Material UI'],
   },
   {
     title: "Junior",
@@ -144,7 +149,8 @@ const projects = [
         label: "Landing page",
         src: "./project-screenshots/junior/landing.png"
       },
-    ]
+    ],
+    stack: ['Javascript', 'HTML', 'CSS', 'React', 'Material UI', 'SASS', 'PostgreSQL'],
   },
 ];
 
