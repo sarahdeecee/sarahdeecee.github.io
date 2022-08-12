@@ -62,12 +62,20 @@ const projects = [
     deployLink: "https://anya-soundboard.herokuapp.com/",
     githubLink: "https://github.com/sarahdeecee/anya-soundboard",
     images: [
-      { label: "",
-        src: "./project-screenshots/anya/screenshot-light-full.png",
+      {
+        label: "Desktop version",
+        src: "./project-screenshots/anya/screenshot-light-full.png"
+      },
+      { label: "Dark mode",
+        src: "./project-screenshots/anya/screenshot-dark-full.png",
       },
       {
-        label: "",
-        src: "./project-screenshots/.png"
+        label: "Mobile version with menu",
+        src: "./project-screenshots/anya/screenshot-dark-mobile-menu.png"
+      },
+      {
+        label: "Favourites function",
+        src: "./project-screenshots/anya/screenshot-favourites.gif"
       }
     ]
   },

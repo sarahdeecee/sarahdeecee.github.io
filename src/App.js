@@ -9,6 +9,7 @@ import MenuContainer from './components/MenuContainer';
 
 function App() {
   const [mode, setMode] = useState("light");
+
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {

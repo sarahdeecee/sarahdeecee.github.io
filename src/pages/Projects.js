@@ -1,10 +1,13 @@
-import { Card, Grid, Skeleton, Typography } from "@mui/material";
+import { Card, Dialog, Grid, Skeleton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import SwipeableTextMobileStepper from "../components/ProjectCarousel";
 import projects from "../data/projectsData"
 
-function Projects() {
+function Projects(props) {
+  const {currentProject, setCurrentProject} = props;
+
   const loadingProject = <Grid item xs={12} sm={6} lg={4}>
     <Card variant="outlined" sx={{ height: "100%"}} className="project-card">
       <Skeleton variant="rectangular" height={300} />
@@ -26,7 +29,6 @@ function Projects() {
         <Grid container spacing={3}>
           {parsedProjects}
         </Grid>
-        {/* <SwipeableTextMobileStepper /> */}
       </article>
     </section>
   );
