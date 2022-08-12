@@ -9,6 +9,7 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from '../react-swipeable-views/packages/react-swipeable-views/src';
 import { autoPlay } from '../react-swipeable-views/packages/react-swipeable-views-utils/src';
 import { useState } from 'react';
+import { CardActionArea } from '@mui/material';
 
 // const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const AutoPlaySwipeableViews = SwipeableViews;
@@ -47,6 +48,7 @@ function SwipeableTextMobileStepper(props) {
         {images.map((step, index) => (
           <Box key={step.label} sx={{display: 'flex', justifyContent: 'center', bgcolor: 'background.default'}}>
             {Math.abs(activeStep - index) <= 2 ? (
+              <CardActionArea sx={{display: 'flex', justifyContent: 'center'}}>
               <Box
                 component="img"
                 sx={{
@@ -59,7 +61,7 @@ function SwipeableTextMobileStepper(props) {
                 src={step.src}
                 alt={step.label}
                 onClick={() => handleProjectDialog(projectTitle, step.label, step.src)}
-              />
+              /></CardActionArea>
             ) : null}
           </Box>
         ))}
