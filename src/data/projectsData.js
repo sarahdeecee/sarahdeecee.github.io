@@ -6,8 +6,12 @@ const projects = [
     deployLink: "https://codepen.io/s_dc/full/abVXemo",
     images: [
       {
-        label: "",
+        label: "Landing page",
         src: "./project-screenshots/free-code-camp/project-portfolio.png",
+      },
+      {
+        label: "Preview of full single page website",
+        src: "./project-screenshots/free-code-camp/project-portfolio.gif",
       }
     ]
   },
@@ -17,12 +21,16 @@ const projects = [
     githubLink: "https://github.com/sarahdeecee/fcc-responsive-projects/tree/main/04-technical-doc-page",
     deployLink: "https://codepen.io/s_dc/full/xxPMgNK",
     images: [
-      { label: "",
+      { label: "Documentation page",
         src: "./project-screenshots/free-code-camp/project-doc-page.png",
       },
       {
-        label: "",
-        src: "./project-screenshots/.png"
+        label: "Sample of updated navigation menu",
+        src: "./project-screenshots/free-code-camp/project-doc-page3.png"
+      },
+      {
+        label: "Small screen version",
+        src: "./project-screenshots/free-code-camp/project-doc-page2.png"
       }
     ]
   },
@@ -32,13 +40,25 @@ const projects = [
     githubLink: "https://github.com/sarahdeecee/food-pickup",
     deployLink: "",
     images: [
-      { label: "",
+      { label: "Restaurant menu page for customer",
         src: "./project-screenshots/todai/menu.png",
       },
       {
-        label: "",
-        src: "./project-screenshots/.png"
-      }
+        label: "Sample customer cart",
+        src: "./project-screenshots/todai/cart.png"
+      },
+      {
+        label: "Customer order confirmation",
+        src: "./project-screenshots/todai/order-confirmation.png"
+      },
+      {
+        label: "List of user orders for restaurant",
+        src: "./project-screenshots/todai/user-orders.png"
+      },
+      {
+        label: "Order queue of restaurant",
+        src: "./project-screenshots/todai/order-queue.png"
+      },
     ]
   },
   {
@@ -47,12 +67,20 @@ const projects = [
     deployLink: "https://coffeebrewing.herokuapp.com/",
     githubLink: "https://github.com/sarahdeecee/coffee-brewing",
     images: [
-      { label: "",
+      { label: "Desktop version",
         src: "./project-screenshots/coffee/desktop-light.png",
       },
       {
-        label: "",
-        src: "./project-screenshots/.png"
+        label: "Dark mode",
+        src: "./project-screenshots/coffee/desktop-dark.png"
+      },
+      {
+        label: "Large text version",
+        src: "./project-screenshots/coffee/desktop-big.png"
+      },
+      {
+        label: "Mobile version",
+        src: "./project-screenshots/coffee/mobile.png"
       }
     ]
   },
@@ -85,13 +113,37 @@ const projects = [
     deployLink: "https://junior-active.herokuapp.com/",
     githubLink: "https://github.com/sarahdeecee/junior",
     images: [
-      { label: "",
+      { label: "Developer profile",
         src: "./project-screenshots/junior/projects.png",
       },
       {
-        label: "",
-        src: "./project-screenshots/.png"
-      }
+        label: "Developer projects page",
+        src: "./project-screenshots/junior/projects.png"
+      },
+      {
+        label: "Project details",
+        src: "./project-screenshots/junior/project-modal.png"
+      },
+      {
+        label: "Job postings and search",
+        src: "./project-screenshots/junior/find-work.png"
+      },
+      {
+        label: "Sample job posting",
+        src: "./project-screenshots/junior/job-post.png"
+      },
+      {
+        label: "Company profile",
+        src: "./project-screenshots/junior/company-profile.png"
+      },
+      {
+        label: "Job posting details on company profile page",
+        src: "./project-screenshots/junior/posting-modal.png"
+      },
+      {
+        label: "Landing page",
+        src: "./project-screenshots/junior/landing.png"
+      },
     ]
   },
 ];
