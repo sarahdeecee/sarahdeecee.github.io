@@ -16,7 +16,7 @@ function Skills() {
       variant="filled"
       label={stack.title}
       avatar={<Avatar alt={stack.title} src={stack.src} variant="square" imgProps={{objectFit: 'scale-down'}}/>}
-      sx={{p: 1}}
+      sx={{p: 1, bgcolor: 'background.paper'}}
     />
   );
 
