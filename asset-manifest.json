@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.eafacf8f.css",
-    "main.js": "/static/js/main.c45057b6.js",
+    "main.js": "/static/js/main.ade56ec7.js",
     "static/js/787.a1b975b5.chunk.js": "/static/js/787.a1b975b5.chunk.js",
     "static/media/Pink Sakura Flowers Logo Dark.svg": "/static/media/Pink Sakura Flowers Logo Dark.930ecd634e51ba3841a5398b6386483b.svg",
     "index.html": "/index.html",
     "main.eafacf8f.css.map": "/static/css/main.eafacf8f.css.map",
-    "main.c45057b6.js.map": "/static/js/main.c45057b6.js.map",
+    "main.ade56ec7.js.map": "/static/js/main.ade56ec7.js.map",
     "787.a1b975b5.chunk.js.map": "/static/js/787.a1b975b5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eafacf8f.css",
-    "static/js/main.c45057b6.js"
+    "static/js/main.ade56ec7.js"
   ]
 }
