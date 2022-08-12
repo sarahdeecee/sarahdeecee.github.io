@@ -1,7 +1,9 @@
-import { Card, CardActionArea, CardMedia, Grid, Typography } from "@mui/material";
+import { Avatar, Card, CardActionArea, CardMedia, Chip, Grid, Stack, SvgIcon, Typography } from "@mui/material";
 import stack from '../data/stack';
 
 function Skills() {
+  const categories = ['language', 'framework', 'database', 'design', 'design', 'testing', 'other'];
+
   const languages = stack.filter(elem => elem.type === 'language');
   const frameworks = stack.filter(elem => elem.type === 'framework');
   const databases = stack.filter(elem => elem.type === 'database');
@@ -9,81 +11,43 @@ function Skills() {
   const testings = stack.filter(elem => elem.type === 'testing');
   const others = stack.filter(elem => elem.type === 'other');
   
-  const parseStack = array => array.map(stack => <Grid item>
-    <Card 
-      key={stack.title}
-      variant="outlined"
-      className="logo-box"
-      data-toggle="tooltip" data-placement="top"
-      title={stack.title}
-      p={3}
-    >
-      <CardActionArea className="logo-box" disableRipple sx={{display: 'flex', width: '100%', height: '100%', padding: '1em', justifyContent: 'space-between'}}>
-        <CardMedia
-          component="img"
-          src={stack.src}
-          className="stack-logo"
-          alt={stack.title}
-          sx={{pb: 1}}/>
-        <Typography variant="body1">{stack.title}</Typography>
-      </CardActionArea>
-    </Card>
-  </Grid>);
+  const parseStack = array => array.map(stack => 
+    <Chip
+      variant="filled"
+      label={stack.title}
+      avatar={<Avatar alt={stack.title} src={stack.src} variant="square" imgProps={{objectFit: 'scale-down'}}/>}
+      sx={{p: 1}}
+    />
+  );
 
   return (
     <section className="page" id="skills">
       <article>
         <Typography variant="h2" className="header">Skill Stack</Typography>
-        <Grid container id="logo-container" direction="column">
-          <Grid container>
-            <Grid item>
-              <Typography variant="h4" component="h3">Languages</Typography>
-            </Grid>
-            <Grid container direction="row">
-              {parseStack(languages)}
-            </Grid>
-          </Grid>
-          <Grid container>
-            <Grid item>
-              <Typography variant="h4" component="h3">Frameworks</Typography>
-            </Grid>
-            <Grid container direction="row">
-              {parseStack(frameworks)}
-            </Grid>
-          </Grid>
-          <Grid container>
-            <Grid item>
-              <Typography variant="h4" component="h3">Databases</Typography>
-            </Grid>
-            <Grid container direction="row">
-              {parseStack(databases)}
-            </Grid>
-          </Grid>
-          <Grid container>
-            <Grid item>
-              <Typography variant="h4" component="h3">Design</Typography>
-            </Grid>
-            <Grid container direction="row">
-              {parseStack(designs)}
-            </Grid>
-          </Grid>
-          <Grid container>
-            <Grid item>
-              <Typography variant="h4" component="h3">Testing</Typography>
-            </Grid>
-            <Grid container direction="row">
-              {parseStack(testings)}
-            </Grid>
-          </Grid>
-          <Grid container>
-            <Grid item>
-              <Typography variant="h4" component="h3">Other</Typography>
-            </Grid>
-            <Grid container direction="row">
-              {parseStack(others)}
-            </Grid>
-          </Grid>
-        </Grid>
+        <Typography variant="h4" gutterBottom component="h3">Languages</Typography>
+        <Stack direction="row" spacing={1} sx={{mb: 2}}>
+          {parseStack(languages)}
+        </Stack>
+        <Typography variant="h4" gutterBottom component="h3">Frameworks</Typography>
+        <Stack direction="row" spacing={1} sx={{mb: 2}}>
+          {parseStack(frameworks)}
+        </Stack>
+        <Typography variant="h4" gutterBottom component="h3">Databases</Typography>
+        <Stack direction="row" spacing={1} sx={{mb: 2}}>
+          {parseStack(databases)}
+        </Stack>
+        <Typography variant="h4" gutterBottom component="h3">Design</Typography>
+        <Stack direction="row" spacing={1} sx={{mb: 2}}>
+          {parseStack(designs)}
+        </Stack>
+        <Typography variant="h4" gutterBottom component="h3">Testing</Typography>
+        <Stack direction="row" spacing={1} sx={{mb: 2}}>
+          {parseStack(testings)}
+        </Stack>
+        <Typography variant="h4" gutterBottom component="h3">Other</Typography>
+        <Stack direction="row" spacing={1} sx={{mb: 2}}>
+          {parseStack(others)}
+        </Stack>
       </article>
     </section>
   );

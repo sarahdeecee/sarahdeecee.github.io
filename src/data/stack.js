@@ -16,47 +16,58 @@ const stack = [
     src: "./logos/ruby.svg",
     type: "language"
   },
-  {title: "Node JS",
+  {
+    title: "Node JS",
     src: "./logos/nodejs-icon.svg",
     type: "framework"
   },
-  {title: "React",
+  {
+    title: "React",
     src: "./logos/react.svg",
     type: "framework"
   },
-  {title: "Rails",
+  {
+    title: "Rails",
     src: "./logos/rails.svg",
     type: "framework"
   },
-  {title: "Postgres",
+  {
+    title: "Postgres",
     src: "./logos/postgresql.svg",
     type: "database"
   },
-  {title: "Git",
+  {
+    title: "Git",
     src: "./logos/git-icon.svg",
     type: "other"
   },
-  {title: "Sass",
+  {
+    title: "Sass",
     src: "./logos/sass.svg",
     type: "design"
   },
-  {title: "Bootstrap",
+  {
+    title: "Bootstrap",
     src: "./logos/bootstrap.svg",
     type: "design"
   },
-  {title: "Material UI",
+  {
+    title: "Material UI",
     src: "./logos/material-ui.svg",
     type: "design"
   },
-  {title: "Cypress",
+  {
+    title: "Cypress",
     src: "./logos/cypress.svg",
     type: "testing"
   },
-  {title: "Jest",
+  {
+    title: "Jest",
     src: "./logos/jest.svg",
     type: "testing"
   },
-  {title: "Storybook",
+  {
+    title: "Storybook",
     src: "./logos/storybook-icon.svg",
     type: "testing"
   }
