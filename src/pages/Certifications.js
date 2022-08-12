@@ -4,21 +4,25 @@ import CertificationCard from "../components/CertificationCard";
 const certifications = [
   { title: "Diploma of Web Development",
     company: "Lighthouse Labs",
+    img: "./certifications/lighthouse.png",
     link: "",
     companyLink: "https://www.lighthouselabs.ca/"
   },
   { title: "Responsive Web Design Certification",
     company: "freeCodeCamp",
+    img: "./certifications/fcc-responsive.png",
     link: "https://www.freecodecamp.org/certification/sdc/responsive-web-design",
     companyLink: "https://www.freecodecamp.org/"
   },
   { title: "JavaScript Algorithms and Data Structures Certification",
     company: "freeCodeCamp",
+    img: "./certifications/fcc-algorithms.png",
     link: "https://www.freecodecamp.org/certification/sdc/javascript-algorithms-and-data-structures",
     companyLink: "https://www.freecodecamp.org/"
   },
   // { title: "Front End Development Libraries",
   //   company: "freeCodeCamp",
+  //   img: "./certifications/.png",
   //   link: "https://www.freecodecamp.org/",
   //   companyLink: ""
   // },
