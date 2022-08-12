@@ -39,7 +39,7 @@ function Projects(props) {
           {parsedProjects}
         </Grid>
       <Dialog maxWidth="lg" scroll="paper" open={currentProject.open} onClose={handleProjectDialogClose}>
-        <ProjectImageDialog image={currentProject.src} title={currentProject.label} />
+        <ProjectImageDialog image={currentProject.src} label={currentProject.label} title={currentProject.title} />
       </Dialog>
       </article>
     </section>

@@ -1,11 +1,10 @@
 import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, DialogContent, DialogTitle, Link, Typography } from "@mui/material";
 
 function ProjectImageDialog(props) {
-  const {image, title} = props;
-  console.log('src: ', image);
+  const {image, label, title} = props;
 
   return (<>
-    <DialogTitle>{title}</DialogTitle>
+    <DialogTitle>{`${title}: ${label}`}</DialogTitle>
       <DialogContent>
         <Box
           component="img"

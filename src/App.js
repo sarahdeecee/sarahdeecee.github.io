@@ -29,6 +29,7 @@ function App() {
   const [particles, setParticles] = useState(true);
   const [page, setPage] = useState('landing');
   const [currentProject, setCurrentProject] = useState({
+    title: '',
     label: '',
     src: '',
     open: false

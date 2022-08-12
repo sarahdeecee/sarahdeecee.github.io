@@ -14,7 +14,7 @@ import { useState } from 'react';
 const AutoPlaySwipeableViews = SwipeableViews;
 
 function SwipeableTextMobileStepper(props) {
-  const {images, setCurrentProject} = props;
+  const {images, setCurrentProject, projectTitle} = props;
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
   const maxSteps = images.length;
@@ -31,9 +31,9 @@ function SwipeableTextMobileStepper(props) {
     setActiveStep(step);
   };
 
-  const handleProjectDialog = (label, src) => {
+  const handleProjectDialog = (title, label, src) => {
     console.log(label, src);
-    setCurrentProject({label, src, open: true});
+    setCurrentProject({title: projectTitle, label, src, open: true});
   }
 
   return (
@@ -58,7 +58,7 @@ function SwipeableTextMobileStepper(props) {
                 }}
                 src={step.src}
                 alt={step.label}
-                onClick={() => handleProjectDialog(step.label, step.src)}
+                onClick={() => handleProjectDialog(projectTitle, step.label, step.src)}
               />
             ) : null}
           </Box>

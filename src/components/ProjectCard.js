@@ -10,7 +10,7 @@ function ProjectCard(props) {
         <Typography variant="h5" component="div">{title}</Typography>
       </CardContent>
       <Box sx={{height: '100%', display: 'flex', flexDirection: 'column', alignContent: 'space-between'}}>
-        <SwipeableTextMobileStepper images={images} setCurrentProject={setCurrentProject} />
+        <SwipeableTextMobileStepper images={images} projectTitle={title} setCurrentProject={setCurrentProject} />
         <CardContent>
           <Typography variant="body2" component="p">{description}</Typography>
         </CardContent>
