@@ -28,6 +28,11 @@ function App() {
 
   const [particles, setParticles] = useState(true);
   const [page, setPage] = useState('landing');
+  const [currentProject, setCurrentProject] = useState({
+    label: '',
+    src: '',
+    open: false
+  });
 
   return (
     <ColorContext.Provider value={colorMode}>
@@ -37,7 +42,7 @@ function App() {
         <Box sx={{ display: 'flex', width: '100%', maxWidth: '1500px', mx: 2}}>
           <MenuContainer particles={particles} setParticles={setParticles} />
           <Box component="main" sx={{ flexGrow: 1 }}>
-            <Content page={page} />
+            <Content page={page} currentProject={currentProject} setCurrentProject={setCurrentProject} />
           </Box>
         </Box>
       </ThemeProvider>

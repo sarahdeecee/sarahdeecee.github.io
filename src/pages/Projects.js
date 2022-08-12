@@ -3,11 +3,16 @@ import { Box } from "@mui/system";
 import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import SwipeableTextMobileStepper from "../components/ProjectCarousel";
+import ProjectImageDialog from "../components/ProjectImageDialog";
 import projects from "../data/projectsData"
 
 function Projects(props) {
   const {currentProject, setCurrentProject} = props;
 
+  const handleProjectDialogClose = e => {
+    setCurrentProject({...currentProject, open: false})
+  }
+  
   const loadingProject = <Grid item xs={12} sm={6} lg={4}>
     <Card variant="outlined" sx={{ height: "100%"}} className="project-card">
       <Skeleton variant="rectangular" height={300} />
@@ -20,7 +25,11 @@ function Projects(props) {
   </Grid>;
   const loadingProjects = <>{loadingProject}{loadingProject}{loadingProject}</>;
   const reverseProjects = projects.slice(0).reverse(); //change order from newest to oldest
-  const parsedProjects = projects? reverseProjects.map(project => <Grid item xs={12} sm={6} lg={4} key={`grid-${project.title}`}><ProjectCard key={project.title} {...project} /></Grid>) : loadingProjects;
+  const parsedProjects = projects ? reverseProjects.map(project => 
+    <Grid item xs={12} sm={6} lg={4} key={`grid-${project.title}`}>
+      <ProjectCard key={project.title} {...project} setCurrentProject={setCurrentProject} />
+    </Grid>) 
+    : loadingProjects;
   
   return (
     <section className="page" id="projects">
@@ -29,6 +38,9 @@ function Projects(props) {
         <Grid container spacing={3}>
           {parsedProjects}
         </Grid>
+      <Dialog maxWidth="lg" scroll="paper" open={currentProject.open} onClose={handleProjectDialogClose}>
+        <ProjectImageDialog image={currentProject.src} title={currentProject.label} />
+      </Dialog>
       </article>
     </section>
   );
