@@ -66,7 +66,7 @@ const projects = [
   },
   {
     title: "Coffee Brewing",
-    description: "A single-page app that assists the user with various coffee brewing methods.",
+    description: "A single-page app that assists the user with various coffee brewing methods. Built with a focus on responsive web design and accesibility.",
     deployLink: "https://coffee-brewing.onrender.com",
     githubLink: "https://github.com/sarahdeecee/coffee-brewing",
     images: [
@@ -90,7 +90,7 @@ const projects = [
   },
   {
     title: "Anya Soundboard",
-    description: "A soundboard for the character Anya Forger from Spy x Family.",
+    description: "A soundboard for the character Anya Forger from Spy x Family. Features a responsive design for desktop or mobile, Japanese language option, and light/dark modes.",
     deployLink: "https://anya-soundboard.onrender.com",
     githubLink: "https://github.com/sarahdeecee/anya-soundboard",
     images: [

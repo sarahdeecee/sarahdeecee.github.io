@@ -80,6 +80,11 @@ const stack = [
     title: "Chai",
     src: "./logos/chaijs.svg",
     type: "testing"
+  },
+  {
+    title: "TypeScript",
+    src:".logos/typescript-2020.svg",
+    type: "other"
   }
 ];
 
