@@ -70,6 +70,16 @@ const stack = [
     title: "Storybook",
     src: "./logos/storybook-icon.svg",
     type: "testing"
+  },
+  {
+    title: "Mocha",
+    src: "./logos/mochajs.svg",
+    type: "testing"
+  },
+  {
+    title: "Chai",
+    src: "./logos/chaijs.svg",
+    type: "testing"
   }
 ];
 

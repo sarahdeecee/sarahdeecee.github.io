@@ -67,7 +67,7 @@ const projects = [
   {
     title: "Coffee Brewing",
     description: "A single-page app that assists the user with various coffee brewing methods.",
-    deployLink: "https://coffeebrewing.herokuapp.com/",
+    deployLink: "https://coffee-brewing.onrender.com",
     githubLink: "https://github.com/sarahdeecee/coffee-brewing",
     images: [
       { label: "Desktop version",
@@ -91,7 +91,7 @@ const projects = [
   {
     title: "Anya Soundboard",
     description: "A soundboard for the character Anya Forger from Spy x Family.",
-    deployLink: "https://anya-soundboard.herokuapp.com/",
+    deployLink: "https://anya-soundboard.onrender.com",
     githubLink: "https://github.com/sarahdeecee/anya-soundboard",
     images: [
       {
@@ -115,7 +115,7 @@ const projects = [
   {
     title: "Junior",
     description: "Junior is a full-stack web application that allows new developers to easily create a portfolio and apply for jobs or freelance work.",
-    deployLink: "https://junior-active.herokuapp.com/",
+    deployLink: "",
     githubLink: "https://github.com/sarahdeecee/junior",
     images: [
       { label: "Developer profile",
