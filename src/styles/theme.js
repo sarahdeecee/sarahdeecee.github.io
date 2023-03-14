@@ -1,3 +1,5 @@
+import sx from "@mui/system/sx";
+
 export const lightTheme = {
   palette: {
     type: 'light',
@@ -51,9 +53,16 @@ export const darkTheme = {
     },
     background: {
       default: '#0a0d12',
-      paper: '#0a161f',
+      paper: '#122431',
     },
     components: {
+      MuiAppBar: {
+        styleOverrides: {
+          colorPrimary: sx({
+            backgroundColor: '#FF0000',
+          }),
+        },
+      },
       MuiDrawer: {
         styleOverrides: {
           secondary: {
