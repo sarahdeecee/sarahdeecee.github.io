@@ -1,4 +1,3 @@
-
 const stack = [
   { title: "HTML-5",
     src: "./logos/html-5.svg",
@@ -83,7 +82,7 @@ const stack = [
   },
   {
     title: "TypeScript",
-    src:".logos/typescript-2020.svg",
+    src:"./logos/typescript-2020.svg",
     type: "other"
   }
 ];
