@@ -83,7 +83,7 @@ const stack = [
   {
     title: "TypeScript",
     src:"./logos/typescript-2020.svg",
-    type: "other"
+    type: "language"
   }
 ];
 

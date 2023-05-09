@@ -152,6 +152,35 @@ const projects = [
     ],
     stack: ['Javascript', 'HTML', 'CSS', 'React', 'Material UI', 'SASS', 'PostgreSQL'],
   },
+  {
+    title: "Budget Shopper",
+    description: "Budget Shopper helps you create grocery lists and stay under budget.",
+    deployLink: "https://budget-shopper.onrender.com/",
+    githubLink: "https://github.com/sarahdeecee/grocery-budgeting",
+    images: [
+      {
+        label: "Grocery list",
+        src: "./project-screenshots/budgeting/screenshot-list.png",
+      },
+      {
+        label: "Add single item",
+        src: "./project-screenshots/budgeting/screenshot-addsingle.png",
+      },
+      {
+        label: "Add multiple items",
+        src: "./project-screenshots/budgeting/screenshot-addmulti.png",
+      },
+      {
+        label: "Edit items",
+        src: "./project-screenshots/budgeting/screenshot-edit.png",
+      },
+      {
+        label: "Delete items",
+        src: "./project-screenshots/budgeting/screenshot-deleteall.png",
+      },
+    ],
+    stack: ['Javascript', 'TypeScript', 'HTML', 'CSS', 'React', 'Material UI'],
+  },
 ];
 
 export default projects;
