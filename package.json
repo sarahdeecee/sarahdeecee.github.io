@@ -22,6 +22,7 @@
     "dotenv": "^16.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-pdf": "^7.1.2",
     "react-scripts": "5.0.1",
     "react-swipeable-views": "file:react-swipeable-views/packages/react-swipeable-views",
     "react-swipeable-views-utils": "file:react-swipeable-views/packages/react-swipeable-views-utils",
