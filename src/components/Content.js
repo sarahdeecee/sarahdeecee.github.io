@@ -6,8 +6,19 @@ import Projects from '../pages/Projects';
 import Skills from '../pages/Skills';
 import ContentFooter from './Footer';
 
+import { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  MotionValue
+} from "framer-motion";
+
 function Content(props) {
   const {currentProject, setCurrentProject} = props;
+
+  const { scrollYProgress } = useScroll();
 
   // const useScrollSpy = ({ items = [], target = window } = {}) => {
   //   useScrollSpy
@@ -42,8 +53,11 @@ function Content(props) {
   
   const parsedTabs = tabs.map(tab => tab.component);
 
-  return (
-    <>
+  return (<>
+      <motion.div
+        className="progress-bar"
+        style={{ scaleX: scrollYProgress }}
+      />
       {parsedTabs}
       <ContentFooter />
     </>
