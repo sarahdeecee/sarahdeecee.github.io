@@ -7,6 +7,7 @@ import ThemeToggle from './ThemeToggle';
 import { useTheme } from '@emotion/react';
 import Links from './Links';
 import LinksMobile from './LinksMobile';
+import LinksBar from './LinksBar';
 
 const drawerWidth = 240;
 
@@ -131,7 +132,7 @@ function MenuContainer(props) {
 
   return (<>
       <CssBaseline />
-      <Links linkTextStyle={linkTextStyle} openLinks={openLinks} setOpenLinks={setOpenLinks} themeToggle={themeToggle} particleToggle={particleToggle} linksList={linksList} drawerWidth={drawerWidth} DrawerHeader={DrawerHeader} />
+      <LinksBar linkTextStyle={linkTextStyle} openLinks={openLinks} setOpenLinks={setOpenLinks} themeToggle={themeToggle} particleToggle={particleToggle} linksList={linksList} drawerWidth={drawerWidth} DrawerHeader={DrawerHeader} />
       <LinksMobile linkTextStyle={linkTextStyle} openLinks={openLinks} setOpenLinks={setOpenLinks} themeToggle={themeToggle} particleToggle={particleToggle} linksList={linksList} drawerWidth={drawerWidth} DrawerHeader={DrawerHeader} />
     </>
   );
