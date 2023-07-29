@@ -1,13 +1,10 @@
-import { LinkedIn, GitHub, Instagram, Email,  ToggleOff, ToggleOn } from '@mui/icons-material';
+import { ToggleOff, ToggleOn } from '@mui/icons-material';
 import { ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, Slide, styled, CssBaseline, useScrollTrigger } from '@mui/material';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCodepen, faFlickr, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
-import { useTheme } from '@emotion/react';
-import Links from './Links';
 import LinksMobile from './LinksMobile';
 import LinksBar from './LinksBar';
+import { linksArr } from '../data/Links';
 
 const drawerWidth = 240;
 
@@ -20,43 +17,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 
-const links = [
-  {
-    link: "https://www.linkedin.com/in/sarah-delacruz",
-    icon: <LinkedIn color="primary" />,
-    text: "LinkedIn"
-  },
-  {
-    link: "https://github.com/sarahdeecee",
-    icon: <GitHub color="primary" />,
-    text: "GitHub"
-  },
-  {
-    link: "https://www.freecodecamp.org/sdc",
-    icon: <FontAwesomeIcon icon={faFreeCodeCamp} size="xl" className="fa-list-icon" />,
-    text: "freeCodeCamp"
-  },
-  {
-    link: "https://codepen.io/s_dc",
-    icon: <FontAwesomeIcon icon={faCodepen} size="xl" className="fa-list-icon" />,
-    text: "CodePen"
-  },
-  {
-    link: "https://www.instagram.com/inakasarah",
-    icon: <Instagram color="primary" />,
-    text: "Instagram"
-  },
-  {
-    link: "https://www.flickr.com/photos/186883449@N08/",
-    icon: <FontAwesomeIcon icon={faFlickr} size="xl" className="fa-list-icon" />,
-    text: "Flickr"
-  },
-  {
-    link: "mailto:sarah.delacruz@gmail.com",
-    icon: <Email color="primary" />,
-    text: "Email"
-  }
-];
+
 
 const linkTextStyle = {fontSize: '16px', fontWeight: 500};
 
@@ -93,7 +54,7 @@ function MenuContainer(props) {
     </ListItemButton>
   </ListItem>;
 
-  const linksList = links.map(link => (
+  const linksList = linksArr.map(link => (
     <ListItem key={`listitem-${link.text}`} disablePadding sx={{ display: 'block' }}>
       <ListItemButton key={`listbutton-${link.text}`}
         sx={{

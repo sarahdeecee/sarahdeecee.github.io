@@ -5,6 +5,7 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Projects from '../pages/Projects';
 import Skills from '../pages/Skills';
+import { useSpring } from "framer-motion"
 
 function Navigation(props) {
   const {page, setPage} = props;
