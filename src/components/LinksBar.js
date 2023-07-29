@@ -1,13 +1,14 @@
 import { List } from "@mui/material";
+import { ParticleToggle } from "./ParticleToggle";
 
 function LinksBar(props) {
-  const {themeToggle, particleToggle, linksList} = props;
+  const {themeToggle, linksList, openLinks, particles, setParticles} = props;
 
   return (
     <List>
       {linksList}
       {themeToggle}
-      {particleToggle}
+      <ParticleToggle openLinks={openLinks} particles={particles} setParticles={setParticles} linkTextStyle/>
     </List>
   );
 }

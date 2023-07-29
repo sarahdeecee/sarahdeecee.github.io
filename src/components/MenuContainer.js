@@ -26,33 +26,7 @@ function MenuContainer(props) {
   const {particles, setParticles} = props;
   const [openLinks, setOpenLinks] = useState(false);
 
-  const handleParticles = () => {
-    (particles === true) ? setParticles(false) : setParticles(true);
-  }
-
   const themeToggle = <ThemeToggle key='switch-button' openLinks={openLinks} linkTextStyle={linkTextStyle} />;
-
-  const particleToggle = <ListItem key={`listitem-particle`} disablePadding sx={{ display: 'block' }}>
-    <ListItemButton key={`listbutton-particle`}
-      sx={{
-        minHeight: 48,
-        justifyContent: openLinks ? 'initial' : 'center',
-        px: 2.5,
-      }}
-      onClick={handleParticles}
-    >
-      <ListItemIcon key={`listicon-particle`}
-        sx={{
-          minWidth: 0,
-          mr: openLinks ? 3 : 'auto',
-          justifyContent: 'center',
-        }}
-      >
-        {particles ? <ToggleOn color="primary" /> : <ToggleOff color="primary" />}
-      </ListItemIcon>
-      <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle} >{particles ? "Effects Off" : "Effects On"}</Typography>} sx={{ opacity: openLinks ? 1 : 0 }} />
-    </ListItemButton>
-  </ListItem>;
 
   const linksList = linksArr.map(link => (
     <ListItem key={`listitem-${link.text}`} disablePadding sx={{ display: 'block' }}>
@@ -93,8 +67,8 @@ function MenuContainer(props) {
 
   return (<>
       <CssBaseline />
-      <LinksBar linkTextStyle={linkTextStyle} openLinks={openLinks} setOpenLinks={setOpenLinks} themeToggle={themeToggle} particleToggle={particleToggle} linksList={linksList} drawerWidth={drawerWidth} DrawerHeader={DrawerHeader} />
-      <LinksMobile linkTextStyle={linkTextStyle} openLinks={openLinks} setOpenLinks={setOpenLinks} themeToggle={themeToggle} particleToggle={particleToggle} linksList={linksList} drawerWidth={drawerWidth} DrawerHeader={DrawerHeader} />
+      <LinksBar linkTextStyle={linkTextStyle} openLinks={openLinks} setOpenLinks={setOpenLinks} themeToggle={themeToggle} linksList={linksList} drawerWidth={drawerWidth} DrawerHeader={DrawerHeader} particles={particles} setParticles={setParticles} />
+      <LinksMobile linkTextStyle={linkTextStyle} openLinks={openLinks} setOpenLinks={setOpenLinks} themeToggle={themeToggle} linksList={linksList} drawerWidth={drawerWidth} DrawerHeader={DrawerHeader} />
     </>
   );
 }
