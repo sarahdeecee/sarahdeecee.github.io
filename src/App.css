@@ -33,7 +33,7 @@
 
 #landing {
   display: flex;
-  min-height: 90vh;
+  min-height: 100vh;
   /* margin-top: 52px; */
   margin-bottom: 0;
   align-items: center;
@@ -169,8 +169,8 @@ input {
   top: 0;
   left: 0;
   right: 0;
-  height: 100px;
-  z-index: 101;
+  height: 10px;
+  z-index: 100;
   background: #D2608C;
   transform-origin: 0%;
 }
