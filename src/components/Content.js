@@ -16,7 +16,7 @@ import {
 } from "framer-motion";
 
 function Content(props) {
-  const {currentProject, setCurrentProject} = props;
+  const {currentProject, setCurrentProject, particles, setParticles} = props;
 
   const { scrollYProgress } = useScroll();
 
@@ -27,7 +27,7 @@ function Content(props) {
   const tabs = [
     {
       text: "landing",
-      component: <Landing key="landing" />
+      component: <Landing key="landing" particles={particles} setParticles={setParticles} />
     },
     {
       text: "about",

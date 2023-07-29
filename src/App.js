@@ -41,9 +41,9 @@ function App() {
         <CssBaseline enableColorScheme />
         {particles && <Particles className="particles" />}
         <Box sx={{ display: 'flex', width: '100%', maxWidth: '1500px', mx: 2}}>
-          <MenuContainer particles={particles} setParticles={setParticles} />
+          {/* <MenuContainer particles={particles} setParticles={setParticles} /> */}
           <Box component="main" sx={{ flexGrow: 1 }}>
-            <Content page={page} currentProject={currentProject} setCurrentProject={setCurrentProject} />
+            <Content page={page} currentProject={currentProject} setCurrentProject={setCurrentProject} particles={particles} setParticles={setParticles} />
           </Box>
         </Box>
       </ThemeProvider>

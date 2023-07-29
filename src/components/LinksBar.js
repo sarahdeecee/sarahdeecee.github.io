@@ -15,7 +15,7 @@ function LinksBar(props) {
       <ListItemButton key={`listbutton-${link.text}`}
         sx={{
           minHeight: 48,
-          justifyContent: openLinks ? 'initial' : 'center',
+          justifyContent: 'center',
           px: 2.5,
           backgroundColor: "inherit"
         }}
@@ -31,16 +31,16 @@ function LinksBar(props) {
         >
           {link.icon}
         </ListItemIcon>
-        <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{link.text}</Typography>} sx={{ opacity: openLinks ? 1 : 0 }} />
+        {/* <ListItemText disableTypography primary={<Typography type="body1" sx={linkTextStyle}>{link.text}</Typography>} sx={{ opacity: openLinks ? 1 : 0 }} /> */}
       </ListItemButton>
     </ListItem>
   ));
 
   return (
-    <List>
+    <List id="links-bar">
       {linksList}
-      {themeToggle}
-      <ParticleToggle openLinks={openLinks} particles={particles} setParticles={setParticles} linkTextStyle/>
+      {/* {themeToggle} */}
+      {/* <ParticleToggle openLinks={openLinks} particles={particles} setParticles={setParticles} linkTextStyle/> */}
     </List>
   );
 }
