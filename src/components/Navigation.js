@@ -8,7 +8,7 @@ import Skills from '../pages/Skills';
 import { useSpring } from "framer-motion"
 
 function Navigation(props) {
-  const {page, setPage} = props;
+  // const {page, setPage} = props;
   
   const tabs = [
     {
@@ -37,9 +37,9 @@ function Navigation(props) {
   const active = useScrollSpy({ tabs });
   // const activeIndex = active ? _findIndex(tabs, ["text", active]) : false;
 
-  const handlePage = (e, newValue) => {
-    setPage(newValue);
-  }
+  // const handlePage = (e, newValue) => {
+  //   setPage(newValue);
+  // }
 
   const parsedTabs = tabs.map(({ label, text }, index) => (
     <Tab
