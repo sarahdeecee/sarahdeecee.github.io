@@ -54,17 +54,6 @@ function MenuContainer(props) {
     </ListItem>
   ));
 
-  // function HideOnScroll(props) {
-  //   const { children } = props;
-  //   const trigger = useScrollTrigger();
-  
-  //   return (
-  //     <Slide appear={false} direction="down" in={!trigger}>
-  //       {children}
-  //     </Slide>
-  //   );
-  // }
-
   return (<>
       <CssBaseline />
       <LinksBar linkTextStyle={linkTextStyle} openLinks={openLinks} setOpenLinks={setOpenLinks} themeToggle={themeToggle} linksList={linksList} drawerWidth={drawerWidth} DrawerHeader={DrawerHeader} particles={particles} setParticles={setParticles} />
