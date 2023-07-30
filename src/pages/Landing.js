@@ -17,15 +17,29 @@ function Landing(props) {
             <Typography variant="h1" component="p" id="landing-name" sx={{fontWeight: "400"}}>Sarah Dela Cruz.</Typography>
             <Typography variant="h4" component="p">I'm a <strong>web developer</strong> from Ontario, Canada.</Typography>
           </Box>
-          <Grid item xs={12} sm={4} md={3} sx={{justifyContent: 'center'}} id="landing-logo-container">
-            <img
-              src={SakuraLogo}
-              alt="Sakura S Logo"
-              loading="lazy"
-              id="landing-logo"
-              width='100%'
-              max-width='500'
-            />
+          <Grid item xs={12} sm={4} md={3} id="landing-logo-container">
+            <Box sx={{position: 'absolute', right: '4em', top: '37vh', width: '25vh', maxWidth: '500px'}}>
+              <img
+                // src={SakuraLogo}
+                src='./logo-flower.png'
+                alt="Sakura Logo"
+                loading="lazy"
+                id="landing-logo"
+                width='100%'
+                max-width='500'
+                zIndex='0'
+              />
+            </Box>
+            <Box sx={{position: 'absolute', right: '4em', top: '36.5vh', width: '25vh', maxWidth: '500px'}}>
+              <img
+                src='./logo-s.png'
+                alt="S Logo"
+                loading="lazy"
+                width='100%'
+                max-width='500'
+                zIndex='2'
+              />
+            </Box>
           </Grid>
         </Grid>
       </Grid>
