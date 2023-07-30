@@ -8,7 +8,7 @@ function CertificationCard(props) {
   };
 
   return (
-    <Card variant="outlined" sx={{height: '100%'}}>
+    <Card variant="outlined" sx={{height: '100%', border: 0}}>
       <CardContent sx={{height: '100%'}}>
         <Box sx={{height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
           <Link href={link ? link : null} underline="none" color="inherit" target="_blank">

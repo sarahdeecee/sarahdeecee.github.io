@@ -8,7 +8,7 @@ function ProjectCard(props) {
   const stackChips = stack.map(chip => <StackChip stack={chip} />);
   
   return (
-    <Card variant="outlined" sx={{ height: "100%"}} className="project-card">
+    <Card variant="outlined" sx={{ height: "100%", border: 0}} className="project-card">
       <CardContent>
         <Typography variant="h5" component="div">{title}</Typography>
       </CardContent>
