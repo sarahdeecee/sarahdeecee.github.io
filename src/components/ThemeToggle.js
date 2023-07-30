@@ -11,18 +11,10 @@ function ThemeToggle(props) {
     <ListItem disablePadding sx={{ display: 'block' }}>
       <ListItemButton
         sx={{
-          minHeight: 48,
-          justifyContent: openLinks ? 'initial' : 'center',
-          px: 2.5,
         }}
         onClick={colorMode.toggleColorMode}
       >
         <ListItemIcon
-          sx={{
-            minWidth: 0,
-            mr: openLinks ? 3 : 'auto',
-            justifyContent: 'center',
-          }}
         >
           {theme.palette.type === 'light' ? <DarkMode color="primary" /> : <LightMode color="primary" />}
         </ListItemIcon>

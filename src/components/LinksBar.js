@@ -37,7 +37,7 @@ function LinksBar(props) {
   ));
 
   return (
-    <List id="links-bar">
+    <List id="links-bar" className="button-bar">
       {linksList}
       {/* {themeToggle} */}
       {/* <ParticleToggle openLinks={openLinks} particles={particles} setParticles={setParticles} linkTextStyle/> */}
