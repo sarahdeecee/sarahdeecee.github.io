@@ -67,7 +67,6 @@ function Content(props) {
       />
       {parsedTabs}
       {/* <motion.div className="progress" style={{ scaleX }} /> */}
-      <ContentFooter />
     </>
   );
 }

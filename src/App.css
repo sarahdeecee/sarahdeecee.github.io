@@ -111,6 +111,10 @@ a {
   text-align: center;
   font-size: large;
   font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 #logo-container {
@@ -129,8 +133,17 @@ a {
   max-height: 5rem;
 }
 
-.MuiCardMedia-root.MuiCardMedia-img {
-  object-fit: scale-down;
+.MuiCardMedia-root {
+  border: 0;
+  & .MuiCardMedia-img {
+    object-fit: scale-down;
+  }
+}
+
+.MuiPaper-root {
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 5px 5px 0px #D2608C;
 }
 
 input {
@@ -139,9 +152,9 @@ input {
 
 #profile-pic {
   margin: 0 2em;
-  border-radius: 100%;
   object-fit: contain;
   width: 25vw;
+  max-width: 375px;
   border-radius: 4px;
   box-shadow: 5px 5px 0px #D2608C;
   float: right;
