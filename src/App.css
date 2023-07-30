@@ -1,3 +1,7 @@
+html {
+  scroll-snap-type: y mandatory;
+}
+
 .App {
   display: flex;
   flex-direction: row;
@@ -35,21 +39,13 @@
   height: 100%;
   margin: 0;
   align-items: center;
-  padding: 0 1.5em;
+  /* padding: 0 1.5em; */
 }
 
 #landing {
-  display: flex;
-  min-height: 100vh;
   /* margin-top: 52px; */
-  margin-bottom: 0;
-  align-items: center;
   /* background: rgb(255,255,255);
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(227,173,202,1) 100%); */
-}
-
-#bio {
-  width: 100%;
 }
 
 #links-drawer-mobile, #app-mobile {
@@ -62,11 +58,14 @@
 }
 
 section.page {
-  padding: 5em 0;
-  min-height: calc(100vh);
+  padding: 2em 0;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   width: 100%;
+  scroll-snap-align: start;
+  position: relative;
+  /* perspective: 500px; */
 }
 
 .MuiTypography-root.header {
@@ -140,10 +139,6 @@ a {
 
 input {
   border-width: 3px;
-}
-
-.page {
-  scroll-margin-top: 5em;
 }
 
 /* Media queries */
