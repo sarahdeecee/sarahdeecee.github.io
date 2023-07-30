@@ -98,10 +98,6 @@ section.page {
   justify-content: space-between;
 }
 
-/* article {
-  display: block;
-} */
-
 a {
   text-decoration: none;
 }
@@ -141,6 +137,16 @@ input {
   border-width: 3px;
 }
 
+#profile-pic {
+  margin: 0 2em;
+  border-radius: 100%;
+  object-fit: contain;
+  width: 25vw;
+  border-radius: 4px;
+  box-shadow: 5px 5px 0px #D2608C;
+  float: right;
+}
+
 /* Media queries */
 @media only screen and (max-width: 600px) {
   #landing-container, #bio {
@@ -173,6 +179,10 @@ input {
     padding: 1em;
     /* max-width: calc(100vw - 2em); */
     /* max-width: 100vw; */
+  }
+  #profile-pic {
+    margin: 0 2em 2em 2em;
+    width: calc(100vw - 6em);
   }
 }
 
