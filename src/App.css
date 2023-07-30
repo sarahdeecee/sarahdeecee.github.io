@@ -6,8 +6,12 @@
   height: 100%;
   width: 100%;
   z-index: 1;
-  max-width: 100vw;
+  /* max-width: 100vw; */
 }
+
+/* #root {
+  width: 667px;
+} */
 
 #menu {
   display: flex;
@@ -22,6 +26,9 @@
 
 #links-bar {
   float: left;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 5px 5px 0px #D2608C;
 }
 
 #content {
@@ -37,6 +44,8 @@
   /* margin-top: 52px; */
   margin-bottom: 0;
   align-items: center;
+  /* background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(227,173,202,1) 100%); */
 }
 
 #bio {
@@ -52,8 +61,12 @@
   display: block;
 }
 
-.page {
-  margin: 5em 0;
+section.page {
+  padding: 5em 0;
+  min-height: calc(100vh);
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .MuiTypography-root.header {
@@ -86,9 +99,9 @@
   justify-content: space-between;
 }
 
-article {
+/* article {
   display: block;
-}
+} */
 
 a {
   text-decoration: none;
@@ -137,7 +150,7 @@ input {
 @media only screen and (max-width: 600px) {
   #landing-container, #bio {
     flex-direction: column;
-    height: 100%;
+    min-height: 100vh;
     justify-content: space-around;
   }
   #landing-name {
@@ -160,6 +173,11 @@ input {
   #links-drawer, #appbar {
     visibility: hidden;
     display: none;
+  }
+  .page {
+    padding: 1em;
+    /* max-width: calc(100vw - 2em); */
+    /* max-width: 100vw; */
   }
 }
 

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { CssBaseline, ThemeProvider, createTheme, Box, Fab } from '@mui/material';
+import { CssBaseline, ThemeProvider, createTheme, Box, Fab, Stack } from '@mui/material';
 import './App.css';
 import Content from './components/Content';
 import Particles from './components/Particles';
@@ -40,12 +40,12 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
         {particles && <Particles className="particles" />}
-        <Box sx={{ display: 'flex', width: '100%', maxWidth: '1500px', mx: 2}}>
+        {/* <Box sx={{ display: 'flex', width: '100%', maxWidth: '1500px', px: 2}}> */}
           {/* <MenuContainer particles={particles} setParticles={setParticles} /> */}
-          <Box component="main" sx={{ flexGrow: 1 }}>
+          <Stack component="main" sx={{ display: 'flex', width: '100vw', maxWidth: '1500px', px: 2, flexGrow: 1 }}>
             <Content page={page} currentProject={currentProject} setCurrentProject={setCurrentProject} particles={particles} setParticles={setParticles} />
-          </Box>
-        </Box>
+          </Stack>
+        {/* </Box> */}
       </ThemeProvider>
     </ColorContext.Provider>
   );
