@@ -13,9 +13,6 @@ function MenuContainer(props) {
   const handleDrawerOpen = () => {
     setOpenLinks(true);
   };
-  // const handleDrawerClose = () => {
-  //   setOpenLinks(false);
-  // };
 
   return (<>
       <CssBaseline />
