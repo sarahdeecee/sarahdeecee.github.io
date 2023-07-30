@@ -26,7 +26,7 @@ function Projects(props) {
   const loadingProjects = <>{loadingProject}{loadingProject}{loadingProject}</>;
   const reverseProjects = projects.slice(0).reverse(); //change order from newest to oldest
   const parsedProjects = projects ? reverseProjects.map(project => 
-    <Grid item xs={12} sm={6} lg={4} key={`grid-${project.title}`}>
+    <Grid item xs={12} md={6} lg={4} key={`grid-${project.title}`}>
       <ProjectCard key={project.title} {...project} setCurrentProject={setCurrentProject} />
     </Grid>) 
     : loadingProjects;
@@ -35,7 +35,7 @@ function Projects(props) {
     <section className="page" id="projects">
       <article>
         <Typography variant="h2" className="header">Projects</Typography>
-        <Grid container spacing={3}>
+        <Grid container spacing={{xs: 3}}>
           {parsedProjects}
         </Grid>
       <Dialog maxWidth="lg" scroll="paper" open={currentProject.open} onClose={handleProjectDialogClose}>
