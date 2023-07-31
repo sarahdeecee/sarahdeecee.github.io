@@ -4,11 +4,11 @@ import { linksArr } from "../data/Links";
 import ThemeToggle from "./ThemeToggle";
 
 function LinksBar(props) {
-  const {openLinks, particles, setParticles} = props;
+  const {particles, setParticles} = props;
 
   const linkTextStyle = {fontSize: '16px', fontWeight: 500};
 
-  const themeToggle = <ThemeToggle key='switch-button' openLinks={openLinks} linkTextStyle={linkTextStyle} />;
+  const themeToggle = <ThemeToggle key='switch-button' linkTextStyle={linkTextStyle} />;
 
   const linksList = linksArr.map(link => (
     <ListItem key={`listitem-${link.text}`} disablePadding sx={{ display: 'block' }}>
@@ -25,7 +25,7 @@ function LinksBar(props) {
         <ListItemIcon key={`listicon-${link.text}`}
           sx={{
             minWidth: 0,
-            mr: openLinks ? 3 : 'auto',
+            mr: 'auto',
             justifyContent: 'center',
           }}
         >

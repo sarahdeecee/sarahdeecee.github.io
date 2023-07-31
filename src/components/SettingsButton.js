@@ -4,7 +4,22 @@ import ThemeToggle from "./ThemeToggle";
 import { ParticleToggle } from "./ParticleToggle";
 import { useState } from "react";
 import SettingsMenu from "./SettingsMenu";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+
+const sideVariants = {
+  closed: {
+    transition: {
+      staggerChildren: 0.2,
+      staggerDirection: -1
+    }
+  },
+  open: {
+    transition: {
+      staggerChildren: 0.2,
+      staggerDirection: 1
+    }
+  }
+};
 
 export default function SettingsButton(props) {
   const {particles, setParticles} = props;
@@ -16,12 +31,7 @@ export default function SettingsButton(props) {
   
   return (
     <List id="settings" className="button-bar" sx={{zIndex: 2}}>
-      <motion.nav
-        initial={false}
-        animate={menuOpen ? "open" : "closed"}
-        className="menu"
-      >
-        <motion.button
+      <motion.button
           whileTap={{ scale: 0.97 }}
           onClick={handleSettingsMenu}
         >
@@ -39,8 +49,38 @@ export default function SettingsButton(props) {
             </svg>
           </motion.div>
         </motion.button>
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.aside
+            initial={{ width: 0 }}
+            animate={{
+              width: 200
+            }}
+            exit={{
+              width: 0,
+              transition: { delay: 0.7, duration: 0.3 }
+            }}
+            style={{position: 'relative', left: 0, zIndex: 2}}
+          >
+            <motion.div
+              className="container"
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={sideVariants}
+            >
+      <motion.nav
+        initial={false}
+        animate={menuOpen ? "open" : "closed"}
+        className="menu"
+      >
+        
         <SettingsMenu open={menuOpen} particles={particles} setParticles={setParticles} />
       </motion.nav>
+      </motion.div>
+          </motion.aside>
+        )}
+      </AnimatePresence>
     </List>
   );
 };
