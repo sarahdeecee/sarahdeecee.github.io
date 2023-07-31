@@ -9,7 +9,7 @@ function Landing(props) {
 
   return (
     <section id="landing" className="page">
-      <MenuContainer particles={particles} setParticles={setParticles} />
+      <MenuContainer />
       <Grid container id="landing-container" component="article" sx={{justifyContent: "space-around", alignItems: "center", width: '100%'}}>
         <Box className="logo-spin" sx={{ width: '25%', maxWidth: '500px', position: 'absolute', translate: '-4em 0em', right: 0, zIndex: 1 }}>
           <img

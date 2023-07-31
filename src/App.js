@@ -42,7 +42,7 @@ function App() {
         {particles && <Particles className="particles" />}
         {/* <Box sx={{ display: 'flex', width: '100%', maxWidth: '1500px', px: 2}}> */}
           {/* <MenuContainer particles={particles} setParticles={setParticles} /> */}
-          <Stack component="main" sx={{ display: 'flex', width: '100vw', maxWidth: '1500px', px: 2, flexGrow: 1 }}>
+          <Stack component="main" className="App light dark" sx={{ display: 'flex', width: '100vw', maxWidth: '1500px', px: 2, flexGrow: 1 }}>
             <Content page={page} currentProject={currentProject} setCurrentProject={setCurrentProject} particles={particles} setParticles={setParticles} />
           </Stack>
         {/* </Box> */}

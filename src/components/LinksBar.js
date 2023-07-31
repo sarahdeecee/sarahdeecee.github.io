@@ -1,7 +1,7 @@
-import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
+import { List, ListItem, ListItemButton, ListItemIcon } from "@mui/material";
 import { linksArr } from "../data/Links";
 
-function LinksBar(props) {
+function LinksBar() {
   const linksList = linksArr.map(link => (
     <ListItem key={`listitem-${link.text}`} disablePadding sx={{ display: 'block' }}>
       <ListItemButton key={`listbutton-${link.text}`}
