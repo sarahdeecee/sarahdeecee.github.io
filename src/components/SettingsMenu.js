@@ -19,37 +19,37 @@ export default function SettingsMenu(props) {
   const {particles, setParticles, open} = props;
 
   return (
-    <motion.ul
-      variants={{
-        open: {
-          clipPath: "inset(0% 0% 0% 0% round 10px)",
-          transition: {
-            type: "spring",
-            bounce: 0,
-            duration: 0.3,
-            delayChildren: 0.3,
-            staggerChildren: 0.05
+    <List>
+      <motion.div
+        variants={{
+          open: {
+            // clipPath: "inset(0% 0% 0% 0% round 10px)",
+            transition: {
+              type: "spring",
+              bounce: 0,
+              duration: 0.3,
+              delayChildren: 0.3,
+              staggerChildren: 0.05
+            }
+          },
+          closed: {
+            // clipPath: "inset(10% 50% 90% 50% round 10px)",
+            transition: {
+              type: "spring",
+              bounce: 0,
+              duration: 0.3
+            }
           }
-        },
-        closed: {
-          clipPath: "inset(10% 50% 90% 50% round 10px)",
-          transition: {
-            type: "spring",
-            bounce: 0,
-            duration: 0.3
-          }
-        }
-      }}
-      style={{ pointerEvents: open ? "auto" : "none" }}
-    >
-      <List>
+        }}
+        style={{ pointerEvents: open ? "auto" : "none" }}
+      >
         <motion.li variants={itemVariants}>
           <ThemeToggle style={style} />
         </motion.li>
         <motion.li variants={itemVariants}>
           <ParticleToggle style={style} particles={particles} setParticles={setParticles} />
         </motion.li>
-      </List>
-    </motion.ul>
+      </motion.div>
+    </List>
   );
 };
