@@ -6,15 +6,6 @@ import { useState } from "react";
 import SettingsMenu from "./SettingsMenu";
 import { motion } from "framer-motion";
 
-const itemVariants = {
-  open: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 300, damping: 24 }
-  },
-  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
-};
-
 export default function SettingsButton(props) {
   const {particles, setParticles} = props;
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,7 +34,7 @@ export default function SettingsButton(props) {
       >
         <motion.button
           whileTap={{ scale: 0.97 }}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={handleSettingsMenu}
         >
           <Settings color="primary" fontSize="large" />
           <motion.div
@@ -59,36 +50,7 @@ export default function SettingsButton(props) {
             </svg>
           </motion.div>
         </motion.button>
-        <motion.ul
-          variants={{
-            open: {
-              clipPath: "inset(0% 0% 0% 0% round 10px)",
-              transition: {
-                type: "spring",
-                bounce: 0,
-                duration: 0.3,
-                delayChildren: 0.3,
-                staggerChildren: 0.05
-              }
-            },
-            closed: {
-              clipPath: "inset(10% 50% 90% 50% round 10px)",
-              transition: {
-                type: "spring",
-                bounce: 0,
-                duration: 0.3
-              }
-            }
-          }}
-          style={{ pointerEvents: menuOpen ? "auto" : "none" }}
-        >
-          <motion.li variants={itemVariants}>
-            <ThemeToggle />
-          </motion.li>
-          <motion.li variants={itemVariants}>
-            <ParticleToggle particles={particles} setParticles={setParticles} />
-          </motion.li>
-        </motion.ul>
+        <SettingsMenu open={menuOpen} />
       </motion.nav>
     </List>
   );

@@ -4,33 +4,50 @@ import { ParticleToggle } from "./ParticleToggle";
 import { Settings } from "@mui/icons-material";
 import { motion, Variants } from "framer-motion";
 
+const itemVariants = {
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 300, damping: 24 }
+  },
+  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
+};
 
 export default function SettingsMenu(props) {
-  const {particles, setParticles} = props;
+  const {particles, setParticles, open} = props;
 
-  return (<></>
-    // <List>
-    //   <ListItem disablePadding>
-    //     <ListItemButton>
-    //       <ListItemIcon>
-    //         <Settings />
-    //       </ListItemIcon>
-    //     </ListItemButton>
-    //   </ListItem>
-    //   <ListItem disablePadding>
-    //     <ListItemButton>
-    //       <ListItemIcon>
-    //         <ParticleToggle particles={particles} setParticles={setParticles} />
-    //       </ListItemIcon>
-    //     </ListItemButton>
-    //   </ListItem>
-    //   <ListItem disablePadding>
-    //     <ListItemButton>
-    //       <ListItemIcon>
-    //         <ThemeToggle />
-    //       </ListItemIcon>
-    //     </ListItemButton>
-    //   </ListItem>
-    // </List>
+  return (
+    <motion.ul
+      variants={{
+        open: {
+          clipPath: "inset(0% 0% 0% 0% round 10px)",
+          transition: {
+            type: "spring",
+            bounce: 0,
+            duration: 0.3,
+            delayChildren: 0.3,
+            staggerChildren: 0.05
+          }
+        },
+        closed: {
+          clipPath: "inset(10% 50% 90% 50% round 10px)",
+          transition: {
+            type: "spring",
+            bounce: 0,
+            duration: 0.3
+          }
+        }
+      }}
+      style={{ pointerEvents: open ? "auto" : "none" }}
+    >
+      <List>
+        <motion.li variants={itemVariants}>
+          <ThemeToggle />
+        </motion.li>
+        <motion.li variants={itemVariants}>
+          <ParticleToggle particles={particles} setParticles={setParticles} />
+        </motion.li>
+      </List>
+    </motion.ul>
   );
 };
