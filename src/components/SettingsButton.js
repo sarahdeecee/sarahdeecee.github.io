@@ -34,33 +34,19 @@ export default function SettingsButton(props) {
   }
   
   return (
-    <List id="settings" className="button-bar" sx={{zIndex: 2, float: 'right'}}>
+    <List id="settings" className="button-bar">
       <motion.button
         whileTap={{ scale: 0.97 }}
         onClick={handleSettingsMenu}
-        // transition={{ duration: 0.50 }}
+        style={{border: 0, backgroundColor: 'transparent'}}
       >
-        {/* {menuOpen ? <ListItem secondaryAction={
-            <IconButton edge="end" aria-label="delete">
-              <Close color="primary" fontSize="large" />
-            </IconButton>
-          }>
-            <ListItemText>Settings</ListItemText>
-          </ListItem> : */}
-           <Menu color="primary" fontSize="large" />
-        {/* } */}
-        {/* <motion.div
-          variants={{
-            open: { rotate: 180 },
-            closed: { rotate: 0 }
-          }}
-          transition={{ duration: 0.20 }}
-          style={{ originY: 0.55 }}
-        >
-          <svg width="15" height="15" viewBox="0 0 20 20">
-            <path d="M0 7 L 20 7 L 10 16" />
-          </svg>
-        </motion.div> */}
+           <Menu color="primary" fontSize="large"
+            sx={{
+              width: '64px',
+              mr: 'auto',
+              justifyContent: 'center',
+            }}
+          />
       </motion.button>
       <AnimatePresence>
         {menuOpen && (
@@ -73,10 +59,7 @@ export default function SettingsButton(props) {
             exit={{
               height: 0,
               width: 0,
-              // opacity: 0
-              // width: '2em',
-              // height: '2em',
-              transition: { delay: 0.7, duration: 0.3 }
+              transition: { delay: 0.3, duration: 0.3 }
             }}
             style={{position: 'relative', left: 0, zIndex: 2}}
           >
@@ -87,13 +70,7 @@ export default function SettingsButton(props) {
               exit="closed"
               variants={sideVariants}
             >
-              {/* <motion.nav
-                initial={false}
-                animate={menuOpen ? "open" : "closed"}
-                className="menu"
-              > */}
-                <SettingsMenu open={menuOpen} particles={particles} setParticles={setParticles} />
-              {/* </motion.nav> */}
+              <SettingsMenu open={menuOpen} particles={particles} setParticles={setParticles} />
             </motion.div>
           </motion.div>
         )}
