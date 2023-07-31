@@ -16,17 +16,6 @@ export default function SettingsButton(props) {
   
   return (
     <List id="settings" className="button-bar" sx={{zIndex: 2}}>
-      {/* <ListItem disablePadding>
-        {!menuOpen && <ListItemButton onClick={handleSettingsMenu}>
-          <ListItemIcon sx={{minWidth: 0, justifyContent: 'center', width: '2em'}}>
-            <Settings color="primary" fontSize="large" />
-          </ListItemIcon>
-        </ListItemButton>}
-        {menuOpen && <ListItemButton onClick={handleSettingsMenu}>
-          <ListItemText>Settings</ListItemText>
-        </ListItemButton>}
-      </ListItem>
-      <SettingsMenu /> */}
       <motion.nav
         initial={false}
         animate={menuOpen ? "open" : "closed"}
