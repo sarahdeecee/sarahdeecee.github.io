@@ -30,7 +30,7 @@ function Landing(props) {
                 zIndex='0'
               />
             </Box>
-            <Box sx={{position: 'absolute', right: '4em', top: '36.5vh', width: '25vh', maxWidth: '500px'}}>
+            <Box sx={{position: 'absolute', right: '4em', top: '37vh', width: '25vh', maxWidth: '500px'}}>
               <img
                 src='./logo-s.png'
                 alt="S Logo"
