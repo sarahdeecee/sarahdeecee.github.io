@@ -1,21 +1,21 @@
 const projects = [
-  {
-    title: "Portfolio Page",
-    description: "Personal portfolio page designed in HTML, CSS and Bootstrap.",
-    githubLink: "https://github.com/sarahdeecee/fcc-responsive-projects/tree/main/05-personal-portfolio",
-    deployLink: "https://codepen.io/s_dc/full/abVXemo",
-    images: [
-      {
-        label: "Landing page",
-        src: "./project-screenshots/free-code-camp/project-portfolio.png",
-      },
-      {
-        label: "Preview of full single page website",
-        src: "./project-screenshots/free-code-camp/project-portfolio.gif",
-      }
-    ],
-    stack: ['Javascript', 'HTML', 'CSS', 'Bootstrap'],
-  },
+  // {
+  //   title: "Portfolio Page",
+  //   description: "Personal portfolio page designed in HTML, CSS and Bootstrap.",
+  //   githubLink: "https://github.com/sarahdeecee/fcc-responsive-projects/tree/main/05-personal-portfolio",
+  //   deployLink: "https://codepen.io/s_dc/full/abVXemo",
+  //   images: [
+  //     {
+  //       label: "Landing page",
+  //       src: "./project-screenshots/free-code-camp/project-portfolio.png",
+  //     },
+  //     {
+  //       label: "Preview of full single page website",
+  //       src: "./project-screenshots/free-code-camp/project-portfolio.gif",
+  //     }
+  //   ],
+  //   stack: ['Javascript', 'HTML', 'CSS', 'Bootstrap'],
+  // },
   {
     title: "Technical Documentation Page",
     description: "A responsive page showing a sample of Vue documentation.",
