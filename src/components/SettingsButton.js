@@ -50,7 +50,7 @@ export default function SettingsButton(props) {
             </svg>
           </motion.div>
         </motion.button>
-        <SettingsMenu open={menuOpen} />
+        <SettingsMenu open={menuOpen} particles={particles} setParticles={setParticles} />
       </motion.nav>
     </List>
   );

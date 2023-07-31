@@ -13,6 +13,8 @@ const itemVariants = {
   closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
 };
 
+const style = {fontSize: '16px', fontWeight: 500};
+
 export default function SettingsMenu(props) {
   const {particles, setParticles, open} = props;
 
@@ -42,10 +44,10 @@ export default function SettingsMenu(props) {
     >
       <List>
         <motion.li variants={itemVariants}>
-          <ThemeToggle />
+          <ThemeToggle style={style} />
         </motion.li>
         <motion.li variants={itemVariants}>
-          <ParticleToggle particles={particles} setParticles={setParticles} />
+          <ParticleToggle style={style} particles={particles} setParticles={setParticles} />
         </motion.li>
       </List>
     </motion.ul>

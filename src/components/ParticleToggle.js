@@ -3,7 +3,7 @@ import { Divider, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, S
 import { Box } from "@mui/system";
 
 export function ParticleToggle(props) {
-  const {openLinks, particles, setParticles, linkTextStyle} = props;
+  const {openLinks, particles, setParticles, style} = props;
 
   const handleParticles = () => {
     (particles === true) ? setParticles(false) : setParticles(true);
@@ -12,7 +12,7 @@ export function ParticleToggle(props) {
   return (
     <>
       <ListItem direction="column" spacing={1} alignItems="center">
-        <Typography type="body1" sx={linkTextStyle}>Effects</Typography>
+        <Typography sx={style}>Effects</Typography>
       </ListItem>
         <Divider />
       <ListItem>

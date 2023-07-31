@@ -4,13 +4,13 @@ import { DarkMode, LightMode } from "@mui/icons-material";
 import { ColorContext } from "../ColorContext";
 
 function ThemeToggle(props) {
-  const { openLinks, linkTextStyle } = props;
+  const { openLinks, style } = props;
   const theme = useTheme();
   const colorMode = useContext(ColorContext);
   return (
     <>
       <ListItem direction="column" spacing={1} alignItems="center">
-        <Typography type="body1" sx={linkTextStyle}>Dark Mode</Typography>
+        <Typography sx={style}>Dark Mode</Typography>
       </ListItem>
       <Divider />
       <ListItem>
