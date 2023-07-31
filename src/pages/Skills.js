@@ -1,9 +1,8 @@
-import { Avatar, Card, CardActionArea, CardMedia, Chip, Grid, Stack, SvgIcon, Typography } from "@mui/material";
+import { Avatar, Chip, Typography } from "@mui/material";
 import stack from '../data/stack';
-import { Box } from "@mui/system";
 
 function Skills() {
-  const categories = ['language', 'framework', 'database', 'design', 'testing', 'other'];
+  // const categories = ['language', 'framework', 'database', 'design', 'testing', 'other'];
 
   const languages = stack.filter(elem => elem.type === 'language');
   const frameworks = stack.filter(elem => elem.type === 'framework');
@@ -12,9 +11,9 @@ function Skills() {
   const testings = stack.filter(elem => elem.type === 'testing');
   const others = stack.filter(elem => elem.type === 'other');
 
-  const toCamelCase = string => {
-    return string[0].toUpperCase() + string.slice(1);
-  }
+  // const toCamelCase = string => {
+  //   return string[0].toUpperCase() + string.slice(1);
+  // }
   
   const parseStack = array => array.map(stack => 
     <Chip

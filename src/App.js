@@ -1,11 +1,10 @@
-import { useMemo, useState } from 'react';
-import { CssBaseline, ThemeProvider, createTheme, Box, Fab, Stack } from '@mui/material';
 import './App.css';
-import Content from './components/Content';
-import Particles from './components/Particles';
+import { useMemo, useState } from 'react';
+import { CssBaseline, ThemeProvider, createTheme, Stack } from '@mui/material';
 import {lightTheme, darkTheme} from './styles/theme';
 import { ColorContext } from './ColorContext';
-import MenuContainer from './components/MenuContainer';
+import Content from './components/Content';
+import Particles from './components/Particles';
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -27,7 +26,7 @@ function App() {
   );
 
   const [particles, setParticles] = useState(true);
-  const [page, setPage] = useState('landing');
+  // const [page, setPage] = useState('landing');
   const [currentProject, setCurrentProject] = useState({
     title: '',
     label: '',
@@ -40,12 +39,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
         {particles && <Particles className="particles" />}
-        {/* <Box sx={{ display: 'flex', width: '100%', maxWidth: '1500px', px: 2}}> */}
-          {/* <MenuContainer particles={particles} setParticles={setParticles} /> */}
-          <Stack component="main" className="App light dark" sx={{ display: 'flex', width: '100vw', maxWidth: '1500px', px: 2, flexGrow: 1 }}>
-            <Content page={page} currentProject={currentProject} setCurrentProject={setCurrentProject} particles={particles} setParticles={setParticles} />
-          </Stack>
-        {/* </Box> */}
+        <Stack component="main" className="App light dark" sx={{ display: 'flex', width: '100vw', maxWidth: '1500px', px: 2, flexGrow: 1 }}>
+          <Content currentProject={currentProject} setCurrentProject={setCurrentProject} particles={particles} setParticles={setParticles} />
+        </Stack>
       </ThemeProvider>
     </ColorContext.Provider>
   );

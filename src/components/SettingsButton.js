@@ -1,7 +1,4 @@
-import { Close, Menu, Settings } from "@mui/icons-material";
-import { IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Tooltip, Typography } from "@mui/material";
-import ThemeToggle from "./ThemeToggle";
-import { ParticleToggle } from "./ParticleToggle";
+import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import { useState } from "react";
 import SettingsMenu from "./SettingsMenu";
 import { AnimatePresence, motion } from "framer-motion";

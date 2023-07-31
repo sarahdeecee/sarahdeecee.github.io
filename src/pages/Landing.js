@@ -1,8 +1,8 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import SakuraLogo from '../data/Pink Sakura Flowers Logo Dark.svg';
 import MenuContainer from "../components/MenuContainer";
 import SettingsButton from "../components/SettingsButton";
+// import SakuraLogo from '../data/Pink Sakura Flowers Logo Dark.svg';
 
 function Landing(props) {
   const {particles, setParticles} = props;

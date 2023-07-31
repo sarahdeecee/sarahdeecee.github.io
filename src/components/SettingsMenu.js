@@ -1,8 +1,7 @@
-import { List, ListItem, ListItemButton, ListItemIcon } from "@mui/material";
+import { List } from "@mui/material";
 import ThemeToggle from "./ThemeToggle";
 import { ParticleToggle } from "./ParticleToggle";
-import { Settings } from "@mui/icons-material";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 const itemVariants = {
   open: {
@@ -23,7 +22,6 @@ export default function SettingsMenu(props) {
       <motion.div
         variants={{
           open: {
-            // clipPath: "inset(0% 0% 0% 0% round 10px)",
             transition: {
               type: "spring",
               bounce: 0,
@@ -33,7 +31,6 @@ export default function SettingsMenu(props) {
             }
           },
           closed: {
-            // clipPath: "inset(10% 50% 90% 50% round 10px)",
             transition: {
               type: "spring",
               bounce: 0,

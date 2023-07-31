@@ -1,9 +1,7 @@
-import { ToggleOff, ToggleOn } from "@mui/icons-material";
-import { Divider, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Switch, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Divider, ListItem, Stack, Switch, Typography } from "@mui/material";
 
 export function ParticleToggle(props) {
-  const {openLinks, particles, setParticles, style} = props;
+  const {particles, setParticles, style} = props;
 
   const handleParticles = () => {
     (particles === true) ? setParticles(false) : setParticles(true);

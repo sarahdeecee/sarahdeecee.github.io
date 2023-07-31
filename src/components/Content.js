@@ -4,31 +4,14 @@ import Contact from '../pages/Contact';
 import Landing from '../pages/Landing';
 import Projects from '../pages/Projects';
 import Skills from '../pages/Skills';
-import ContentFooter from './Footer';
-
-import { useRef } from "react";
 import {
   motion,
   useScroll,
-  useSpring,
-  useTransform,
-  MotionValue
 } from "framer-motion";
-
-
-function useParallax(value, distance) {
-  return useTransform(value, [0, 1], [-distance, distance]);
-}
 
 function Content(props) {
   const {currentProject, setCurrentProject, particles, setParticles} = props;
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-  const ref = useRef(null);
   
   const tabs = [
     {
@@ -66,7 +49,6 @@ function Content(props) {
         style={{ scaleX: scrollYProgress }}
       />
       {parsedTabs}
-      {/* <motion.div className="progress" style={{ scaleX }} /> */}
     </>
   );
 }

@@ -1,8 +1,6 @@
 import { Card, Dialog, Grid, Skeleton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
-import SwipeableTextMobileStepper from "../components/ProjectCarousel";
 import ProjectImageDialog from "../components/ProjectImageDialog";
 import projects from "../data/projectsData"
 

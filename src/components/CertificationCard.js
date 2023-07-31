@@ -1,7 +1,7 @@
 import { Box, Card, CardActionArea, CardContent, CardMedia, Link, Typography } from "@mui/material";
 
 function CertificationCard(props) {
-  const {title, link, img, company, companyLink, currentProject, setCurrentProject} = props;
+  const {title, link, img, company, companyLink, setCurrentProject} = props;
 
   const handleDialogImage = e => {
     setCurrentProject({title: company, label: title, src: img, open: true});

@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, DialogContent, DialogTitle, Link, Typography } from "@mui/material";
+import { Box, DialogContent, DialogTitle } from "@mui/material";
 
 function ProjectImageDialog(props) {
   const {image, label, title} = props;
