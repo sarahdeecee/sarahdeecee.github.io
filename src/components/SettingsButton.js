@@ -1,10 +1,11 @@
 import { Close, Menu, Settings } from "@mui/icons-material";
-import { IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
+import { IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Tooltip, Typography } from "@mui/material";
 import ThemeToggle from "./ThemeToggle";
 import { ParticleToggle } from "./ParticleToggle";
 import { useState } from "react";
 import SettingsMenu from "./SettingsMenu";
 import { AnimatePresence, motion } from "framer-motion";
+import { MenuToggle } from "./MenuToggle";
 
 const sideVariants = {
   open: {
@@ -35,19 +36,36 @@ export default function SettingsButton(props) {
   
   return (
     <List id="settings" className="button-bar">
-      <motion.button
-        whileTap={{ scale: 0.97 }}
-        onClick={handleSettingsMenu}
-        style={{border: 0, backgroundColor: 'transparent'}}
-      >
-           <Menu color="primary" fontSize="large"
-            sx={{
-              width: '64px',
-              mr: 'auto',
-              justifyContent: 'center',
+      <ListItem disablePadding sx={{width: '100%', justifyContent: 'space-between', alignItems: 'center'}}>
+        <AnimatePresence>
+          {menuOpen && <motion.div
+            initial={{right: 0, width: 0, opacity: 0,
+              transition: { delay: 0.3, duration: 0.1 }
             }}
+            animate={{opacity: 1}}
+            exit={{width: 0, opacity: 0,
+              transition: { delay: 0.3, duration: 0.1 }
+            }}
+          > 
+            <ListItemText primary="Settings"
+              primaryTypographyProps={{
+                color: 'primary',
+                fontWeight: 'medium',
+                fontSize: '16pt'
+              }}
+              sx={{px: 2, width: '100%'}}
           />
-      </motion.button>
+          </motion.div>}
+        </AnimatePresence>
+        <ListItemButton onClick={handleSettingsMenu} sx={{m: 0, pt: 1, width: '64px', display: 'flex', justifyContent: 'flex-end'}}>
+          <motion.nav
+            style={{border: 0, backgroundColor: 'transparent'}}
+            animate={menuOpen ? "open" : "closed"}
+          >
+            <MenuToggle toggle={() => setMenuOpen()} />
+          </motion.nav>
+        </ListItemButton>
+      </ListItem>
       <AnimatePresence>
         {menuOpen && (
           <motion.div
