@@ -18,7 +18,6 @@ export function ParticleToggle(props) {
           <Typography color="primary">Off</Typography>
           <Switch
             checked={particles}
-            defaultChecked
             onChange={handleParticles}
             inputProps={{ 'aria-label': 'particles-switch' }}
           />

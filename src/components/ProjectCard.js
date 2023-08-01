@@ -5,7 +5,7 @@ import StackChip from "./StackChip";
 function ProjectCard(props) {
   const {title, description, images, stack, deployLink, githubLink, setCurrentProject} = props;
 
-  const stackChips = stack.map(chip => <StackChip stack={chip} />);
+  const stackChips = stack.map(chip => <StackChip key={`stackchip-${chip}`} stack={chip} card={title} />);
   
   return (
     <Card variant="outlined" sx={{ height: "100%", border: 0}} className="project-card">

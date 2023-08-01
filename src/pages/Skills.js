@@ -17,9 +17,10 @@ function Skills() {
   
   const parseStack = array => array.map(stack => 
     <Chip
+      key={stack.title}
       variant="filled"
       label={stack.title}
-      avatar={<Avatar alt={stack.title} src={stack.src} variant="square" imgProps={{objectFit: 'scale-down'}}/>}
+      avatar={<Avatar key={`${stack.title}-avatar`} alt={stack.title} src={stack.src} variant="square" />}
       sx={{p: 1, mb: 1, mr: 1, fontSize: '1em', bgcolor: 'background.paper'}}
     />
   );
