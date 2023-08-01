@@ -20,7 +20,7 @@ function About() {
             alt="Sarah Dela Cruz avatar"
             loading="lazy"
           />
-          <Typography variant="body1" component="p" style={{ whiteSpace: "pre-line", fontSize: '14pt' }}>{biography}</Typography>
+          <Typography id="bio" variant="body1" component="p" style={{ whiteSpace: "pre-line" }}>{biography}</Typography>
           <Typography variant="body2" component="p" sx={{mt: '2em'}}>Fun fact: My older brother gifted me a book titled <strong>How to Do Everything with HTML</strong> in the early 2000's &#8212; I still own it to this day.</Typography>
         </Grid>
       </Grid>

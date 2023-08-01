@@ -5,6 +5,7 @@ import {lightTheme, darkTheme} from './styles/theme';
 import { ColorContext } from './ColorContext';
 import Content from './components/Content';
 import Particles from './components/Particles';
+import MobileNavBar from './components/MobileNavBar';
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -38,6 +39,7 @@ function App() {
     <ColorContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
+        <MobileNavBar />
         {particles && <Particles className="particles" />}
         <Stack component="main" className="App light dark" sx={{ display: 'flex', width: '100vw', maxWidth: '1500px', px: 2, flexGrow: 1 }}>
           <Content currentProject={currentProject} setCurrentProject={setCurrentProject} particles={particles} setParticles={setParticles} />
