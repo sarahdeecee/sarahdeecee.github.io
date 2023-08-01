@@ -9,18 +9,18 @@ function ThemeToggle(props) {
   return (
     <>
       <ListItem direction="column" spacing={1} alignItems="center">
-        <Typography sx={style}>Dark Mode</Typography>
+        <Typography color="primary" sx={style}>Dark Mode</Typography>
       </ListItem>
       <Divider />
       <ListItem>
         <Stack direction="row" sx={{alignItems: 'center', ml: 2}}>
-          <Typography>Off</Typography>
+          <Typography color="primary">Off</Typography>
           <Switch
             checked={theme.palette.type === 'light' ? false : true}
             onChange={colorMode.toggleColorMode}
             inputProps={{ 'aria-label': 'mode-switch' }}
           />
-          <Typography>On</Typography>
+          <Typography color="primary">On</Typography>
         </Stack>
       </ListItem>
     </>

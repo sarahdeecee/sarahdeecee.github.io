@@ -28,22 +28,10 @@ a {
   z-index: 100;
 }
 
-.button-bar {
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: 5px 5px 0px #D2608C;
-  color: #D2608C;
-}
-
 #content {
   height: 100%;
   margin: 0;
   align-items: center;
-}
-
-#landing {
-  /* background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(227,173,202,1) 100%); */
 }
 
 section.page {
@@ -77,6 +65,10 @@ section.page {
 
 #settings-listitem {
   justify-content: flex-end;
+}
+
+#landing-text-box {
+  align-items: flex-start;
 }
 
 /* About */
@@ -190,6 +182,9 @@ input {
 
 /* Media queries */
 @media only screen and (max-width: 600px) {
+  html {
+    scroll-snap-type: none;
+  }
   .mobile {
     display: contents;
   }
@@ -202,6 +197,9 @@ input {
   #landing-container {
     flex-direction: column;
     justify-content: space-around;
+  }
+  #landing-text-box {
+    align-items: center;
   }
   #landing-name {
     font-size: 46px;
@@ -243,5 +241,8 @@ input {
   }
   .project-card-image-area {
     max-height: 200px;
+  }
+  #contact {
+    min-height: 100vh;
   }
 }

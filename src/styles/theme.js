@@ -29,7 +29,7 @@ export const lightTheme = {
       MuiCard: {
         styleOverrides: {
           root: {
-            background: '#F7E0F3'
+            background: '#F7E0F3',
           }
         }
       }
@@ -49,7 +49,7 @@ export const darkTheme = {
     },
     text: {
       primary: '#d2608c',
-      secondary: '#872349',
+      secondary: '#F7E0F3',
     },
     background: {
       default: '#0a0d12',

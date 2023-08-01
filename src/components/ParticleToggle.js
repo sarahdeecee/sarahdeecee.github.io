@@ -10,19 +10,19 @@ export function ParticleToggle(props) {
   return (
     <>
       <ListItem direction="column" spacing={1} alignItems="center">
-        <Typography sx={style}>Effects</Typography>
+        <Typography color="primary" sx={style}>Effects</Typography>
       </ListItem>
         <Divider />
       <ListItem>
         <Stack direction="row" sx={{alignItems: 'center', ml: 2}}>
-          <Typography>Off</Typography>
+          <Typography color="primary">Off</Typography>
           <Switch
             checked={particles}
             defaultChecked
             onChange={handleParticles}
             inputProps={{ 'aria-label': 'particles-switch' }}
           />
-          <Typography>On</Typography>
+          <Typography color="primary">On</Typography>
         </Stack>
       </ListItem>
     </>

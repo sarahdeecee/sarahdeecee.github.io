@@ -10,7 +10,7 @@ function LinksList() {
           minHeight: 48,
           justifyContent: 'center',
           px: 2.5,
-          backgroundColor: "inherit"
+          // backgroundColor: "inherit"
         }}
         href={link.link}
         target="_blank"

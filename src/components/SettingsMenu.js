@@ -1,4 +1,4 @@
-import { Divider, Link, List, ListItem, Stack, Typography } from "@mui/material";
+import { Divider, Link, List, ListItem, Typography } from "@mui/material";
 import ThemeToggle from "./ThemeToggle";
 import { ParticleToggle } from "./ParticleToggle";
 import { motion } from "framer-motion";
@@ -34,7 +34,7 @@ export default function SettingsMenu(props) {
   const pagesLi = <>
     <motion.li key='menu-pages' variants={itemVariants} className="mobile-motion">
       <ListItem direction="column" spacing={1} alignItems="center">
-        <Typography sx={style}>Pages</Typography>
+        <Typography color="primary" sx={style}>Pages</Typography>
       </ListItem>
       <Divider />
     </motion.li>

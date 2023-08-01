@@ -31,7 +31,7 @@ function Landing(props) {
           />
         </Box>
         <Grid container item id="landing-grid" xs={10} sx={{display: 'flex', justifyContent: 'space-evenly', flexDirection: 'row'}}>
-          <Grid item xs={12} sx={{zIndex: 3, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}>
+          <Grid item xs={12} id="landing-text-box" sx={{zIndex: 3, display: 'flex', flexDirection: 'column'}}>
             <Typography variant="h4" component="p">Hello! My name is</Typography>
             <Typography variant="h1" component="p" id="landing-name" sx={{fontWeight: "400"}}>Sarah Dela Cruz.</Typography>
             <Typography variant="h4" id="landing-subtitle" component="p">I'm a <strong>web developer</strong> from Ontario, Canada.</Typography>
