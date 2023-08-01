@@ -40,9 +40,10 @@ function Contact() {
 
   return (
     <section className="page" id="contact">
-      <Grid container component="article" sx={{alignItems: 'stretch'}}>
+      <Grid container component="article" sx={{mb: 1, alignItems: 'stretch'}}>
         <Grid item container sx={{flexGrow: 1}}>
-          <Typography variant="h2" className="header">Let's get in touch!</Typography>
+          <Typography variant="h2" className="header long">Let's get in touch!</Typography>
+          <Typography variant="h2" className="header mobile">Contact me</Typography>
           <Box sx={{display: 'flex', justifyContent: "center", width: '100%'}}>
             <Card variant="outlined" sx={{ height: "100%", width: '80%', border: 0, p: 2}}>
             <form id="form-control" ref={form} onSubmit={handleSubmit}>

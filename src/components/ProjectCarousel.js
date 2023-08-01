@@ -49,9 +49,9 @@ function SwipeableTextMobileStepper(props) {
             {Math.abs(activeStep - index) <= 2 ? (
               <CardActionArea sx={{display: 'flex', justifyContent: 'center'}}>
               <Box
+                className="project-card-image-area"
                 component="img"
                 sx={{
-                  maxHeight: 315,
                   height: '100%',
                   overflow: 'hidden',
                   maxWidth: '100%',

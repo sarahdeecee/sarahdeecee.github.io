@@ -1,9 +1,3 @@
-import About from "../pages/About";
-import Contact from "../pages/Contact";
-import Landing from "../pages/Landing";
-import Projects from "../pages/Projects";
-import Skills from "../pages/Skills";
-
 export const pages = [
   {
     link: "landing",
@@ -14,6 +8,11 @@ export const pages = [
     link: "about",
     label: "About",
     // component: <About />
+  },
+  {
+    link: "certifications",
+    label: "Certifications",
+    // component: <Certifications />
   },
   {
     link: "projects",

@@ -87,7 +87,7 @@ section.page {
 /* Projects */
 
 .project-card-image-area {
-  max-height: 300px;
+  max-height: 315px;
   overflow-y: hidden;
 }
 
@@ -232,7 +232,7 @@ input {
     background-color: none;
     box-shadow: none;
   }
-  .progress-bar, #links-bar, #settings-box {
+  .progress-bar, #links-bar, #settings-box, .long {
     display: none;
   }
   #settings-listitem {
@@ -240,5 +240,8 @@ input {
   }
   #settings {
     padding: 2px;
+  }
+  .project-card-image-area {
+    max-height: 200px;
   }
 }
