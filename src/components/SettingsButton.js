@@ -33,7 +33,7 @@ export default function SettingsButton(props) {
   
   return (
     <List id="settings" className="button-bar">
-      <ListItem disablePadding sx={{width: '100%', justifyContent: 'space-between', alignItems: 'center'}}>
+      <ListItem disablePadding id="settings-listitem" sx={{width: '100%', justifyContent: 'space-between', alignItems: 'center'}}>
         <AnimatePresence>
           {menuOpen && <motion.div
             initial={{right: 0, width: 0, opacity: 0,
@@ -51,10 +51,10 @@ export default function SettingsButton(props) {
                 fontSize: '16pt'
               }}
               sx={{px: 2, width: '100%'}}
-          />
+            />
           </motion.div>}
         </AnimatePresence>
-        <ListItemButton onClick={handleSettingsMenu} sx={{m: 0, pt: 1, width: '64px', display: 'flex', justifyContent: 'flex-end'}}>
+        <ListItemButton onClick={handleSettingsMenu} sx={{m: 0, pt: 1, px: '19px', width: '64px', display: 'flex', justifyContent: 'flex-end'}}>
           <motion.nav
             style={{border: 0, backgroundColor: 'transparent'}}
             animate={menuOpen ? "open" : "closed"}

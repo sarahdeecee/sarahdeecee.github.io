@@ -75,6 +75,10 @@ section.page {
   z-index: -1;
 }
 
+#settings-listitem {
+  justify-content: flex-end;
+}
+
 /* About */
 #bio {
   font-size: 1.1em;
@@ -220,7 +224,18 @@ input {
   .logo {
     display: none;
   }
-  .progress-bar, #links-bar, #settings {
+  .button-bar {
+    padding: 0;
+    background-color: none;
+    box-shadow: none;
+  }
+  .progress-bar, #links-bar, #settings-box {
     display: none;
+  }
+  #settings-listitem {
+    justify-content: center;
+  }
+  #settings {
+    padding: 2px;
   }
 }

@@ -38,7 +38,7 @@ function Landing(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Box sx={{height: '22em', zIndex: 5, position: 'absolute', right: 0}}>
+      <Box id="settings-box" sx={{height: '22em', zIndex: 5, position: 'absolute', right: 0}}>
         <SettingsButton particles={particles} setParticles={setParticles} />
       </Box>
     </section>

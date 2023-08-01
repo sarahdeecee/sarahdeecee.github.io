@@ -39,11 +39,11 @@ function App() {
     <ColorContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
-        <MobileNavBar />
         {particles && <Particles className="particles" />}
         <Stack component="main" className="App light dark" sx={{ display: 'flex', width: '100vw', maxWidth: '1500px', px: 2, flexGrow: 1 }}>
           <Content currentProject={currentProject} setCurrentProject={setCurrentProject} particles={particles} setParticles={setParticles} />
         </Stack>
+        <MobileNavBar />
       </ThemeProvider>
     </ColorContext.Provider>
   );
