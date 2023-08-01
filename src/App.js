@@ -43,7 +43,7 @@ function App() {
         <Stack component="main" className="App light dark" sx={{ display: 'flex', width: '100vw', maxWidth: '1500px', px: 2, flexGrow: 1 }}>
           <Content currentProject={currentProject} setCurrentProject={setCurrentProject} particles={particles} setParticles={setParticles} />
         </Stack>
-        <MobileNavBar />
+        <MobileNavBar particles={particles} setParticles={setParticles} />
       </ThemeProvider>
     </ColorContext.Provider>
   );
