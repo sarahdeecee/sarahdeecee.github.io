@@ -1,7 +1,8 @@
-import { List } from "@mui/material";
+import { Divider, Link, List, ListItem, Stack, Typography } from "@mui/material";
 import ThemeToggle from "./ThemeToggle";
 import { ParticleToggle } from "./ParticleToggle";
 import { motion } from "framer-motion";
+import { pages } from "../data/pages";
 
 const itemVariants = {
   open: {
@@ -16,6 +17,29 @@ const style = {fontSize: '16px', fontWeight: 500};
 
 export default function SettingsMenu(props) {
   const {particles, setParticles, open} = props;
+  const settingsArr = [
+    <ThemeToggle style={style} />,
+    <ParticleToggle style={style} particles={particles} setParticles={setParticles} />
+  ]
+
+  const settingsLi = settingsArr.map((item, index) => <motion.li key={`motion-${index}`} variants={itemVariants}>{item}</motion.li>)
+  
+  const pagesParsed = pages.map(item => <motion.li key={`motion-${item.link}`} variants={itemVariants} className="mobile-motion">
+      <ListItem>
+        <Link href={`#${item.link}`} sx={{ml: 2, textDecoration: 'none'}}>{item.label}</Link>
+      </ListItem>
+    </motion.li>
+  )
+
+  const pagesLi = <>
+    <motion.li key='menu-pages' variants={itemVariants} className="mobile-motion">
+      <ListItem direction="column" spacing={1} alignItems="center">
+        <Typography sx={style}>Pages</Typography>
+      </ListItem>
+      <Divider />
+    </motion.li>
+    {pagesParsed}
+  </>
 
   return (
     <List>
@@ -26,7 +50,7 @@ export default function SettingsMenu(props) {
               type: "spring",
               bounce: 0,
               duration: 0.3,
-              delayChildren: 0.3,
+              delayChildren: 0.1,
               staggerChildren: 0.05
             }
           },
@@ -40,12 +64,8 @@ export default function SettingsMenu(props) {
         }}
         style={{ pointerEvents: open ? "auto" : "none" }}
       >
-        <motion.li variants={itemVariants}>
-          <ThemeToggle style={style} />
-        </motion.li>
-        <motion.li variants={itemVariants}>
-          <ParticleToggle style={style} particles={particles} setParticles={setParticles} />
-        </motion.li>
+        {pagesLi}
+        {settingsLi}
       </motion.div>
     </List>
   );

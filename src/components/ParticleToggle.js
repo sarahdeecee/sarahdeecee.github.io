@@ -14,7 +14,7 @@ export function ParticleToggle(props) {
       </ListItem>
         <Divider />
       <ListItem>
-        <Stack direction="row" sx={{alignItems: 'center'}}>
+        <Stack direction="row" sx={{alignItems: 'center', ml: 2}}>
           <Typography>Off</Typography>
           <Switch
             checked={particles}

@@ -3,32 +3,11 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Projects from '../pages/Projects';
 import Skills from '../pages/Skills';
+import { pages } from '../data/pages';
 
 function Navigation(props) {
-  const tabs = [
-    {
-      text: "about",
-      label: "About",
-      component: <About />
-    },
-    {
-      text: "projects",
-      label: "Projects",
-      component: <Projects />
-    },
-    {
-      text: "skills",
-      label: "Skills",
-      component: <Skills />
-    },
-    {
-      text: "contact",
-      label: "Contact",
-      component: <Contact />
-    }
-  ];
-
-  const parsedTabs = tabs.map(({ label, text }, index) => (
+  const {page, handlePage} = props;
+  const parsedTabs = pages.map(({ label, text }, index) => (
     <Tab
       key={index}
       label={label}

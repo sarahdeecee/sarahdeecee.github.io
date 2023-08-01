@@ -3,6 +3,7 @@ import { useState } from "react";
 import SettingsMenu from "./SettingsMenu";
 import { AnimatePresence, motion } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
+import LinksList from "./LinksList";
 
 const sideVariants = {
   open: {
@@ -69,7 +70,7 @@ export default function SettingsButton(props) {
             initial={{ width: 0, height: 0 }}
             animate={{
               width: 200,
-              height: 200
+              height: 'auto'
             }}
             exit={{
               height: 0,
@@ -85,6 +86,7 @@ export default function SettingsButton(props) {
               exit="closed"
               variants={sideVariants}
             >
+              
               <SettingsMenu open={menuOpen} particles={particles} setParticles={setParticles} />
             </motion.div>
           </motion.div>

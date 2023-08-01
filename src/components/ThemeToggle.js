@@ -13,7 +13,7 @@ function ThemeToggle(props) {
       </ListItem>
       <Divider />
       <ListItem>
-        <Stack direction="row" sx={{alignItems: 'center'}}>
+        <Stack direction="row" sx={{alignItems: 'center', ml: 2}}>
           <Typography>Off</Typography>
           <Switch
             checked={theme.palette.type === 'light' ? false : true}
