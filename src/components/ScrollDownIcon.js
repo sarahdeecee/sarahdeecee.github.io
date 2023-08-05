@@ -14,8 +14,6 @@ function ScrollDownIcon() {
       {/* <Box sx={{position: 'absolute', bottom: 0, zIndex: 5}}> */}
       <motion.span
         initial={{opacity: 0, y: 0 }}
-        // exit={{ opacity: 0 }}
-        // whileHover={{ scale: 1.2 }}
         transition={{
           y: {
             duration: 1,
@@ -24,12 +22,12 @@ function ScrollDownIcon() {
           },
           opacity: {
             duration: 1,
-            repeat: 0,
-            delay: 1
+            repeat: Infinity,
+            delay: 1,
+            ease: "easeOut"
           }
         }}
-        animate={{ opacity: 1, y: 100 }}
-        // whileTap={{ scale: 0.9 }}
+        animate={{ opacity: [0,1], y: 100 }}
       >
         <KeyboardDoubleArrowDown sx={{fontSize: '10em'}} />
       </motion.span>
