@@ -7,10 +7,10 @@ import { pages } from "../data/pages";
 const itemVariants = {
   open: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: { type: "spring", stiffness: 300, damping: 24 }
   },
-  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
+  closed: { opacity: 0, x: 20, transition: { duration: 0.2 } }
 };
 
 const style = {fontSize: '16px', fontWeight: 500};

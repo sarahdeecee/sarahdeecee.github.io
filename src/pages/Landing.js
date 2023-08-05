@@ -2,6 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import MenuContainer from "../components/MenuContainer";
 import SettingsButton from "../components/SettingsButton";
+import ScrollDownIcon from "../components/ScrollDownIcon";
 // import SakuraLogo from '../data/Pink Sakura Flowers Logo Dark.svg';
 
 function Landing(props) {
@@ -9,6 +10,7 @@ function Landing(props) {
 
   return (
     <section id="landing" className="page">
+      <ScrollDownIcon />
       <MenuContainer />
       <Grid container id="landing-container" component="article" sx={{justifyContent: "space-around", alignItems: "center", width: '100%'}}>
         <Box className="logo logo-spin" sx={{ width: '25%', maxWidth: '500px', position: 'absolute', translate: '-4em 0em', right: 0, zIndex: 1 }}>

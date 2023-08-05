@@ -7,7 +7,7 @@ import { MenuToggle } from "./MenuToggle";
 const sideVariants = {
   open: {
     opacity: 1,
-    // y: 0,
+    x: 0,
     transition: {
       staggerChildren: 0.2,
       staggerDirection: 1
@@ -15,7 +15,7 @@ const sideVariants = {
   },
   closed: {
     opacity: 0,
-    // y: 20,
+    x: 20,
     transition: {
       staggerChildren: 0.2,
       staggerDirection: -1
@@ -32,7 +32,7 @@ export default function SettingsButton(props) {
   }
   
   return (
-    <Card variant="outlined" sx={{border: 0}}>
+    <Card id="settings-card" variant="outlined" sx={{border: 0}}>
       <List id="settings" className="button-bar">
         <ListItem disablePadding id="settings-listitem" sx={{width: '100%', justifyContent: 'space-between', alignItems: 'center'}}>
           <AnimatePresence>
@@ -75,7 +75,7 @@ export default function SettingsButton(props) {
               exit={{
                 height: 0,
                 width: 0,
-                transition: { delay: 0.3, duration: 0.3 }
+                transition: { delay: 0.5, duration: 0.3 }
               }}
               style={{position: 'relative', left: 0, zIndex: 2}}
             >
@@ -86,7 +86,6 @@ export default function SettingsButton(props) {
                 exit="closed"
                 variants={sideVariants}
               >
-                
                 <SettingsMenu open={menuOpen} particles={particles} setParticles={setParticles} />
               </motion.div>
             </motion.div>
