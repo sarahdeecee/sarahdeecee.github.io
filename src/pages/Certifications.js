@@ -26,6 +26,13 @@ const certifications = [
     link: "https://www.freecodecamp.org/certification/sdc/front-end-development-libraries",
     companyLink: "https://www.freecodecamp.org/",
   },
+  { 
+    title: "Introduction to AWS",
+    company: "A Cloud Guru",
+    img: "./certifications/acg-intro-to-aws.png",
+    link: "https://verify.acloud.guru/7A541EBD5F07",
+    companyLink: "https://www.pluralsight.com/cloud-guru",
+  },
 ];
 
 function Certifications(props) {
